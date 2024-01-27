@@ -41,9 +41,9 @@ function handleSubmit(e){
           <Navbar />
         </div>
 
-        <div className="bg-[#1D174F] h-[150vh] w-screen h-screen flex justify-center p-[20px] pt-[20vh] sm:pt-[30vh] lg ">
+        <div className="bg-[#1D174F] h-[190vh] w-screen h-screen flex justify-center p-[20px] pt-[20vh] sm:pt-[30vh] lg ">
           {/* <Background /> */}
-          <div className=" w-screen opacity-[0.85] z-20 sm:w-[500px] sm:h-[650px] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
+          <div className=" w-screen opacity-[0.85] z-20 h-[45em] sm:w-[500px] sm:h-[45em] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <img className="w-[50px] h-[50px]" src={img}></img>
               <h1 className="tracking-[1.2px] text-gray-500 font-medium mt-[10px] text-lg">

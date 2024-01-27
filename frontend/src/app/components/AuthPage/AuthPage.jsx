@@ -16,7 +16,7 @@ const [data,setData]=useState({
   return (
     <div>
       {page===1&&<Register data={data} setData={setData} setPage={setPage} />}
-      {page===2&&<OtpVerify setPage={setPage} />}
+      {page===2&&<OtpVerify data={data} setData={setData} setPage={setPage} />}
     </div>
   )
 }
