@@ -2,7 +2,7 @@ import React from "react";
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import speakersData from "./data"; // Importing speaker data from data.js
 
-const Speaker = () => {
+const Speakers = () => {
   // Card component for rendering each speaker
   const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
     <div className="max-w-lg w-[80%] md:w-[40%] lg:w-[25%] mx-auto p-5 m-5 bg-white shadow-lg rounded-lg overflow-hidden">
@@ -79,4 +79,4 @@ const Speaker = () => {
   );
 };
 
-export default Speaker;
+export default Speakers;
