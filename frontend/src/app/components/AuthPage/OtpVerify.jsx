@@ -1,11 +1,8 @@
 "use client";
 import React, { useState,useEffect } from "react";
-import { FaUserCircle } from "react-icons/fa";
+
 import { FaLock } from "react-icons/fa";
-import { FiPhoneCall } from "react-icons/fi";
-import { RiLockPasswordFill } from "react-icons/ri";
-import { BsEyeSlashFill, BsGenderAmbiguous } from "react-icons/bs";
-import { AiOutlineMail, AiFillEye } from "react-icons/ai";
+
 import Link from "next/link";
 import Navbar from "../Navbar/Navbar";
 import Timer from "./Timer";
