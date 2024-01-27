@@ -95,7 +95,7 @@ const Register = ({ data, setData, setPage }) => {
         <div className=""></div>
 
         <div className="bg-[#1D174F] h-[190vh] w-screen h-screen flex justify-center p-[20px] pt-[10em] sm:pt-[10em] lg ">
-          {/* <Background /> */}
+       
           <div className=" w-screen opacity-[0.85] z-20 h-[50em] sm:w-[500px] sm:h-[50em] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <Image
