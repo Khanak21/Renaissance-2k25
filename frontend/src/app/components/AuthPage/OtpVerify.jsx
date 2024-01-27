@@ -9,18 +9,17 @@ import { AiOutlineMail, AiFillEye } from "react-icons/ai";
 import Link from "next/link";
 import Navbar from "../Navbar/Navbar";
 import Timer from "./Timer";
+import Image from "next/image";
 //import Background from "./Background";
 
-const img = "dnd"; //require("./rene.png");
+const img = "/rene.png";
 
 const OtpVerify = ({data,setData,setPage}) => {
  
   const [icon, seticon] = useState(true);
-  const [countdown, setCountdown] = useState(500);
-  const show = () => {
-    seticon(!icon);
-  };
 
+ 
+//adding otp to fomdata
 function  handleFormChange(e){
  
 setData({
@@ -29,6 +28,9 @@ setData({
 })
 console.log(data)
 }
+
+
+//verify otp function
 function handleSubmit(e){
   e.preventDefault()
   setPage(3)
@@ -43,11 +45,16 @@ function handleSubmit(e){
           <Navbar />
         </div>
 
-        <div className="bg-[#1D174F] h-[150vh] w-screen h-screen flex justify-center p-[20px] pt-[20vh] sm:pt-[30vh] lg ">
+        <div className="bg-[#1D174F] h-[150vh] w-screen h-screen flex justify-center p-[20px] pt-[10em] sm:pt-[10em]  ">
           {/* <Background /> */}
           <div className=" w-screen opacity-[0.85] h-[35em] z-20 sm:w-[500px] sm:h-[35em] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
-              <img className="w-[50px] h-[50px]" src={img}></img>
+            <Image 
+              width={700}  // Set the width of the image
+              height={250} // Set the height of the image
+              src={img}>
+
+              </Image>
               <h1 className="tracking-[1.2px] text-gray-500 font-medium mt-[10px] text-lg">
                Enter One-Time Password
               </h1>
