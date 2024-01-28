@@ -7,6 +7,7 @@ import Sponsors from "./components/Sponsors/Sponsors";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
 import ButtonBackToTop from "./components/ButtonBackToTop/ButtonBackToTop";
+import Speakers from "./components/Speakers/Speakers";
 
 const HomePage = () => {
   return (
