@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-// import BG from "../Hero/abstract-digital-grid-black-background.jpg"; 
+// import BG from "../Hero/abstract-digital-grid-black-background.jpg";
 // import BG from "../Hero/HeroBG.mp4" PS- This doesnot work in NEXT without an external file-loader and someone spent hours figuring it out
 
 export const Hero = () => {

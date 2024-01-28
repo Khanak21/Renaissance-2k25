@@ -18,13 +18,11 @@ const HomePage = () => {
         <About />
         <Events />
         <Sponsors />
+        <Speakers />
         <Testimonials />
         <Footer />
         <ButtonBackToTop />
       </div>
-      
-
-      
     </>
   );
 };

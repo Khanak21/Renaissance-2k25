@@ -1,34 +1,36 @@
-"use client"
+"use client";
 import Counter from "./Counter";
-import  gsap  from "gsap";
+import gsap from "gsap";
 import React, { useEffect } from "react";
-import './About.css';
+import "./About.css";
 
 function About() {
-
   useEffect(() => {
     // Set initial state
     gsap.set(".left-right", { opacity: 0, x: -100 });
     gsap.set(".about-section", { opacity: 0, x: 100 });
-  
+
     // Animate elements
-    gsap.fromTo(".left-right", {
-      opacity: 0,
-      x: -100,
-      ease: "power3.inOut",
-      duration: 2,
-    }, {
-      opacity: 1,
-      x: 0,
-    });
-  
+    gsap.fromTo(
+      ".left-right",
+      {
+        opacity: 0,
+        x: -100,
+        ease: "power3.inOut",
+        duration: 2,
+      },
+      {
+        opacity: 1,
+        x: 0,
+      }
+    );
+
     gsap.fromTo(
       ".about-section",
       { opacity: 0, x: 100 },
       { opacity: 1, x: 0, ease: "power3.inOut", duration: 1 }
     );
-  }, []); 
-  
+  }, []);
 
   return (
     <div>
