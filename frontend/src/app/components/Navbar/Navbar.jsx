@@ -1,8 +1,8 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
+"use client";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 
-const Motion = dynamic(() => import('framer-motion'), { ssr: false });
+const Motion = dynamic(() => import("framer-motion"), { ssr: false });
 const motion = Motion.motion;
 
 import logo from "./logo.png";
@@ -60,10 +60,10 @@ function Navbar() {
       else setScroll(false);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -84,7 +84,11 @@ function Navbar() {
         } xs:px-8 xs:py-8 transition duration-600`}
       >
         <a href="#">
-          <img className="cursor-pointer" src={logo.src} alt="Renaissance Logo" />
+          <img
+            className="cursor-pointer"
+            src={logo.src}
+            alt="Renaissance Logo"
+          />
         </a>
       </div>
 
@@ -93,10 +97,11 @@ function Navbar() {
         <ul className="text-custom-nav text-l font-bold flex flex-row justify-center items-center">
           {navItems.map((item) => (
             <a
+            key={`link-${item}`}
               href="#"
               className="mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute before:bg-custom-accent before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full hover:text-custom-secondary"
             >
-              <li className="cursor-pointer" key={`link-${item}`}>
+              <li className="cursor-pointer" >
                 {item.toUpperCase()}
                 {/* <div />
             <Link to={`${item}`} smooth={true} duration={500}>
@@ -172,4 +177,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
