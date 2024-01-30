@@ -1,0 +1,15 @@
+article {
+  position: absolute;
+  opacity: 0;
+  transition: all 1s linear;
+}
+article.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide {
+  transform: translateX(-120%);
+}
+article.nextSlide {
+  transform: translateX(120%);
+}
