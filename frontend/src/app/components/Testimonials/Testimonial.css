@@ -2,14 +2,41 @@ article {
   position: absolute;
   opacity: 0;
   transition: all 1s linear;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0);
 }
+
 article.activeSlide {
   opacity: 1;
   transform: translateX(0);
 }
+
+#height{
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
 article.lastSlide {
   transform: translateX(-120%);
 }
+
 article.nextSlide {
   transform: translateX(120%);
+}
+
+@media screen and (max-width: 768px) {
+  #height {
+    height: full;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #height {
+    height: 60vh;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #height {
+    height: 70vh;
+  }
 }
