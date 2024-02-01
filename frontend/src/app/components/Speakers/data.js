@@ -30,6 +30,15 @@ const speakers = [
     facebook: "www.facebook.com",
     twitter: "www.twitter.com",
   },
+  {
+    id: 4,
+    img: Speaker3,
+    name: "Thala",
+    post: "Thala For A Reason",
+    linkedin: "www.google.com",
+    facebook: "www.facebook.com",
+    twitter: "www.twitter.com",
+  },
 ];
 
 export default speakers;
