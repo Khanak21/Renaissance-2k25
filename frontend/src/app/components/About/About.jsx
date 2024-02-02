@@ -54,13 +54,13 @@ function About() {
       <div className="md:flex md:flex-row md:items-center md:h-[30rem] bg-gray-800">
         {/* div for seat confirmation and heading */}
         <div className="left-right relative h-[18rem] md:w-1/3 md:h-[30rem]">
-          <div className="text-4xl font-['Raleway'] absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 text-[#354F52] ">
-            ABOUT
-            <br />
-            DESIGN
-            <br />
-            WEEK
-            <br />
+          <div className="text-4xl font-['Raleway'] absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2 text-[#354F52] ">
+            <div className="pb-0 mb-0 pl-4">ABOUT</div>
+            
+            <div className="pl-3">    DESIGN</div>
+            
+            <div className="pl-5">WEEK</div>
+            
             <button className="text-left text-[12px] text-white bg-[#354F52] p-2 hover:bg-[#2F3E46] md:w-[10rem]">
               CONFIRM YOUR SEAT &rarr;
             </button>
