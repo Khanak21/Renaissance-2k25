@@ -2,7 +2,6 @@ import React from "react";
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import speakersData from "./data"; // Importing speaker data from data.js
 import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs"; // Import the arrow icon
 
 const Speakers = () => {
   // Card component for rendering each speaker
@@ -82,10 +81,9 @@ const Speakers = () => {
       <div className="flex justify-center mt-5">
         <Link
           href="/allspeakers"
-          className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+          className="p-3 border-2 bg-white border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
         >
-          <span className="mr-2">View More</span> {/* Button text */}
-          <BsArrowRight className="text-lg animate-ping mx-1" />{" "}
+          <button className="mr-2 font-bold">View More</button>
           {/* Arrow icon with jiggling animation */}
         </Link>
       </div>
