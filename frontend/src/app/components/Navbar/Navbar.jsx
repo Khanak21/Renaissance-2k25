@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
-
-const Motion = dynamic(() => import("framer-motion"), { ssr: false });
-const motion = Motion.motion;
+import { motion } from "framer-motion";
 
 import logo from "./logo.png";
 
@@ -72,7 +69,7 @@ function Navbar() {
     // navbar component
     <nav
       className={`w-full text-white  flex flex-row justify-between z-[1000] fixed transition duration-600 ${
-        navScroll ? "shadow-xl" : ""
+        navScroll ? "shadow-xl bg-custom-dark" : ""
       }`}
     >
       {/* logo  */}
@@ -97,11 +94,11 @@ function Navbar() {
         <ul className="text-custom-nav text-l font-bold flex flex-row justify-center items-center">
           {navItems.map((item) => (
             <a
-            key={`link-${item}`}
+              key={`link-${item}`}
               href="#"
               className="mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute before:bg-custom-accent before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full hover:text-custom-secondary"
             >
-              <li className="cursor-pointer" >
+              <li className="cursor-pointer">
                 {item.toUpperCase()}
                 {/* <div />
             <Link to={`${item}`} smooth={true} duration={500}>
@@ -122,7 +119,7 @@ function Navbar() {
       </div>
 
       {/* Hamburger Navigation Menu  */}
-      <div className="md:hidden relative flex justify-center items-center cursor-pointer mr-3">
+      <div className="md:hidden relative flex justify-center items-center cursor-pointer mr-3 ">
         <div className="flex" onClick={() => setToggle(true)}>
           {HamOpen}
         </div>
