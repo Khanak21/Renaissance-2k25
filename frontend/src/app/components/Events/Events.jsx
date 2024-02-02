@@ -48,7 +48,7 @@ const Events = () => {
         <div className="w-full bg-gray-100 rounded-lg p-4 my-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {EventsData.map((e, index) => (
             <motion.div key={index} className="event-item" variants={item}>
-              <EventCard title={e.title} description={e.description} />
+              <EventCard title={e.title} description={e.description} route={e.route} />
             </motion.div>
           ))}
         </div>

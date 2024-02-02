@@ -9,10 +9,10 @@ import Footer from "./components/Footer/Footer";
 import ButtonBackToTop from "./components/ButtonBackToTop/ButtonBackToTop";
 import Speakers from "./components/Speakers/Speakers";
 import MapLocation from "./components/Map/Map";
-import FAQ from "./components/FAQ/FAQ";
 import Gallery from "./components/Gallery/Gallery";
 import Events from "./components/Events/Events";
 import Navbar from "./components/Navbar/Navbar";
+import FAQ from "./components/FAQ/FAQ";
 
 const HomePage = () => {
   const List = [
@@ -74,8 +74,8 @@ const HomePage = () => {
   return (
     <>
       <div className="h-screen relative">
-        <Hero />
         <Navbar />
+        <Hero />
         <About />
         <Events />
         <Sponsors ImageList={List} />
