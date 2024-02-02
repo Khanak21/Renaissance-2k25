@@ -12,9 +12,9 @@ const Footer = () => {
     <>
       <div className="Page  w-full bg-[#1b1c1c] pt-8">
         <div className="Header text-white text-[48px] lg:text-[52px] flex flex-col justify-center align-middle items-center p-4 ">
-          <p>We Have Top Executives</p>
-          <p>And</p>
-          <p>Startup Here</p>
+          <p className="text-center">We Have Top Executives</p>
+          <p className="text-center">And</p>
+          <p className="text-center">Startup Here</p>
         </div>
 
         <div className="Content mt-4 mb-4 mr-10 ml-10 lg:ml-28 lg:mr-28 flex pt-10 pb-10  lg:h-[400px] flex-col  lg:flex-row">

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 import logo from "./logo.png";
 
 const navItems = [
@@ -80,18 +80,18 @@ function Navbar() {
             : "md:w-1/3 md:h-1/3 lg:w-1/5 lg:h-1/5"
         } xs:px-8 xs:py-8 transition duration-600`}
       >
-        <a href="#">
+        <Link href="/">
           <img
             className="cursor-pointer"
             src={logo.src}
             alt="Renaissance Logo"
           />
-        </a>
+        </Link>
       </div>
 
       {/* Navigation Menu  */}
       <div className="container hidden md:flex justify-end px-3 xl:px-12">
-        <ul className="text-custom-nav text-l font-bold flex flex-row justify-center items-center">
+        <ul className="text-custom-nav text-sm font-light flex flex-row justify-center items-center">
           {navItems.map((item) => (
             <a
               key={`link-${item}`}
@@ -109,7 +109,7 @@ function Navbar() {
           ))}
           <a
             href="/auth"
-            className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark font-bold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+            className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
           >
             <li className="cursor-pointer" key={`link-confirmYourSeat`}>
               CONFIRM YOUR SEAT

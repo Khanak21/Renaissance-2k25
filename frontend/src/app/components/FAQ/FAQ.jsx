@@ -27,8 +27,8 @@ const container = {
     opacity: 1,
     scale: 1,
     transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -59,12 +59,12 @@ const FAQ = () => {
 
   return (
     <div className="mx-auto mt-10">
-      <h2 className="text-4xl font-bold text-center mb-10">
+      <h2 className="text-3xl lg:text-4xl font-bold text-center mb-10 px-8">
         Frequently Asked Questions
       </h2>
       <div className="flex justify-center items-center">
         <motion.div
-          className="w-[80%]"
+          className="w-[90%] lg:w-[80%]"
           variants={container}
           initial="hidden"
           animate={controls}
@@ -91,6 +91,7 @@ const FAQ = () => {
                       animate={
                         selectedQuestion === index ? { rotate: -90 } : { rotate: 0 }
                       }
+                      className="m-2"
                     >
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 

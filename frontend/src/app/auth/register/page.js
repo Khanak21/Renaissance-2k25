@@ -1,5 +1,5 @@
-import AuthPage from "@/app/components/AuthPage/AuthPage";
 import React from "react";
+import AuthPage from "../../components/AuthPage/AuthPage";
 
 const registerpage = () => {
   return (
