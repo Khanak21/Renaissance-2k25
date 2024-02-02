@@ -1,10 +1,8 @@
 import React from "react";
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
-import speakersData from "./data"; // Importing speaker data from data.js
-import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs"; // Import the arrow icon
+import speakersData from "../components/Speakers/data"; // Importing speaker data from data.js
 
-const Speakers = () => {
+const AllSpeakersPage = () => {
   // Card component for rendering each speaker
   const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
     <div className="max-w-lg w-[80%] md:w-[40%] lg:w-[26%] mx-auto p-5 m-5 bg-white shadow-lg rounded-lg overflow-hidden">
@@ -64,8 +62,8 @@ const Speakers = () => {
       </h2>
       {/* Speaker cards */}
       <div className="flex lg:px-20 content-between flex-wrap">
-        {/* Mapping over the first three elements of the speakersData array */}
-        {speakersData.slice(0, 3).map((speaker) => (
+        {/* Mapping over all elements of the speakersData array */}
+        {speakersData.map((speaker) => (
           <Card
             key={speaker.id} // Unique key for React list
             img={speaker.img.src} // Speaker's image source
@@ -77,20 +75,8 @@ const Speakers = () => {
           />
         ))}
       </div>
-
-      {/* View More Button */}
-      <div className="flex justify-center mt-5">
-        <Link
-          href="/allspeakers"
-          className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
-        >
-          <span className="mr-2">View More</span> {/* Button text */}
-          <BsArrowRight className="text-lg animate-ping mx-1" />{" "}
-          {/* Arrow icon with jiggling animation */}
-        </Link>
-      </div>
     </div>
   );
 };
 
-export default Speakers;
+export default AllSpeakersPage;
