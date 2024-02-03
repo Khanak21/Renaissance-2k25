@@ -91,7 +91,7 @@ const Register = ({ data, setData, setPage }) => {
 
   return (
     <>
-      <div className="bg-back w-full h-full">
+      <div className="bg-[#1D174F] w-full">
         <div className=""></div>
 
         <div className="bg-[#1D174F] h-[290vh] w-screen h-screen flex justify-center p-[20px] pt-[10em] sm:pt-[10em] lg ">
