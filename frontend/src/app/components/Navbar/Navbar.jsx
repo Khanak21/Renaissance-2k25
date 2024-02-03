@@ -1,17 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 import logo from "./logo.png";
 
-const navItems = [
-  "home",
-  "speakers",
-  "schedule",
-  "location",
-  "blog",
-  "contact",
-];
+const navItems = ["home", "events", "speakers", "location", "team", "contact"];
 
 const HamOpen = (
   <svg
@@ -80,41 +73,41 @@ function Navbar() {
             : "md:w-1/3 md:h-1/3 lg:w-1/5 lg:h-1/5"
         } xs:px-8 xs:py-8 transition duration-600`}
       >
-        <a href="#">
+        <Link href="/">
           <img
             className="cursor-pointer"
             src={logo.src}
             alt="Renaissance Logo"
           />
-        </a>
+        </Link>
       </div>
 
       {/* Navigation Menu  */}
       <div className="container hidden md:flex justify-end px-3 xl:px-12">
-        <ul className="text-custom-nav text-l font-bold flex flex-row justify-center items-center">
+        <ul className="text-custom-nav text-sm font-light flex flex-row justify-center items-center">
           {navItems.map((item) => (
-            <a
+            <Link
               key={`link-${item}`}
-              href="#"
+              href={
+                item === "team"
+                  ? "/team"
+                  : item === "speakers"
+                  ? "/allspeakers"
+                  : `/#${item}`
+              }
               className="mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute before:bg-custom-accent before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full hover:text-custom-secondary"
             >
-              <li className="cursor-pointer">
-                {item.toUpperCase()}
-                {/* <div />
-            <Link to={`${item}`} smooth={true} duration={500}>
-              {item}
-            </Link> */}
-              </li>
-            </a>
+              <li className="cursor-pointer">{item.toUpperCase()}</li>
+            </Link>
           ))}
-          <a
-            href="/auth"
-            className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark font-bold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+          <Link
+            href="/auth/register"
+            className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
           >
             <li className="cursor-pointer" key={`link-confirmYourSeat`}>
               CONFIRM YOUR SEAT
             </li>
-          </a>
+          </Link>
         </ul>
       </div>
 
@@ -141,7 +134,7 @@ function Navbar() {
 
               {/* logo */}
               <div className="logo p-1 my-5 w-full flex justify-center items-center">
-                <img className="w-[70%]" src={logo} alt="Renaissance Logo" />
+                <img className="w-[70%]" src={logo.src} alt="Renaissance Logo" />
               </div>
 
               {/* Nav-items  */}

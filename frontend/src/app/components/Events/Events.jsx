@@ -13,8 +13,8 @@ const Events = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
+        delayChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -39,6 +39,7 @@ const Events = () => {
   return (
     <>
       <motion.div
+        id="events"
         className="w-full"
         variants={container}
         initial="hidden"
@@ -48,7 +49,11 @@ const Events = () => {
         <div className="w-full bg-gray-100 rounded-lg p-4 my-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {EventsData.map((e, index) => (
             <motion.div key={index} className="event-item" variants={item}>
-              <EventCard title={e.title} description={e.description} route={e.route} />
+              <EventCard
+                title={e.title}
+                description={e.description}
+                route={e.route}
+              />
             </motion.div>
           ))}
         </div>
