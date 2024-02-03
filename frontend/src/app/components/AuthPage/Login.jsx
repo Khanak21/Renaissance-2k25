@@ -19,13 +19,13 @@ const Login = () => {
   };
   return (
     <>
-      <div className="bg-back w-full h-full">
+      <div className="bg-[#1D174F] w-full h-full">
         <div className="">
           <Navbar />
         </div>
 
         <div className="relative h-[70em]  bg-[#1D174F]   w-screen flex justify-center  pt-[5em]   px-[30px]  ">
-          <div className="p-[17px] sm:p-[30px]  bg-[#EEF5DB] opacity-[0.85] z-20 w-full h-[40em] sm:w-[500px] sm:h-[40em] bg-lgreen flex flex-col rounded">
+          <div className="p-[17px] sm:p-[30px]  bg-[#EEF5DB] opacity-[0.85] z-20 w-full h-[40em]  sm:w-[500px] sm:h-[40em]  flex flex-col rounded">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <Image
                 className=""

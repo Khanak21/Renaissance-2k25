@@ -31,14 +31,14 @@ const OtpVerify = ({ data, setData, setPage }) => {
 
   return (
     <>
-      <div className="bg-back w-full h-full">
+      <div className="bg-[#1D174F] w-full h-full">
         <div className="">
           <Navbar />
         </div>
 
         <div className="bg-[#1D174F] h-[150vh] w-screen h-screen flex justify-center p-[20px] pt-[10em] sm:pt-[10em]  ">
           {/* <Background /> */}
-          <div className=" w-screen opacity-[0.85] h-[35em] z-20 sm:w-[500px] sm:h-[35em] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
+          <div className=" w-screen opacity-[0.85] h-[45em] z-20 sm:w-[500px] sm:h-[45em] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <Image
                 width={700} // Set the width of the image
