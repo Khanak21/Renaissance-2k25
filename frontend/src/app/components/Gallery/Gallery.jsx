@@ -16,7 +16,7 @@ const Gallery = () => {
       </motion.div>
       <motion.div
         whileInView={{ y: [150, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5, ease: "easeOut" ,delay:0.3}}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
         viewport={{ once: true }}
       >
         <PhotoAlbum
@@ -29,7 +29,6 @@ const Gallery = () => {
           }}
         />
       </motion.div>
-      ;
     </div>
   );
 };
