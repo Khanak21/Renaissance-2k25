@@ -56,7 +56,7 @@ const Speakers = () => {
   );
 
   return (
-    <div className="bg-[#27282A]">
+    <div className="pt-[50px] bg-[#27282A] ">
       {/* Title */}
       <h2 className="font-bold text-3xl lg:text-5xl text-center pb-5 text-white">
         SPEAKERS
@@ -83,7 +83,7 @@ const Speakers = () => {
           href="/allspeakers"
           className="p-3 border-2 bg-white border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
         >
-          <button className="mr-2 font-bold">View More</button>
+          <button className="mr-2 font-bold">View All Speakers</button>
           {/* Arrow icon with jiggling animation */}
         </Link>
       </div>

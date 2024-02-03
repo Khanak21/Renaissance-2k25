@@ -11,12 +11,12 @@ const Gallery = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl lg:text-6xl font-bold text-center mb-10 px-8">
-          Gallery
+          Our Events Gallery
         </h2>
       </motion.div>
       <motion.div
         whileInView={{ y: [150, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5, ease: "easeOut" ,delay:0.3}}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
         viewport={{ once: true }}
       >
         <PhotoAlbum
@@ -29,7 +29,6 @@ const Gallery = () => {
           }}
         />
       </motion.div>
-      ;
     </div>
   );
 };
