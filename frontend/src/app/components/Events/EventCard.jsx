@@ -4,7 +4,7 @@ import { FaCoffee } from "react-icons/fa";
 
 const EventCard = ({ title, description,route }) => {
   return (
-    <div className="relative group bg-white shadow-md rounded-md p-4 text-center overflow-hidden">
+    <div className="relative group  bg-white shadow-md rounded-md p-4 text-center overflow-hidden h-full ">
       <FaCoffee
         size={60}
         className="text-blue-500 mx-auto mb-3 transition-all duration-300 group-hover:blur"
