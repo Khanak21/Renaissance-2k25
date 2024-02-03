@@ -1,6 +1,4 @@
-"use client"
 import React, { useState, useEffect } from "react";
-import Image from 'next/image';
 import data from "./data";
 import "./Testimonial.css";
 import Quote from "./quote.png";
@@ -25,18 +23,18 @@ const Testimonials = () => {
     if (index === 0) setIndex(people.length - 1);
     else setIndex(index - 1);
   };
+
   const nextSlide = () => {
     if (index === people.length - 1) setIndex(0);
     else setIndex(index + 1);
   };
-  
 
   return (
-    <div className="flex flex-row align-middle overflow-x-hidden overflow-y-hidden w-full h-full items-center bg-[#27282A] py-10 px-2 justify-around">
-    {/* prev arrow */}
-    <div className="section-left mr-2">
+    <div className="flex flex-col sm:flex-row align-middle overflow-x-hidden overflow-y-hidden w-full h-[650px] sm:h-full items-center bg-[#27282A] py-10 px-2 sm:justify-around">
+      {/* prev arrow for desktop view */}
+      <div className="section-left hidden sm:block mx-2">
         <button
-          className="hover:cursor-pointer hover:scale-125 ease-in-out duration-300 "
+          className="hover:cursor-pointer hover:scale-125 ease-in-out duration-300"
           onClick={prevSlide}
         >
           <svg
@@ -55,6 +53,7 @@ const Testimonials = () => {
           </svg>
         </button>
       </div>
+
       {/* container of cards */}
       <div className=" section-center flex items-center justify-center w-full sm:w-4/6 h-full  overflow-y-hidden overflow-x-hidden relative">
         {people.map((item, indexPeople) => {
@@ -74,10 +73,10 @@ const Testimonials = () => {
 
           return (
             <article className={`${position} duration-500`} key={id}>
-              <div className=" my-2 ">
+              <div className="my-2">
                 <div
                   id="height"
-                  className=" bg-white  relative flex  flex-grow rounded-3xl  py-12 px-2 items-center flex-col  lg:flex-row justify-center lg:justify-between m-5"
+                  className="bg-white relative flex flex-grow rounded-3xl py-12 px-2 items-center flex-col lg:flex-row justify-center lg:justify-between m-5"
                 >
                   <div className="flex flex-col  xl:w-2/5 lg:w-2/5 md:w-2/5 md:pl-6 items-center">
                     <div className="w-20 h-20 xl:lg:w-40 xl:lg:h-40 md:w-40  sm:w-40 md:h-40 sm:h-40  mb-2 hover:cursor-pointer hover:scale-105 ease-in-out duration-300 ">
@@ -102,12 +101,8 @@ const Testimonials = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="hidden lg:block absolute top-10 right-5 md:right-10 lg:right-20">
-                    <img
-                      className="w-24 h-24"
-                      src={Quote.src}
-                      alt=""
-                    />
+                  <div className="hidden lg:block absolute top-10 right-20">
+                    <img className="w-24 h-24" src={Quote.src} alt="" />
                   </div>
                 </div>
               </div>
@@ -116,32 +111,78 @@ const Testimonials = () => {
         })}
       </div>
 
-      {/* next arrow */}
-      <div className="section-right ml-2">
-      <button
-        className="hover:cursor-pointer hover:scale-125 ease-in-out duration-300"
-        onClick={nextSlide}
-      >
-        <svg
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="0.5"
-          stroke="currentColor"
-          color="white"
-          className="w-10 h-10 sm:w-20 sm:h-20"
+      {/* next arrow for desktop view */}
+      <div className="section-right hidden sm:block mx-2">
+        <button
+          className="hover:cursor-pointer hover:scale-125 ease-in-out duration-300"
+          onClick={nextSlide}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12.75 15l3-3m0 0l-3-3m3 .1M22.5 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      </button>
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="0.5"
+            stroke="currentColor"
+            color="white"
+            className="w-10 h-10 sm:w-20 sm:h-20"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12.75 15l3-3m0 0l-3-3m3 .1M22.5 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div className="flex w-1/2 justify-around sm:hidden mx-2 mt-4">
+        {/* prev arrow for mobile view */}
+        <div className="section-left relative bottom-8">
+          <button
+            onClick={prevSlide}
+            className="hover:cursor-pointer"
+          >
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="0.5"
+              stroke="currentColor"
+              color="white"
+              className="h-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M11.25 9l-3 3m0 0l3 3m-3-.5M19.5 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* next arrow for mobile view */}
+        <div className="section-left relative bottom-8">
+          <button
+            onClick={nextSlide}
+            className="hover:cursor-pointer"
+          >
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="0.5"
+              stroke="currentColor"
+              color="white"
+              className="h-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12.75 15l3-3m0 0l-3-3m3 .1M22.5 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
 };
+
 export default Testimonials;
-
-
-
