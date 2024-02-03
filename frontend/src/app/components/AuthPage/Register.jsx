@@ -14,11 +14,7 @@ const img = "/rene.png";
 
 const Register = ({ data, setData, setPage }) => {
   const [icon, seticon] = useState(true);
- const [errors,setErr]=useState({})
-
-
-
- 
+  const [errors, setErr] = useState({});
 
   const validateForm = (formData) => {
     let errors = {};
@@ -38,10 +34,10 @@ const Register = ({ data, setData, setPage }) => {
       errors.email = "Invalid email address";
     }
     if (!formData.tel.trim()) {
-        errors.tel = "Telephone number is required";
-      } else if (!isValidIndianPhoneNumber(formData.tel)) {
-        errors.tel = "Invalid Indian telephone number";
-      }
+      errors.tel = "Telephone number is required";
+    } else if (!isValidIndianPhoneNumber(formData.tel)) {
+      errors.tel = "Invalid Indian telephone number";
+    }
     // Add more validation rules as needed
 
     return errors;
@@ -71,22 +67,20 @@ const Register = ({ data, setData, setPage }) => {
 
   //handling the submit and showing otp page
   function handleSubmit(e) {
-  //  e.preventDefault();
-   
-    
+    //  e.preventDefault();
+
     // Perform validation
     const validationErrors = validateForm(data);
-    
+
     if (Object.keys(validationErrors).length === 0) {
       // No errors, submit the form
       setPage(2);
       // Your submission logic goes here
     } else {
-        setErr(validationErrors)
+      setErr(validationErrors);
       // There are errors, update the errors state
-      console.log(validationErrors)
+      console.log(validationErrors);
     }
-
   }
 
   return (
@@ -94,8 +88,7 @@ const Register = ({ data, setData, setPage }) => {
       <div className="bg-[#1D174F] w-full">
         <div className=""></div>
 
-        <div className="bg-[#1D174F] h-[290vh] w-screen h-screen flex justify-center p-[20px] pt-[10em] sm:pt-[10em] lg ">
-       
+        <div className="bg-[#1D174F] w-screen h-screen flex justify-center p-[20px] ">
           <div className=" w-screen opacity-[0.85] z-20 h-[50em] sm:w-[500px] sm:h-[50em] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <Image
@@ -108,8 +101,13 @@ const Register = ({ data, setData, setPage }) => {
                 Create Account💎
               </h1>
             </div>
-            <div className="flex justify-center"> {errors.username && <span style={{ color: 'red' }}>{errors.username}</span>}</div>
-        
+            <div className="flex justify-center">
+              {" "}
+              {errors.username && (
+                <span style={{ color: "red" }}>{errors.username}</span>
+              )}
+            </div>
+
             <div className="">
               <div className="mb-[24px] flex">
                 <div className="mr-[10px] flex justify-center items-center">
@@ -123,13 +121,12 @@ const Register = ({ data, setData, setPage }) => {
                   value={data.username}
                   required
                 ></input>
-               
               </div>
-                 <div className="flex justify-center gap-10">
+              <div className="flex justify-center gap-10">
                 <div className="inline-flex items-center">
                   <label
                     className="relative flex items-center p-3 rounded-full cursor-pointer"
-                    htmlfor="stude"
+                    htmlFor="stude"
                   >
                     <input
                       onChange={handleFormChange}
@@ -160,7 +157,7 @@ const Register = ({ data, setData, setPage }) => {
                 <div className="inline-flex items-center">
                   <label
                     className="relative flex items-center p-3 rounded-full cursor-pointer"
-                    htmlfor="react"
+                    htmlFor="react"
                   >
                     <input
                       onChange={handleFormChange}
@@ -189,8 +186,13 @@ const Register = ({ data, setData, setPage }) => {
                   </label>
                 </div>
               </div>
-              <div className="flex justify-center"> {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}</div>
-         
+              <div className="flex justify-center">
+                {" "}
+                {errors.email && (
+                  <span style={{ color: "red" }}>{errors.email}</span>
+                )}
+              </div>
+
               <div className="mb-[24px] flex">
                 <div className="mr-[10px] flex justify-center items-center">
                   <AiOutlineMail size="21px" color="#2F3E46" />
@@ -206,7 +208,6 @@ const Register = ({ data, setData, setPage }) => {
                   required
                 ></input>
               </div>
-         
 
               <div className="mb-[24px] flex">
                 <div className="mr-[10px] flex justify-center items-center">
@@ -233,8 +234,13 @@ const Register = ({ data, setData, setPage }) => {
                   )}
                 </div>
               </div>
-              <div className="flex justify-center"> {errors.tel && <span style={{ color: 'red' }}>{errors.tel}</span>}</div>
-         
+              <div className="flex justify-center">
+                {" "}
+                {errors.tel && (
+                  <span style={{ color: "red" }}>{errors.tel}</span>
+                )}
+              </div>
+
               <div className="mb-[24px] flex">
                 <div className="mr-[10px] flex justify-center items-center">
                   <FiPhoneCall size="21px" color="#2F3E46" />
@@ -250,7 +256,7 @@ const Register = ({ data, setData, setPage }) => {
                   pattern="[0-9]{10}"
                 ></input>
               </div>
-            
+
               <div className="mb-[24px] flex items-center justify-center">
                 <div className="mr-[10px] flex justify-center items-center translate-y-[-10px]">
                   <BsGenderAmbiguous size="21px" color="#2F3E46" />

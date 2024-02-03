@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Register from "./Register";
 import OtpVerify from "./OtpVerify";
-import Navbar from "../Navbar/Navbar";
+import StickyNavbar from "../StickyNavbar/StickyNavbar";
+
 const AuthPage = () => {
   const [page, setPage] = useState(1);
   const [data, setData] = useState({
@@ -16,9 +17,9 @@ const AuthPage = () => {
 
   return (
     <>
-      <div className="">
-          <Navbar />
-        </div>
+      <div className="sticky top-0 z-[100]">
+        <StickyNavbar />
+      </div>
 
       <div className="h-[80em] bg-[#1D174F]">
         {page === 1 && (
