@@ -134,7 +134,7 @@ function Navbar() {
 
               {/* logo */}
               <div className="logo p-1 my-5 w-full flex justify-center items-center">
-                <img className="w-[70%]" src={logo} alt="Renaissance Logo" />
+                <img className="w-[70%]" src={logo.src} alt="Renaissance Logo" />
               </div>
 
               {/* Nav-items  */}
