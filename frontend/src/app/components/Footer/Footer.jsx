@@ -10,7 +10,7 @@ import { RiArrowDropUpLine } from "react-icons/ri";
 const Footer = () => {
   return (
     <>
-      <div className="Page  w-full bg-[#1b1c1c] pt-8">
+      <div className="Page  w-full bg-[#1b1c1c] pt-8" id="contact">
         <div className="Header text-white text-[48px] lg:text-[52px] flex flex-col justify-center align-middle items-center p-4 ">
           <p className="text-center">We Have Top Executives</p>
           <p className="text-center">And</p>

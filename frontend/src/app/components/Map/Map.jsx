@@ -4,6 +4,7 @@ const MapLocation = () => {
   return (
     <>
       <motion.div
+        id="location"
         whileInView={{ y: [150, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }}
