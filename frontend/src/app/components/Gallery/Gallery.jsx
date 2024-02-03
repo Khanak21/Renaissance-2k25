@@ -14,7 +14,6 @@ const Gallery = () => {
           return 3;
         }}
       />
-      ;
     </div>
   );
 };
