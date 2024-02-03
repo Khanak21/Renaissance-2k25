@@ -1,6 +1,9 @@
 import React from "react";
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import speakersData from "../components/Speakers/data"; // Importing speaker data from data.js
+import StickyNavbar from "../components/StickyNavbar/StickyNavbar";
+import footer from "../components/Footer/Footer";
+import Footer from "../components/Footer/Footer";
 
 const AllSpeakersPage = () => {
   // Card component for rendering each speaker
@@ -55,27 +58,35 @@ const AllSpeakersPage = () => {
   );
 
   return (
-    <div className="bg-[#27282A]">
-      {/* Title */}
-      <h2 className="font-bold text-3xl lg:text-5xl text-center pb-5 text-white">
-        SPEAKERS
-      </h2>
-      {/* Speaker cards */}
-      <div className="flex lg:px-20 content-between flex-wrap">
-        {/* Mapping over all elements of the speakersData array */}
-        {speakersData.map((speaker) => (
-          <Card
-            key={speaker.id} // Unique key for React list
-            img={speaker.img.src} // Speaker's image source
-            name={speaker.name} // Speaker's name
-            post={speaker.post} // Speaker's position/title
-            linkedin={speaker.linkedin} // Speaker's LinkedIn profile URL
-            twitter={speaker.twitter} // Speaker's Twitter profile URL
-            facebook={speaker.facebook} // Speaker's Facebook profile URL
-          />
-        ))}
+    <>
+      <div className="sticky top-0 z-[100]">
+        <StickyNavbar />
       </div>
-    </div>
+
+      <div className="bg-[#27282A]">
+        {/* Title */}
+        <h2 className="font-bold text-3xl lg:text-5xl text-center pb-5 text-white">
+          SPEAKERS
+        </h2>
+        {/* Speaker cards */}
+        <div className="flex lg:px-20 content-between flex-wrap">
+          {/* Mapping over all elements of the speakersData array */}
+          {speakersData.map((speaker) => (
+            <Card
+              key={speaker.id} // Unique key for React list
+              img={speaker.img.src} // Speaker's image source
+              name={speaker.name} // Speaker's name
+              post={speaker.post} // Speaker's position/title
+              linkedin={speaker.linkedin} // Speaker's LinkedIn profile URL
+              twitter={speaker.twitter} // Speaker's Twitter profile URL
+              facebook={speaker.facebook} // Speaker's Facebook profile URL
+            />
+          ))}
+        </div>
+      </div>
+
+      <Footer />
+    </>
   );
 };
 

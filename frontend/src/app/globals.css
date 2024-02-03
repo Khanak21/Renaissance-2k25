@@ -72,9 +72,11 @@ code {
 body::-webkit-scrollbar {
   display: none;
 }
+
 html,
 body {
   /* overflow-x: hidden; */
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {

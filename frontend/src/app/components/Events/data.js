@@ -7,17 +7,17 @@ export const EventsData = [
   {
     title: "random event name",
     route: "randomeventname",
-    description: "welcome to this world",
+    description: "welcome to this world welcome to this world welcome to this world",
   },
   {
     title: "B Plan",
     route:"bplan",
-    description: "welcome to this world",
+    description: "welcome to this world welcome to this world",
   },
   {
     title: "IPL Auction",
     route:"iplauction",
-    description: "welcome to this world",
+    description: "welcome to this world welcome to this world welcome to this world",
   },
   {
     title: "hello world",
@@ -25,9 +25,9 @@ export const EventsData = [
     description: "welcome to this world",
   },
   {
-    title: "hello world",
+    title: "hello world welcome to this world",
     route: "helloworld",
-    description: "welcome to this world",
+    description: "welcome to this world welcome to this world",
   },
   {
     title: "hello world",

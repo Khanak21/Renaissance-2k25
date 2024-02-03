@@ -14,11 +14,7 @@ const img = "/rene.png";
 
 const Register = ({ data, setData, setPage }) => {
   const [icon, seticon] = useState(true);
- const [errors,setErr]=useState({})
-
-
-
- 
+  const [errors, setErr] = useState({});
 
   const validateForm = (formData) => {
     let errors = {};
@@ -38,10 +34,10 @@ const Register = ({ data, setData, setPage }) => {
       errors.email = "Invalid email address";
     }
     if (!formData.tel.trim()) {
-        errors.tel = "Telephone number is required";
-      } else if (!isValidIndianPhoneNumber(formData.tel)) {
-        errors.tel = "Invalid Indian telephone number";
-      }
+      errors.tel = "Telephone number is required";
+    } else if (!isValidIndianPhoneNumber(formData.tel)) {
+      errors.tel = "Invalid Indian telephone number";
+    }
     // Add more validation rules as needed
 
     return errors;
@@ -71,31 +67,28 @@ const Register = ({ data, setData, setPage }) => {
 
   //handling the submit and showing otp page
   function handleSubmit(e) {
-  //  e.preventDefault();
-   
-    
+    //  e.preventDefault();
+
     // Perform validation
     const validationErrors = validateForm(data);
-    
+
     if (Object.keys(validationErrors).length === 0) {
       // No errors, submit the form
       setPage(2);
       // Your submission logic goes here
     } else {
-        setErr(validationErrors)
+      setErr(validationErrors);
       // There are errors, update the errors state
-      console.log(validationErrors)
+      console.log(validationErrors);
     }
-
   }
 
   return (
     <>
-      <div className="bg-back w-full h-full">
+      <div className="bg-[#1D174F] w-full">
         <div className=""></div>
 
-        <div className="bg-[#1D174F] h-[190vh] w-screen h-screen flex justify-center p-[20px] pt-[10em] sm:pt-[10em] lg ">
-       
+        <div className="bg-[#1D174F] w-screen h-screen flex justify-center p-[20px] ">
           <div className=" w-screen opacity-[0.85] z-20 h-[50em] sm:w-[500px] sm:h-[50em] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <Image
@@ -108,8 +101,13 @@ const Register = ({ data, setData, setPage }) => {
                 Create Account💎
               </h1>
             </div>
-            <div className="flex justify-center"> {errors.username && <span style={{ color: 'red' }}>{errors.username}</span>}</div>
-        
+            <div className="flex justify-center">
+              {" "}
+              {errors.username && (
+                <span style={{ color: "red" }}>{errors.username}</span>
+              )}
+            </div>
+
             <div className="">
               <div className="mb-[24px] flex">
                 <div className="mr-[10px] flex justify-center items-center">
@@ -123,17 +121,17 @@ const Register = ({ data, setData, setPage }) => {
                   value={data.username}
                   required
                 ></input>
-               
               </div>
-                 <div className="flex justify-center gap-10">
+              <div className="flex justify-center gap-10">
                 <div className="inline-flex items-center">
                   <label
                     className="relative flex items-center p-3 rounded-full cursor-pointer"
-                    htmlfor="html"
+                    htmlFor="stude"
                   >
                     <input
                       onChange={handleFormChange}
                       name="student_from"
+                      id="mnnit"
                       value="mnnit"
                       type="radio"
                       className="before:content[''] peer relative h-5 w-5 cursor-pointer border-gray-900 appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
@@ -151,7 +149,7 @@ const Register = ({ data, setData, setPage }) => {
                   </label>
                   <label
                     className="mt-px font-semibold text-gray-700 cursor-pointer select-none"
-                    htmlfor="html"
+                    for="mnnit"
                   >
                     MNNIT Student
                   </label>
@@ -159,7 +157,7 @@ const Register = ({ data, setData, setPage }) => {
                 <div className="inline-flex items-center">
                   <label
                     className="relative flex items-center p-3 rounded-full cursor-pointer"
-                    htmlfor="react"
+                    htmlFor="react"
                   >
                     <input
                       onChange={handleFormChange}
@@ -167,6 +165,7 @@ const Register = ({ data, setData, setPage }) => {
                       type="radio"
                       className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-800 before:opacity-0 before:transition-opacity border-gray-900 checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
                       value="other"
+                      id="other"
                       defaultChecked=""
                     />
                     <span className="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
@@ -181,14 +180,19 @@ const Register = ({ data, setData, setPage }) => {
                   </label>
                   <label
                     className="mt-px font-semibold text-gray-700 cursor-pointer select-none"
-                    htmlfor="react"
+                    for="other"
                   >
                     Other
                   </label>
                 </div>
               </div>
-              <div className="flex justify-center"> {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}</div>
-         
+              <div className="flex justify-center">
+                {" "}
+                {errors.email && (
+                  <span style={{ color: "red" }}>{errors.email}</span>
+                )}
+              </div>
+
               <div className="mb-[24px] flex">
                 <div className="mr-[10px] flex justify-center items-center">
                   <AiOutlineMail size="21px" color="#2F3E46" />
@@ -204,7 +208,6 @@ const Register = ({ data, setData, setPage }) => {
                   required
                 ></input>
               </div>
-         
 
               <div className="mb-[24px] flex">
                 <div className="mr-[10px] flex justify-center items-center">
@@ -231,8 +234,13 @@ const Register = ({ data, setData, setPage }) => {
                   )}
                 </div>
               </div>
-              <div className="flex justify-center"> {errors.tel && <span style={{ color: 'red' }}>{errors.tel}</span>}</div>
-         
+              <div className="flex justify-center">
+                {" "}
+                {errors.tel && (
+                  <span style={{ color: "red" }}>{errors.tel}</span>
+                )}
+              </div>
+
               <div className="mb-[24px] flex">
                 <div className="mr-[10px] flex justify-center items-center">
                   <FiPhoneCall size="21px" color="#2F3E46" />
@@ -248,7 +256,7 @@ const Register = ({ data, setData, setPage }) => {
                   pattern="[0-9]{10}"
                 ></input>
               </div>
-            
+
               <div className="mb-[24px] flex items-center justify-center">
                 <div className="mr-[10px] flex justify-center items-center translate-y-[-10px]">
                   <BsGenderAmbiguous size="21px" color="#2F3E46" />

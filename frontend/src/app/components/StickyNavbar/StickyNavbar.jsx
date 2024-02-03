@@ -40,28 +40,15 @@ const HamClose = (
   </svg>
 );
 
-function Navbar() {
+function StickyNavbar() {
   const [toggle, setToggle] = useState(false);
-  const [navScroll, setScroll] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 500) setScroll(true);
-      else setScroll(false);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [navScroll, setScroll] = useState(true);
 
   return (
     // Rest of your component code remains unchanged
     // navbar component
     <nav
-      className={`w-full text-white  flex flex-row justify-between z-[1000] fixed transition duration-600 ${
+      className={`w-full text-white  flex flex-row justify-between z-[1000] transition duration-600 ${
         navScroll ? "shadow-xl bg-custom-dark" : ""
       }`}
     >
@@ -134,7 +121,11 @@ function Navbar() {
 
               {/* logo */}
               <div className="logo p-1 my-5 w-full flex justify-center items-center">
-                <img className="w-[70%]" src={logo.src} alt="Renaissance Logo" />
+                <img
+                  className="w-[70%]"
+                  src={logo.src}
+                  alt="Renaissance Logo"
+                />
               </div>
 
               {/* Nav-items  */}
@@ -166,4 +157,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default StickyNavbar;
