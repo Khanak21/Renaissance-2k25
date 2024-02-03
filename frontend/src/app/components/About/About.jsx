@@ -10,49 +10,104 @@ function About() {
 
   const myRef = useRef();
   const myRef1 = useRef();
-  const [myElementIsVisible, setMyElementIsVisible] = useState(false);
-  const [myElementIsVisible1, setMyElementIsVisible1] = useState(false);
+  // const [myElementIsVisible, setMyElementIsVisible] = useState(false);
+  // const [myElementIsVisible1, setMyElementIsVisible1] = useState(false);
+  const [animationsTriggered1, setAnimationsTriggered1] = useState(false);
   const [animationsTriggered, setAnimationsTriggered] = useState(false);
-
-  const handleScroll = () => {
-    if (myRef.current) {
-      const rect = myRef.current.getBoundingClientRect();
-      setMyElementIsVisible(rect.top < window.innerHeight && rect.bottom >= 0);
-    }
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !animationsTriggered) {
+        
+            gsap.fromTo(
+              entry.target,
+              { opacity: 0, x: 100 },
+              { opacity: 1, x: 0, ease: "power3.inOut", duration: 1.5 }
+            );
+            setAnimationsTriggered1(true);
+          }
+        });
+      },
+      { threshold: 0.5 } 
+    );
+  
     if (myRef1.current) {
-      const rect1 = myRef1.current.getBoundingClientRect();
-      setMyElementIsVisible1(rect1.top < window.innerHeight && rect1.bottom >= 0);
+      observer.observe(myRef1.current);
     }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+  
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
     };
-  }, []);
+  }, [animationsTriggered1]);
+
 
   useEffect(() => {
-    if (myElementIsVisible && !animationsTriggered) {
-      gsap.fromTo(
-        myRef.current,
-        { opacity: 0, x: -100 },
-        { opacity: 1, x: 0, ease: "power3.inOut", duration: 2 }
-      );
-      setAnimationsTriggered(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !animationsTriggered) {
+        
+            gsap.fromTo(
+              entry.target,
+              { opacity: 0, x: -100 },
+              { opacity: 1, x: 0, ease: "power3.inOut", duration: 1.5 }
+            );
+            setAnimationsTriggered(true);
+          }
+        });
+      },
+      { threshold: 0.5 } 
+    );
+  
+    if (myRef.current) {
+      observer.observe(myRef.current);
     }
-  }, [myElementIsVisible, animationsTriggered]);
+  
+    return () => {
+      observer.disconnect();
+    };
+  }, [animationsTriggered]);
+  
 
-  useEffect(() => {
-    if (myElementIsVisible1 && !animationsTriggered) {
-      gsap.fromTo(
-        myRef1.current,
-        { opacity: 0, x: 100 },
-        { opacity: 1, x: 0, ease: "power3.inOut", duration: 2 }
-      );
-      setAnimationsTriggered(true); 
-    }
-  }, [myElementIsVisible1, animationsTriggered]);
+  // const handleScroll = () => {
+  //   if (myRef.current) {
+  //     const rect = myRef.current.getBoundingClientRect();
+  //     setMyElementIsVisible(rect.top < window.innerHeight && rect.bottom >= 0);
+  //   }
+  //   // if (myRef1.current) {
+  //   //   const rect1 = myRef1.current.getBoundingClientRect();
+  //   //   setMyElementIsVisible1(rect1.top < window.innerHeight && rect1.bottom >= 0);
+  //   // }
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   if (myElementIsVisible && !animationsTriggered) {
+  //     gsap.fromTo(
+  //       myRef.current,
+        
+  //     );
+  //     setAnimationsTriggered(true);
+  //   }
+  // }, [myElementIsVisible, animationsTriggered]);
+
+  // useEffect(() => {
+  //   if (myElementIsVisible1 && !animationsTriggered) {
+  //     gsap.fromTo(
+  //       myRef1.current,
+  //       { opacity: 0, x: 100 },
+  //       { opacity: 1, x: 0, ease: "power3.inOut", duration: 2 }
+  //     );
+  //     setAnimationsTriggered(true); 
+  //   }
+  // }, [myElementIsVisible1, animationsTriggered]);
 
   return (
     <div>
