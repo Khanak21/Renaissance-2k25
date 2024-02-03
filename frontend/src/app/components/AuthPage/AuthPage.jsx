@@ -16,6 +16,10 @@ const AuthPage = () => {
 
   return (
     <>
+      <div className="">
+          <Navbar />
+        </div>
+
       <div className="h-[80em] bg-[#1D174F]">
         {page === 1 && (
           <Register data={data} setData={setData} setPage={setPage} />
