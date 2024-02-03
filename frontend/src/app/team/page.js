@@ -9,7 +9,9 @@ const team = () => {
     <div className="sticky top-0 z-[100]">
       <StickyNavbar />
       </div>
-      <CardTest />
+      <div className="pb-[4rem]">
+        <CardTest />
+      </div>
       <Footer />
     </>
   );

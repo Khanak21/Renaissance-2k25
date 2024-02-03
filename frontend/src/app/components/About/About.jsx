@@ -43,7 +43,7 @@ function About() {
         <div className="absolute bottom-[5rem] right-[2rem] md:right-[5rem] text-white font-['Raleway'] text-right text-xs">
           <span className="text-xl sm:text-2xl md:text-4xl">11 FEB 2024</span>
           <br />
-          <span className="">3968 CARSON STREET, SAN DIEGO, CA 92101</span>
+          <span className="">MNNIT Allahabad,Prayagraj</span>
           <br />
           <button className="p-3 border-2 border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300">
             BUY TICKET
@@ -55,13 +55,13 @@ function About() {
         {/* div for seat confirmation and heading */}
         <div className="left-right relative h-[18rem] md:w-1/3 md:h-[30rem]">
           <div className="text-4xl font-['Raleway'] absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2 text-[#354F52] ">
-            <div className="pb-0 mb-0 pl-4">ABOUT</div>
+            <div className="text-white pb-0 mb-0 pl-4">ABOUT</div>
             
-            <div className="pl-3">    DESIGN</div>
+            <div className="text-white pl-3">    DESIGN</div>
             
-            <div className="pl-5">WEEK</div>
+            <div className="text-white pl-5">WEEK</div>
             
-            <button className="text-left text-[12px] text-white bg-[#354F52] p-2 hover:bg-[#2F3E46] md:w-[10rem]">
+            <button className="mt-[20px] text-left text-[12px] text-white bg-[#354F52] p-2 hover:bg-[#2F3E46] md:w-[10rem]">
               CONFIRM YOUR SEAT &rarr;
             </button>
           </div>

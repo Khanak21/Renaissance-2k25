@@ -11,7 +11,7 @@ const Gallery = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl lg:text-6xl font-bold text-center mb-10 px-8">
-          Gallery
+          Our Events Gallery
         </h2>
       </motion.div>
       <motion.div
