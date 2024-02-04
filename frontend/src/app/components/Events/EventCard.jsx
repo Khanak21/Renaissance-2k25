@@ -20,7 +20,7 @@ const EventCard = ({ title, description,route }) => {
           href={`/events/${route}`}
           className="px-4 py-2 bg-white text-blue-500 rounded-md"
         >
-          Register
+          View More
         </Link>
       </div>
     </div>

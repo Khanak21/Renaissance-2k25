@@ -2,13 +2,12 @@ import React from "react";
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import speakersData from "../components/Speakers/data"; // Importing speaker data from data.js
 import StickyNavbar from "../components/StickyNavbar/StickyNavbar";
-import footer from "../components/Footer/Footer";
 import Footer from "../components/Footer/Footer";
 
 const AllSpeakersPage = () => {
   // Card component for rendering each speaker
   const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
-    <div className="max-w-lg w-[80%] md:w-[40%] lg:w-[26%] mx-auto p-5 m-5 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="max-w-lg w-[80%] md:w-full lg:w-full mx-auto p-5 m-5 bg-white shadow-lg rounded-lg overflow-hidden">
       {/* Profile Picture */}
       <div className="flex gap-2 justify-center hover:cursor-pointer hover:scale-105 ease-in-out duration-300">
         {/* Image of the speaker */}
@@ -63,13 +62,13 @@ const AllSpeakersPage = () => {
         <StickyNavbar />
       </div>
 
-      <div className="bg-[#27282A]">
+      <div className="pt-[4rem] pb-[4rem] bg-[#27282A]">
         {/* Title */}
         <h2 className="font-bold text-3xl lg:text-5xl text-center pb-5 text-white">
           SPEAKERS
         </h2>
         {/* Speaker cards */}
-        <div className="flex lg:px-20 content-between flex-wrap">
+        <div className="px-[30px] grid lg:grid-cols-3 lg:gap-8 md:grid-cols-2 md:gap-7">
           {/* Mapping over all elements of the speakersData array */}
           {speakersData.map((speaker) => (
             <Card
