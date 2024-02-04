@@ -54,10 +54,10 @@ function StickyNavbar() {
     >
       {/* logo  */}
       <div
-        className={`logo px-4 py-4 md:px-8 md:py-4 flex justify-center items-center w-1/3 h-1/3 ${
+        className={`logo px-4 py-4 md:px-8 md:py-2 flex justify-center items-center w-1/3 h-1/3 ${
           !navScroll
             ? "lg:w-1/3 lg:h-1/3"
-            : "md:w-1/3 md:h-1/3 lg:w-1/5 lg:h-1/5"
+            : "md:w-1/3 md:h-1/3 lg:w-1/6 lg:h-1/6"
         } xs:px-8 xs:py-8 transition duration-600`}
       >
         <Link href="/">
@@ -135,19 +135,31 @@ function StickyNavbar() {
                     className="mx-10 my-3 cursor-pointer"
                     key={`link-${item}`}
                   >
-                    <a
-                      href="#"
-                      className="text-base xs:text-base font-light text-custom-light"
+                    <Link
+                      key={`link-${item}`}
+                      href={
+                        item === "team"
+                          ? "/team"
+                          : item === "speakers"
+                          ? "/allspeakers"
+                          : `/#${item}`
+                      }
+                      onClick={() => setToggle(false)}
+                      className="text-base font-light text-custom-light"
                     >
                       {item.toUpperCase()}
-                    </a>
+                    </Link>
                   </li>
                 ))}
-                <a href="/auth" className="">
-                  <li className="my-4 p-4 cursor-pointer bg-custom-secondary shadow-sm text-base xs:text-xl font-bold text-custom-accent">
+                <Link
+                  href="/auth/register"
+                  className=""
+                  onClick={() => setToggle(false)}
+                >
+                  <li className="my-4 p-4 cursor-pointer bg-custom-secondary shadow-sm text-base font-bold text-custom-accent">
                     CONFIRM YOUR SEAT
                   </li>
-                </a>
+                </Link>
               </ul>
             </motion.div>
           </div>

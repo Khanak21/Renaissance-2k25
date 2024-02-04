@@ -10,31 +10,29 @@ import { RiArrowDropUpLine } from "react-icons/ri";
 const Footer = () => {
   return (
     <>
-      <div className="Page  w-full bg-[#1b1c1c] pt-8" id="contact">
-        <div className="Header text-white text-[48px] lg:text-[52px] flex flex-col justify-center align-middle items-center p-4 ">
-          <p className="text-center">We Have Top Executives</p>
-          <p className="text-center">And</p>
-          <p className="text-center">Startup Here</p>
+      <div className="w-full bg-[#1b1c1c] pt-8" id="contact">
+        <div className="Header text-white text-lg lg:text-2xl flex flex-col justify-center align-middle items-center p-4 px-16 md:px-4">
+          <p className="text-center">We Have Top Executives And Startup Here</p>
         </div>
 
-        <div className="Content mt-4 mb-4 mr-10 ml-10 lg:ml-28 lg:mr-28 flex pt-10 pb-10  lg:h-[400px] flex-col  lg:flex-row">
+        <div className="Content mt-4 mb-4 mr-10 ml-10 lg:ml-28 lg:mr-28 flex pt-2 pb-10  lg:h-[400px] flex-col  lg:flex-row">
           <div className="flex flex-col lg:flex-row w-full">
             <div className="text-white  w-full flex flex-col justify-around">
-              <div className="flex p-4">
-                <BsFillCheckCircleFill className="text-[40px] text-[#CAD2C5]  mr-4 text-justify" />
-                <p className="text-[24px]  lg:text-[24px]">
+              <div className="flex p-4 text-base  lg:text-lg">
+                <BsFillCheckCircleFill className="text-[42px] md:text-xl text-[#CAD2C5]  mr-4 text-justify" />
+                <p className="">
                   Through True Rich Attended does no end it his mother since
                 </p>
               </div>
               <div className="flex p-4">
-                <BsFillCheckCircleFill className="text-[40px] text-[#CAD2C5] mr-4 text-justify" />
-                <p className="text-[24px]  lg:text-[24px]">
+                <BsFillCheckCircleFill className="text-[42px] md:text-xl text-[#CAD2C5] mr-4 text-justify" />
+                <p className="">
                   Attended does no end it his mother since real had half every
                 </p>
               </div>
               <div className="flex p-4">
-                <BsFillCheckCircleFill className="text-[42px] text-[#CAD2C5] mr-4 text-justify" />
-                <p className="text-[24px]  lg:text-[24px]">
+                <BsFillCheckCircleFill className="text-[42px] md:text-xl text-[#CAD2C5] mr-4 text-justify" />
+                <p className="">
                   Since real had half every him case in packages enquire we up
                 </p>
               </div>
@@ -60,7 +58,7 @@ const Footer = () => {
                 <div className="bg-[#181818] h-full flex flex-col lg:flex-row pt-10 pb-10 pr-4 pl-4">
                   <div className="flex w-full">
                     <div className="h-80 flex flex-col justify-center text-left pl-10 lg:ml-40">
-                      <p className="text-white text-[15px] mt-4 mb-4">
+                      <p className="text-white text-base mt-4 mb-4">
                         EVENT <br></br>DETAILS
                       </p>
                       <p className="text-[#52796F] mt-4 mb-4">

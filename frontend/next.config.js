@@ -1,5 +1,8 @@
-module.exports = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   images: {
-    domains: ["https://unsplash.com/"],
+    remotePatterns: [{ hostname: "source.unsplash.com" }],
   },
 };
+
+module.exports = nextConfig;
