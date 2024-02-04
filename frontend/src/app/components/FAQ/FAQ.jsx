@@ -59,12 +59,12 @@ const FAQ = () => {
 
   return (
     <div className="mx-auto mt-10">
-      <h2 className="text-3xl lg:text-4xl font-bold text-center mb-10 px-8">
-        Frequently Asked Questions
+      <h2 className="text-lg lg:text-2xl font-bold text-center mb-4 px-8">
+        FREQUENTLY ASKED QUESTIONS
       </h2>
-      <div className="flex justify-center items-center">
+      <div className="px-4 md:px-12 lg:px-20 flex justify-center items-center">
         <motion.div
-          className="w-[90%] lg:w-[80%]"
+          className="w-full"
           variants={container}
           initial="hidden"
           animate={controls}
@@ -75,10 +75,10 @@ const FAQ = () => {
               <motion.div
                 key={index}
                 variants={item}
-                className="bg-gray-100 p-6 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out max-h-full"
+                className="bg-gray-100 p-4 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out max-h-full"
               >
                 <h3
-                  className={`text-xl font-semibold cursor-pointer ${
+                  className={`text-base font-semibold cursor-pointer ${
                     selectedQuestion === index ? "text-blue-500" : "text-black"
                   }`}
                   onClick={() => handleToggle(index)}
@@ -118,7 +118,7 @@ const FAQ = () => {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="text-gray-700 overflow-hidden mt-2"
+                      className="text-gray-700 overflow-hidden mt-2 text-sm"
                     >
                       {faq.answer}
                     </motion.p>

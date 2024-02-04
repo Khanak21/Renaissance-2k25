@@ -62,15 +62,15 @@ function Navbar() {
     // navbar component
     <nav
       className={`w-full text-white  flex flex-row justify-between z-[1000] fixed transition duration-600 ${
-        navScroll ? "shadow-xl bg-custom-dark" : ""
+        navScroll ? "shadow-2xl bg-[#27282A]" : ""
       }`}
     >
       {/* logo  */}
       <div
-        className={`logo px-4 py-4 md:px-8 md:py-4 flex justify-center items-center w-1/3 h-1/3 ${
+        className={`logo px-4 py-4 md:px-8 md:py-2 flex justify-center items-center w-1/3 h-1/3 ${
           !navScroll
             ? "lg:w-1/3 lg:h-1/3"
-            : "md:w-1/3 md:h-1/3 lg:w-1/5 lg:h-1/5"
+            : "md:w-1/3 md:h-1/3 lg:w-1/6 lg:h-1/6"
         } xs:px-8 xs:py-8 transition duration-600`}
       >
         <Link href="/">
