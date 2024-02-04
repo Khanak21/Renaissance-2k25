@@ -1,6 +1,6 @@
 "use client";
 import Counter from "./Counter";
-import gsap from "gsap";
+// import gsap from "gsap";
 import React, { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
@@ -25,34 +25,34 @@ function About() {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    if (myElementIsVisible && !animationsTriggered) {
-      gsap.fromTo(
-        myRef.current,
-        { opacity: 0, x: -100 },
-        { opacity: 1, x: 0, ease: "power3.inOut", duration: 2 }
-      );
-      setAnimationsTriggered(true);
-    }
-  }, [myElementIsVisible, animationsTriggered]);
+  // useEffect(() => {
+  //   if (myElementIsVisible && !animationsTriggered) {
+  //     gsap.fromTo(
+  //       myRef.current,
+  //       { opacity: 0, x: -100 },
+  //       { opacity: 1, x: 0, ease: "power3.inOut", duration: 2 }
+  //     );
+  //     setAnimationsTriggered(true);
+  //   }
+  // }, [myElementIsVisible, animationsTriggered]);
 
-  useEffect(() => {
-    if (myElementIsVisible1 && !animationsTriggered) {
-      gsap.fromTo(
-        myRef1.current,
-        { opacity: 0, x: 100 },
-        { opacity: 1, x: 0, ease: "power3.inOut", duration: 2 }
-      );
-      setAnimationsTriggered(true); 
-    }
-  }, [myElementIsVisible1, animationsTriggered]);
+  // useEffect(() => {
+  //   if (myElementIsVisible1 && !animationsTriggered) {
+  //     gsap.fromTo(
+  //       myRef1.current,
+  //       { opacity: 0, x: 100 },
+  //       { opacity: 1, x: 0, ease: "power3.inOut", duration: 2 }
+  //     );
+  //     setAnimationsTriggered(true); 
+  //   }
+  // }, [myElementIsVisible1, animationsTriggered]);
 
   return (
     <div>
@@ -79,14 +79,14 @@ function About() {
           ref={myRef}
           className="left-right relative h-[18rem] md:w-1/3 md:h-[30rem]"
         >
-          <div className="text-4xl font-['Raleway'] absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2 text-[#354F52] ">
-            <div className="text-white pb-0 mb-0 pl-4">ABOUT</div>
+          <div className="flex flex-col items-center text-4xl font-['Raleway'] absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2 text-[#354F52] ">
+            <div className="text-white text-[1.5rem] pb-0 mb-0 pl-4">ABOUT</div>
             
-            <div className="text-white pl-3">    DESIGN</div>
+            <div className="text-white  text-[1.5rem] pl-3">    DESIGN</div>
             
-            <div className="text-white pl-5">WEEK</div>
+            <div className="text-white text-[1.5rem] pl-5">WEEK</div>
             
-            <button className="mt-[20px] text-left text-[12px] text-white bg-[#354F52] p-2 hover:bg-[#2F3E46] md:w-[10rem]">
+            <button className="mt-[20px] text-left text-[12px] w-[10.3rem] text-white bg-[#354F52] p-2 hover:bg-[#2F3E46] md:w-[10.3rem]">
               CONFIRM YOUR SEAT &rarr;
             </button>
           </div>
@@ -97,7 +97,7 @@ function About() {
           className="about-section md:w-2/3 md:h-[30rem] md:py-20 md:px-12"
         >
           <div className="w-full lg:w-3/4">
-            <div className="text-[white] text-left p-12">
+            <div className="text-[white] text-[1rem] text-left p-12">
               Renaissance is the annual entrepreneurial summit of MNNIT
               Allahabad that provides a platform for aspiring entrepreneurs to
               encourage the entrepreneurial journey of translating thoughts into
@@ -107,20 +107,20 @@ function About() {
               that plague us into opportunities.{" "}
             </div>
             <div className="text-[white] flex flex-row px-12 text-sm sm:text-xl md:text-2xl">
-              <div className="pb-12 w-1/3 text-left ">
-                <div className="text-3xl font-semibold text-[white]">
+              <div className="pb-12 w-1/3 text-left text-[1rem] ">
+                <div className="text-[1.5rem] font-semibold text-[white]">
                   <Counter last={8} />
                 </div>
                 Events
               </div>
-              <div className="pb-12 w-1/3  text-left">
-                <div className="text-3xl font-semibold text-[white]">
+              <div className="pb-12 w-1/3  text-left  text-[1rem]">
+                <div className="text-[1.5rem] font-semibold text-[white]">
                   <Counter last={9} />
                 </div>
                 Speakers
               </div>
-              <div className="pb-12 w-1/3  text-left ">
-                <div className="text-3xl font-semibold text-[white]">
+              <div className="pb-12 w-1/3  text-left  text-[1rem]">
+                <div className="text-[1.5rem] font-semibold text-[white]">
                   <Counter last={25} />
                 </div>
                 Sponsors

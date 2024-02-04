@@ -62,7 +62,7 @@ function Navbar() {
     // navbar component
     <nav
       className={`w-full text-white  flex flex-row justify-between z-[1000] fixed transition duration-600 ${
-        navScroll ? "shadow-xl bg-custom-dark" : ""
+        navScroll ? "shadow-xl bg-bubble" : ""
       }`}
     >
       {/* logo  */}

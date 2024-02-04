@@ -27,8 +27,8 @@ module.exports = {
         instagram: "#e95950",
         back: "#2F3E46",
         lgreen: "#84A98C",
-        bubble: "#4fc3dc",
-        bubble1: "#ff2d75",
+        bubble: "#27282A",
+        bubble1: "#EEF5DB",
         custom: {
           accent: withOpacity("--color-accent"),
           secondary: withOpacity("--color-secondary"),
