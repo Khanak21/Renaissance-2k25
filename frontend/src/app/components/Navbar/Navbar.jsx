@@ -121,6 +121,7 @@ function Navbar() {
             <motion.div
               className="md:hidden fixed top-0 left-0 right-0 p-1 w-screen h-screen flex justify-end items-end flex-col bg-custom-dark shadow-lg z-50 pb-4"
               animate={{ y: [-500, 0] }}
+              exit={{ y: [0, -500] }}
               transition={{
                 type: "spring",
                 bounce: 0.25,
@@ -134,7 +135,11 @@ function Navbar() {
 
               {/* logo */}
               <div className="logo p-1 my-5 w-full flex justify-center items-center">
-                <img className="w-[70%]" src={logo.src} alt="Renaissance Logo" />
+                <img
+                  className="w-[70%]"
+                  src={logo.src}
+                  alt="Renaissance Logo"
+                />
               </div>
 
               {/* Nav-items  */}
@@ -144,19 +149,31 @@ function Navbar() {
                     className="mx-10 my-3 cursor-pointer"
                     key={`link-${item}`}
                   >
-                    <a
-                      href="#"
+                    <Link
+                      key={`link-${item}`}
+                      href={
+                        item === "team"
+                          ? "/team"
+                          : item === "speakers"
+                          ? "/allspeakers"
+                          : `/#${item}`
+                      }
+                      onClick={() => setToggle(false)}
                       className="text-base xs:text-base font-light text-custom-light"
                     >
                       {item.toUpperCase()}
-                    </a>
+                    </Link>
                   </li>
                 ))}
-                <a href="/auth" className="">
+                <Link
+                  href="/auth/register"
+                  onClick={() => setToggle(false)}
+                  className=""
+                >
                   <li className="my-4 p-4 cursor-pointer bg-custom-secondary shadow-sm text-base xs:text-xl font-bold text-custom-accent">
                     CONFIRM YOUR SEAT
                   </li>
-                </a>
+                </Link>
               </ul>
             </motion.div>
           </div>

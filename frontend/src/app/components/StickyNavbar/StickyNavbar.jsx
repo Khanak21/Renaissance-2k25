@@ -135,19 +135,31 @@ function StickyNavbar() {
                     className="mx-10 my-3 cursor-pointer"
                     key={`link-${item}`}
                   >
-                    <a
-                      href="#"
+                    <Link
+                      key={`link-${item}`}
+                      href={
+                        item === "team"
+                          ? "/team"
+                          : item === "speakers"
+                          ? "/allspeakers"
+                          : `/#${item}`
+                      }
+                      onClick={() => setToggle(false)}
                       className="text-base xs:text-base font-light text-custom-light"
                     >
                       {item.toUpperCase()}
-                    </a>
+                    </Link>
                   </li>
                 ))}
-                <a href="/auth" className="">
+                <Link
+                  href="/auth/register"
+                  className=""
+                  onClick={() => setToggle(false)}
+                >
                   <li className="my-4 p-4 cursor-pointer bg-custom-secondary shadow-sm text-base xs:text-xl font-bold text-custom-accent">
                     CONFIRM YOUR SEAT
                   </li>
-                </a>
+                </Link>
               </ul>
             </motion.div>
           </div>
