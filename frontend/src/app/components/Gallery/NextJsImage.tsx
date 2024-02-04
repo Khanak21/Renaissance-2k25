@@ -1,40 +1,24 @@
 import Image from "next/image";
 import type { RenderPhotoProps } from "react-photo-album";
-// import getBase64 from "../../lib/getLocalBase64";
-import { getPlaiceholder } from "plaiceholder";
 
-const getImage = async (src: string) => {
-  const buffer = await fetch(src).then(async (res) =>
-    Buffer.from(await res.arrayBuffer())
-  );
-
-  const {
-    metadata: { height, width },
-    ...plaiceholder
-  } = await getPlaiceholder(buffer, { size: 10 });
-
-  return {
-    ...plaiceholder,
-    img: { src, height, width },
-  };
-};
+const dataUrl =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7OHOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAABJ0AAASdAHeZh94AAAAHElEQVQoU2Nsa2j4z0AEYILSBMGoQryASIUMDAAT2gKZGEeGWgAAAABJRU5ErkJggg==";
 
 export default function NextJsImage({
   photo,
   imageProps: { alt, title, sizes, className, onClick },
   wrapperStyle,
 }: RenderPhotoProps) {
-  getImage(photo.src).then((myBlurDataUrl) => {
-    return (
-      <div style={{ ...wrapperStyle, position: "relative" }}>
-        <Image
-          fill
-          src={photo}
-          placeholder="blur"
-          blurDataURL={myBlurDataUrl.base64}
-          {...{ alt, title, sizes, className, onClick }}
-        />
-      </div>
-    );
-  });
+  return (
+    <div style={{ ...wrapperStyle, position: "relative" }}>
+      <Image
+        fill
+        src={photo}
+        placeholder="blur"
+        loading="lazy"
+        blurDataURL={dataUrl}
+        {...{ alt, title, sizes, className, onClick }}
+      />
+    </div>
+  );
 }
