@@ -2,6 +2,8 @@ import React from "react";
 import PhotoAlbum from "react-photo-album";
 import photos from "./Photos";
 import { motion } from "framer-motion";
+// import NextJsImage from "./NextJsImage";
+
 const Gallery = () => {
   return (
     <div className="m-4 md:m-8">
@@ -21,6 +23,7 @@ const Gallery = () => {
       >
         <PhotoAlbum
           layout="columns"
+          // renderPhoto={NextJsImage}
           photos={photos}
           columns={(containerWidth) => {
             if (containerWidth < 400) return 2;
