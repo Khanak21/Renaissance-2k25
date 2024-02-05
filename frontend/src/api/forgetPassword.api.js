@@ -1,16 +1,12 @@
 import axios from "axios";
 const serverUrl = process.env.NEXT_PUBLIC_SERVER;
 
-const emailVerifyUrl = "api/auth/emailverify";
+const forgetPasswordUrl = "api/auth/forgetpassword";
 
 const emailVerifyApi = async (data) => {
-  const { token } = data;
+  const { email } = data;
   return await axios
-    .post(
-      `${serverUrl}${emailVerifyUrl}`,
-      {},
-      { headers: { Authorization: "Bearer " + token } }
-    )
+    .post(`${serverUrl}${forgetPasswordUrl}`, { email })
     .then((res) => {
       return res.data;
     })

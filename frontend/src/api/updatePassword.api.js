@@ -1,14 +1,14 @@
 import axios from "axios";
 const serverUrl = process.env.NEXT_PUBLIC_SERVER;
 
-const emailVerifyUrl = "api/auth/emailverify";
+const updatePasswordUrl = "api/auth/updatepassword";
 
-const emailVerifyApi = async (data) => {
-  const { token } = data;
+const updatePasswordApi = async (data) => {
+  const { token, password } = data;
   return await axios
     .post(
-      `${serverUrl}${emailVerifyUrl}`,
-      {},
+      `${serverUrl}${updatePasswordUrl}`,
+      { password },
       { headers: { Authorization: "Bearer " + token } }
     )
     .then((res) => {
@@ -19,4 +19,4 @@ const emailVerifyApi = async (data) => {
       return { success: false, message: message };
     });
 };
-export default emailVerifyApi;
+export default updatePasswordApi;

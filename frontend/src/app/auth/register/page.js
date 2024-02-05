@@ -5,11 +5,6 @@ import React from "react";
 const registerpage = () => {
   return (
     <div>
-      <Toaster
-        position="top-right"
-        reverseOrder={false}
-        toastOptions={{ success: { duration: 5000 } }}
-      />
       <AuthPage />
     </div>
   );

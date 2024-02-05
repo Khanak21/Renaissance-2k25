@@ -4,7 +4,7 @@ import React from "react";
 const loginpage = () => {
   return (
     <>
-      <Login type="1" />
+      <Login type="2" />
     </>
   );
 };

@@ -7,9 +7,9 @@ import { BsEyeSlashFill, BsGenderAmbiguous } from "react-icons/bs";
 import { AiOutlineMail, AiFillEye } from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
-import Navbar from "../Navbar/Navbar";
 import registerUserApi from "../../../api/registerUser.api";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 //import Background from "./Background";
 
 const img = "/rene.png";
@@ -17,6 +17,7 @@ const img = "/rene.png";
 const Register = ({ data, setData, setPage }) => {
   const [icon, seticon] = useState(true);
   const [errors, setErr] = useState({});
+  const router = useRouter();
 
   const validateForm = (formData) => {
     let errors = {};
@@ -93,6 +94,7 @@ const Register = ({ data, setData, setPage }) => {
       });
       if (apiResult.success === true) {
         toast.success(apiResult.message);
+        router.push("/");
       } else {
         toast.error(apiResult.message);
       }

@@ -1,21 +1,55 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaUserCircle } from "react-icons/fa";
-import { RiLockPasswordFill, RiFacebookCircleFill } from "react-icons/ri";
-import { BsGoogle, BsEyeSlashFill } from "react-icons/bs";
-import { AiFillTwitterCircle, AiFillEye } from "react-icons/ai";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { BsEyeSlashFill } from "react-icons/bs";
+import { AiFillEye } from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
 import StickyNavbar from "../StickyNavbar/StickyNavbar";
+import toast from "react-hot-toast";
+import loginUserApi from "../../../api/loginUser.api";
+import forgetPasswordApi from "../../../api/forgetPassword.api";
 
 const img = "/rene.png";
 
-const Login = () => {
+const Login = ({ type }) => {
   const [icon, seticon] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
   const show = () => {
-    console.log("clicked");
-    // console.log("clicked");
     seticon(!icon);
+  };
+  const handleLoginClick = async () => {
+    if (type === "1") {
+      if (email === "" || password === "") {
+        toast.error("email or password field cannot be empty");
+        return;
+      }
+      const apiResult = await loginUserApi({ email, password });
+      if (apiResult.success) {
+        toast.success(apiResult.message);
+        setEmail("");
+        setPassword("");
+        router.push("/");
+      } else {
+        toast.error(apiResult.message);
+      }
+    } else {
+      if (email === "") {
+        toast.error("email field cannot be empty");
+        return;
+      }
+      const apiResult = await forgetPasswordApi({ email });
+      if (apiResult.success) {
+        toast.success(apiResult.message);
+        router.push("/");
+      } else {
+        toast.error(apiResult.message);
+      }
+    }
   };
   return (
     <>
@@ -39,23 +73,31 @@ const Login = () => {
             </div>
 
             <div>
-              <form>
-                <div className="mb-[24px] flex">
-                  <div className="mr-[8px] flex justify-center items-center">
-                    <FaUserCircle size="21px" color="#2F3E46" />
-                  </div>
-                  <input
-                    className="rounded outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
-                    placeholder="Username"
-                    required
-                  ></input>
+              <div className="mb-[24px] flex">
+                <div className="mr-[8px] flex justify-center items-center">
+                  <FaUserCircle size="21px" color="#2F3E46" />
                 </div>
+                <input
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  className="rounded outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
+                  placeholder="Email"
+                  required
+                ></input>
+              </div>
 
+              {type === "1" && (
                 <div className="mb-[3px] flex">
                   <div className="mr-[8px] flex justify-center items-center">
                     <RiLockPasswordFill size="21px" color="hsl(217,10%,25%)" />
                   </div>
                   <input
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
                     type={icon === true ? "password" : "text"}
                     className="rounded-l-md outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px] "
                     placeholder="Password"
@@ -72,23 +114,25 @@ const Login = () => {
                     )}
                   </div>
                 </div>
+              )}
 
+              {type === "1" && (
                 <div className="text-end w-full mb-[24px]">
-                  <a
-                    href=""
+                  <Link
+                    href="/auth/forgetpassword"
                     className="text-[11px] text-back font-semibold hover:text-slate-600"
                   >
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
+              )}
 
-                <button
-                  type="submit"
-                  className="w-full p-[5px] bg-[#1D174F] bg-back text-white rounded-full hover:bg-zinc-600"
-                >
-                  LOG-IN
-                </button>
-              </form>
+              <button
+                onClick={handleLoginClick}
+                className="w-full p-[5px] bg-[#1D174F] bg-back text-white rounded-full hover:bg-zinc-600"
+              >
+                {type === "1" ? "LOG-IN" : "VERIFY MAIL"}
+              </button>
             </div>
 
             {/* <div className="mt-[30px] flex items-center justify-center">
