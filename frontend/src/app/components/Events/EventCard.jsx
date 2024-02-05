@@ -3,10 +3,10 @@ import React from "react";
 
 const EventCard = ({ title, description, route, svg, id }) => {
   return (
-    <div
-      className="relative font-bold min-h-[20em] group rounded-3xl hover:border-dashed hover:border-2 hover:border-[#ffde89] bg-[#27282a] shadow-lg lg:w-[20%]"
-      key={id}
-    >
+    // <div
+    //   className="relative font-bold min-h-[20em] group rounded-3xl hover:border-dashed hover:border-2 hover:border-[#ffde89] bg-[#27282a] shadow-lg lg:w-[20%]"
+    //   key={id}
+    // >
       <div className="flex flex-col-reverse items-center justify-around w-full h-full group-hover:shadow-3xl">
         <img
           src={`${svg}`}
@@ -51,7 +51,7 @@ const EventCard = ({ title, description, route, svg, id }) => {
           {title}
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
