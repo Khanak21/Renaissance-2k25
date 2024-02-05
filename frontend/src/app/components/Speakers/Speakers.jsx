@@ -5,12 +5,12 @@ import Link from "next/link";
 
 // Card component for rendering each speaker
 export const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
-  <section class="container bg-white shadow-lg rounded-3xl mx-auto transform duration-500">
-    <section class="flex flex-col mx-auto max-w-sm overflow-hidden h-full">
+  <section className="container mx-auto duration-500 transform bg-white shadow-lg rounded-3xl">
+    <section className="flex flex-col h-full max-w-sm mx-auto overflow-hidden">
       <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
-        <img class="w-full object-cover h-52" src={`${img}`} alt="" />
+        <img className="object-cover w-full h-52" src={`${img}`} alt="" />
       </div>
-      <div class="p-4 my-auto flex flex-col items-center justify-between flex-grow">
+      <div className="flex flex-col items-center justify-between flex-grow p-4 my-auto">
         <div className="text-center">
           {/* Speaker's name */}
           <h2 className="text-lg font-bold">{name}</h2>

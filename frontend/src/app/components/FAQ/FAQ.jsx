@@ -1,25 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-const faqData = [
-  {
-    question: "What is Tailwind CSS?",
-    answer:
-      "Tailwind CSS is a utility-first CSS framework that helps you quickly build modern designs.",
-  },
-  {
-    question: "How can I install Tailwind CSS?",
-    answer:
-      "You can install Tailwind CSS using npm or yarn. Run `npm install tailwindcss` or `yarn add tailwindcss`.",
-  },
-  {
-    question: "What are the main features of Tailwind CSS?",
-    answer:
-      "Tailwind CSS provides a set of utility classes for styling, a responsive design system, and a customizable configuration.",
-  },
-  // Add more FAQ items as needed
-];
+import { faqData } from "./FAQ.data";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },

@@ -3,6 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [{ hostname: "source.unsplash.com" }],
   },
+  reactStrictMode: false,
 };
 
 module.exports = nextConfig;
