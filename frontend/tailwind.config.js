@@ -52,6 +52,9 @@ module.exports = {
           secondary: withOpacity("--border-secondary"),
         },
       }, //usage: border-custom-primary
+      backgroundImage: {
+        'testimonial': "url('/EventPage/bggg-01.svg')",
+      },
 
       keyframes: {
         animate: {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import data from "./data";
 import "./Testimonial.css";
-import Quote from "./quote.svg";
 
 const Testimonials = () => {
   const [people] = useState(data);
@@ -30,7 +29,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row align-middle overflow-x-hidden overflow-y-hidden w-full h-[650px] sm:h-full items-center bg-[#27282A] py-10 px-2 sm:justify-around">
+    <div className="flex flex-col sm:flex-row justify-center align-middle overflow-x-hidden overflow-y-hidden w-full h-[80%] sm:h-full items-center bg-[#27282A] md:px-20 sm:justify-around">
       {/* prev arrow for desktop view */}
       <div className="hidden mx-2 section-left sm:block">
         <button
@@ -55,9 +54,9 @@ const Testimonials = () => {
       </div>
 
       {/* container of cards */}
-      <div className="relative flex items-center justify-center w-full h-full overflow-x-hidden overflow-y-hidden  section-center sm:w-4/6">
+      <div className="relative flex items-center justify-center w-full h-full overflow-x-hidden overflow-y-hidden section-center sm:w-4/6">
         {people.map((item, indexPeople) => {
-          const { id, image, name, title, headline, text } = item;
+          const { id, name, title, headline, text, src } = item;
           let position = "";
           if (indexPeople === index) position = "activeSlide w-full flex-grow";
           if (
@@ -75,34 +74,36 @@ const Testimonials = () => {
             <article className={`${position} duration-500`} key={id}>
               <div className="my-2">
                 <div
-                  id="height"
-                  className="relative flex flex-col items-center justify-center flex-grow px-2 py-12 m-5 bg-white rounded-3xl lg:flex-row lg:justify-between"
+                  className="relative flex flex-col items-center justify-center px-2 py-8 m-5 bg-white bg-testimonial rounded-3xl lg:flex-row lg:justify-between"
                 >
-                  <div className="flex flex-col items-center xl:w-2/5 lg:w-2/5 md:w-2/5 md:pl-6">
-                    <div className="w-20 h-20 mb-2 duration-300 ease-in-out xl:lg:w-40 xl:lg:h-40 md:w-40 sm:w-40 md:h-40 sm:h-40 hover:cursor-pointer hover:scale-105 ">
+                  <div className="z-10 flex flex-col items-center justify-center w-full lg:w-2/5 md:pl-6">
+                    <div className="mb-2 duration-300 ease-in-out hover:cursor-pointer hover:scale-105 ">
                       <img
-                        src={image.src}
+                        src={src}
                         alt={name}
-                        className="object-cover object-center person-img rounded-xl "
+                        className="object-cover w-40 h-40 rounded-xl lg:w-60 lg:h-60"
                       />
                     </div>
-                    <div className="pb-1 mt-8 text-lg font-bold text-center ">
+                    <div className="text-base font-bold text-center sm:text-lg lg:mt-8 ">
                       {name}
                     </div>
-                    <div className="mb-4 text-center text-wrap">{title}</div>
+                    <div className="mb-4 text-base text-center text-wrap">{title}</div>
                   </div>
-                  <div className="flex items-center justify-center w-11/12">
-                    <div className="  max-w-[20rem] justify-center">
-                      <div className="text-xl font-bold text-center  md:mb-4">
+                  <div className="z-10 flex items-center justify-center flex-grow w-full lg:w-3/5">
+                    <div className="flex flex-col justify-center">
+                      <div className="text-base font-bold text-center sm:text-lg lg:mb-4">
                         {headline}
                       </div>
                       <div className="items-center justify-center">
-                        <p className="text-center md:px-6 text-wrap">{text}</p>
+                        <p className="text-base text-center md:px-6 text-wrap">{text}</p>
                       </div>
                     </div>
                   </div>
-                  <div className="absolute hidden lg:block top-10 right-20">
-                    <img className="w-32 h-32" src={Quote.src} alt="" />
+                  <div className="absolute z-0 hidden lg:block top-10 right-10">
+                    <img className="w-32 h-32" src={`/Testimonials/quote.svg`} alt="" />
+                  </div>
+                  <div className="absolute z-0 top-[55%] left-5 lg:hidden">
+                    <img className="w-16 h-16" src={`/Testimonials/quote_start.svg`} alt="" />
                   </div>
                 </div>
               </div>

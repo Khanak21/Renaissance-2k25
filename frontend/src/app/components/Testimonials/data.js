@@ -1,49 +1,44 @@
-import Rajeev from "./Rajeev.jpg";
-import chetanya from "./chetanya.jpg";
-import Gary from "./Gary.png";
-import Abhilekh from "./Abhilekh.jpg";
-import Mansi from "./Mansi.jpg";
-
 const people = [
   {
     id: 1,
-    image: Rajeev,
-    name: "Rajeev Tripathi",
-    title: "Director,MNNIT Allahabad",
+    name: "Prof. Rajeev Tripathi",
+    src: '/Testimonials/Rajeev.jpg',
+    title: "Ex-Director, MNNIT Allahabad",
     headline: "Efficient Collaborating",
-    text: " I duly hope the legacy continues eternally and provide ample opportunities to optimistic demeanor and direct them towards being an entrepreneur.",
+    text: "I duly hope the legacy continues eternally and provide ample opportunities to cater and optimistic demeanour towards being an entrepreneur, surpassing the bars set by the previous endeavours. I heartily welcome everyone to be a part of 8.0 E-Summit Renaissance 2024 and make it a grand success with your support and enthusiasm.",
   },
   {
     id: 2,
-    image: chetanya,
     name: "Chetanya Golecha",
-    title: "Co-Founder, Water Float ",
+    src: '/Testimonials/chetanya.jpg',
+    title: "Co-Founder, Water Float",
     headline: " Intuitive Design",
-    text: " I would like to give my  congrats to entire team of NIT Allahabad for a wonderful event.The attendees were ecstatic than I have ever seen.",
+    text: "A great event, packed with so much young audience and great speakers, offering a unique balance between entrepreneurship and industrial applications. In short: offering a compact source of inspiration & opportunity.",
   },
   {
     id: 3,
-    image: Gary,
     name: "Gary Dalal",
+    src: '/Testimonials/Gary.png',
     title: "Director, Apptology FZCO",
-    headline: " Mindblowing Service",
-    text: " I would like to give my personal congrats to the entire team of NIT Allahabad for putting up a wonderful event.The attendees were ecstatic. ",
+    headline: "Mindblowing Service",
+    text: "I would like to give my personal congrats to the entire team of NIT Allahabad for putting up a wonderful event. The attendees were more than ecstatic than what I have ever seen anywhere else and it is this spirit that puts up a favourable stage for people like us to speak/ perform.",
   },
   {
     id: 4,
-    image: Abhilekh,
     name: "Abhilekh Agarwal",
+    src: '/Testimonials/Abhilekh.jpg',
     title: "CTO, Cube26",
     headline: "  Great Effort",
-    text: "  It was a great effort by Team Renaissance. Greatly appreciated coming back to college. Your hard work and efforts has lead to such successful event. ",
+    text: "It was a great effort by Team Renaissance. Greatly appreciated coming back to college. Your hard work and efforts has lead to such successful event.",
   },
   {
     id: 5,
-    image: Mansi,
     name: "Mansi Matela",
-    title: "Head Strategy & New Initiatives,SilverPus",
+    src: '/Testimonials/Mansi.jpg',
+    title: "Head-Strategy & New Initiatives at SilverPus",
     headline: "  Thrilling Experience",
-    text: " I was thrilled to see an amazing audience. The events made an impact to aspiring entrepreneurs. A platform for the genesis of great ideas. ",
+    text: "I was thrilled to see such an amazing audience. The events were extraordinary and it surely made an impact to many aspiring entrepreneurs. A platform for the genesis of great ideas.",
   },
 ];
+
 export default people;
