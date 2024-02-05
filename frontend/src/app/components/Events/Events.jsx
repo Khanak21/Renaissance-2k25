@@ -46,16 +46,28 @@ const Events = () => {
         animate={controls}
         ref={ref}
       >
-        <div className="w-full bg-gray-100 rounded-lg p-4 my-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {EventsData.map((e, index) => (
-            <motion.div key={index} className="event-item" variants={item}>
-              <EventCard
-                title={e.title}
-                description={e.description}
-                route={e.route}
-              />
-            </motion.div>
-          ))}
+        <div className="px-10 py-10 mx-auto bg-black sm:p-8 md:p-12">
+          <div className="flex items-center justify-center pb-12 text-lg font-extrabold sm:pb-14 sm:text-xl lg:pb-16 lg:text-2xl text-[#ffde89]">
+            OUR EVENTS
+          </div>
+          <div className="grid grid-cols-1 gap-x-5 gap-y-10 sm:grid-cols-2 lg:flex lg:flex-row lg:flex-wrap lg:justify-center">
+            {/* <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"> */}
+            {EventsData.map((e, index) => (
+              <motion.div
+                className="relative font-bold min-h-[20em] group rounded-3xl hover:border-dashed hover:border-2 hover:border-[#ffde89] bg-[#27282a] shadow-lg lg:w-[20%]"
+                key={index}
+                variants={item}
+              >
+                <EventCard
+                  id={index}
+                  title={e.title}
+                  description={e.desc}
+                  route={e.route}
+                  svg={e.svg}
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
     </>
