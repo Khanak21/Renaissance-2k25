@@ -6,7 +6,7 @@ import Link from "next/link";
 const Speakers = () => {
   // Card component for rendering each speaker
   const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
-    <div className="max-w-lg w-[55%] md:w-[30%] lg:w-[20%] mx-auto p-5 m-5 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="max-w-lg w-[70%] md:w-[30%] lg:w-[20%] mx-auto p-5 m-5 bg-white shadow-lg rounded-lg overflow-hidden">
       {/* Profile Picture */}
       <div className="flex gap-2 justify-center hover:cursor-pointer hover:scale-105 ease-in-out duration-300">
         {/* Image of the speaker */}
