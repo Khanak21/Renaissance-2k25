@@ -6,10 +6,12 @@ import StickyNavbar from "../components/StickyNavbar/StickyNavbar";
 const team = () => {
   return (
     <>
-    <div className="sticky top-0 z-[100]">
-      <StickyNavbar />
+      <div className="sticky top-0 z-[100]">
+        <StickyNavbar />
       </div>
-      <CardTest />
+      <div className="pb-[4rem]">
+        <CardTest />
+      </div>
       <Footer />
     </>
   );

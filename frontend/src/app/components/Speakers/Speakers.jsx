@@ -6,7 +6,7 @@ import Link from "next/link";
 const Speakers = () => {
   // Card component for rendering each speaker
   const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
-    <div className="max-w-lg w-[80%] md:w-[40%] lg:w-[26%] mx-auto p-5 m-5 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="max-w-lg w-[55%] md:w-[30%] lg:w-[20%] mx-auto p-5 m-5 bg-white shadow-lg rounded-lg overflow-hidden">
       {/* Profile Picture */}
       <div className="flex gap-2 justify-center hover:cursor-pointer hover:scale-105 ease-in-out duration-300">
         {/* Image of the speaker */}
@@ -56,15 +56,27 @@ const Speakers = () => {
   );
 
   return (
-    <div className="bg-[#27282A]">
+    <div className="pt-[50px] bg-[#27282A] ">
       {/* Title */}
-      <h2 className="font-bold text-3xl lg:text-5xl text-center pb-5 text-white">
-        SPEAKERS
-      </h2>
+      <div className="flex justify-center md:justify-between items-center px-[3rem] md:px-[3rem] lg:px-[7.4rem]">
+        <h2 className="font-bold text-3xl lg:text-3xl text-center pb-5 text-white">
+          SPEAKERS
+        </h2>
+        <div className="flex justify-center hidden md:block lg:block">
+          <Link
+            href="/allspeakers"
+            className="p-3 border-[1px] bg-[#27282A] border-white shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+          >
+            <button className="mr-2 text-white">View All Speakers</button>
+            {/* Arrow icon with jiggling animation */}
+          </Link>
+      </div>
+      </div>
+      
       {/* Speaker cards */}
       <div className="flex lg:px-20 content-between flex-wrap">
         {/* Mapping over the first three elements of the speakersData array */}
-        {speakersData.slice(0, 3).map((speaker) => (
+        {speakersData.slice(0, 4).map((speaker) => (
           <Card
             key={speaker.id} // Unique key for React list
             img={speaker.img.src} // Speaker's image source
@@ -78,12 +90,12 @@ const Speakers = () => {
       </div>
 
       {/* View More Button */}
-      <div className="flex justify-center mt-5">
+      <div className="md:hidden lg:hidden flex justify-center mt-5">
         <Link
           href="/allspeakers"
-          className="p-3 border-2 bg-white border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+          className="p-3 border-[1px] bg-[#27282A] border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
         >
-          <button className="mr-2 font-bold">View More</button>
+          <button className="mr-2 text-white">View All Speakers</button>
           {/* Arrow icon with jiggling animation */}
         </Link>
       </div>

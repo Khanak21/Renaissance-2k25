@@ -23,7 +23,7 @@ const EventCard = ({ title, description, route, svg, id }) => {
         </div>
         <div className="z-20 flex flex-col justify-around h-0 px-4 py-4 overflow-hidden duration-500 ease-linear bg-white opacity-0 group-hover:-translate-x-0 group-hover:-translate-y-8 group-hover:h-full group-hover:opacity-100 rounded-3xl">
           <div className="flex flex-col items-center justify-center">
-            <h2 className="text-lg font-extrabold">
+            <h2 className="text-base font-extrabold lg:text-lg">
               DESCRIPTION
             </h2>
             <div className="mt-2 text-base text-center">{description}</div>
@@ -52,26 +52,6 @@ const EventCard = ({ title, description, route, svg, id }) => {
         </div>
       </div>
     </div>
-    // <div key={id} className="relative h-full p-4 overflow-hidden text-center bg-white rounded-md shadow-md group ">
-    //   <FaCoffee
-    //     size={60}
-    //     className="mx-auto mb-3 text-blue-500 transition-all duration-300 group-hover:blur"
-    //   />
-    //   <h3 className="mb-2 text-xl font-semibold transition-all duration-300 group-hover:blur">
-    //     {title}
-    //   </h3>
-    //   <p className="text-gray-700 transition-all duration-300 group-hover:blur">
-    //     {description}
-    //   </p>
-    //   <div className="absolute inset-0 flex items-center justify-center text-white transition-all duration-300 bg-transparent opacity-0 group-hover:opacity-100">
-    //     <Link
-    //       href={`/events/${route}`}
-    //       className="px-4 py-2 text-blue-500 bg-white rounded-md"
-    //     >
-    //       Register
-    //     </Link>
-    //   </div>
-    // </div>
   );
 };
 

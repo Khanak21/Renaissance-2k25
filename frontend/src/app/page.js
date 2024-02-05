@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import About from "./components/About/About";
 import Hero from "./components/Hero/Hero";
@@ -20,6 +19,7 @@ const HomePage = () => {
     <>
       <div className="h-screen relative">
         <Navbar />
+
         <Hero />
         <About />
         <Events />
