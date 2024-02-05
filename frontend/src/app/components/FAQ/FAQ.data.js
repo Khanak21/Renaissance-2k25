@@ -1,6 +1,6 @@
 export const faqData = [
   {
-    question: "What is the mode of conduct of Renaissance 7.0?",
+    question: "What is the mode of conduct of Renaissance 8.0?",
     answer: "This event will be held in offline mode",
   },
   {
@@ -16,7 +16,7 @@ export const faqData = [
   {
     question: "Is there any new event this time in Renaissance 8.0?",
     answer:
-      "Yes, CONTENT-O-RAMA and Nayak are the new events introduced this year.",
+      "Yes, The Pursuit of Profit and Blink & Meet are the new events introduced this year.",
   },
   {
     question: "How can I register for the events?",

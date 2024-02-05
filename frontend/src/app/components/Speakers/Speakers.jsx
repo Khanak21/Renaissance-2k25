@@ -5,7 +5,7 @@ import Link from "next/link";
 
 // Card component for rendering each speaker
 export const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
-  <section className="container mx-auto duration-500 transform bg-white shadow-lg rounded-3xl">
+  <section className="w-full mx-auto duration-500 transform bg-white shadow-lg sm:container rounded-3xl">
     <section className="flex flex-col h-full max-w-sm mx-auto overflow-hidden">
       <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
         <img className="object-cover w-full h-52" src={`${img}`} alt="" />
@@ -13,7 +13,7 @@ export const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
       <div className="flex flex-col items-center justify-between flex-grow p-4 my-auto">
         <div className="text-center">
           {/* Speaker's name */}
-          <h2 className="text-lg font-bold">{name}</h2>
+          <h2 className="text-base font-bold lg:text-lg">{name}</h2>
           {/* Speaker's position/title */}
           <div className="text-base text-gray-600">{post}</div>
         </div>
@@ -100,7 +100,7 @@ export const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
 
 const Speakers = () => {
   return (
-    <div className="pt-[50px] bg-[#27282A] ">
+    <div className="pt-12 bg-[#27282A] ">
       {/* Title */}
       <div className="flex justify-center md:justify-between items-center px-[3rem] md:px-[3rem] lg:px-[7.4rem]">
         <h2 className="text-lg font-bold text-center text-white lg:text-2xl">
@@ -118,8 +118,8 @@ const Speakers = () => {
 
 
       {/* Speaker cards */}
-      <div className="flex justify-center w-full lg:pt-4">
-        <div className="flex justify-around gap-5 lg:px-20">
+      <div className="flex justify-center w-full pt-4">
+        <div className="grid grid-cols-1 gap-10 px-2 sm:grid-cols-2 sm:px-12 lg:flex lg:justify-around lg:gap-5 lg:px-20">
           {/* Mapping over the first three elements of the speakersData array */}
           {speakersData.slice(0, 4).map((speaker) => (
             <Card

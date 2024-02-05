@@ -42,7 +42,7 @@ const Testimonials = () => {
             strokeWidth="0.5"
             stroke="currentColor"
             color="white"
-            className="w-10 h-10 sm:w-20 sm:h-20"
+            className="w-10 h-10 md:w-15 md:h-15 lg:w-20 lg:h-20"
           >
             <path
               strokeLinecap="round"
@@ -124,7 +124,7 @@ const Testimonials = () => {
             strokeWidth="0.5"
             stroke="currentColor"
             color="white"
-            className="w-10 h-10 sm:w-20 sm:h-20"
+            className="w-10 h-10 md:w-15 md:h-15 lg:w-20 lg:h-20"
           >
             <path
               strokeLinecap="round"
