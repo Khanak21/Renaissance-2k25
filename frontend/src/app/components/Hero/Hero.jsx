@@ -13,7 +13,7 @@ export const Hero = () => {
         loop
         muted
       >
-        <source src="/video/HeroBG.mp4" type="video/mp4" />
+        <source src="http://64.225.87.66/" type="video/mp4" />
       </video>
 
       {/* in case we want a img in background */}

@@ -8,6 +8,8 @@ import { AiOutlineMail, AiFillEye } from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../Navbar/Navbar";
+import registerUserApi from "../../../api/registerUser.api";
+import toast from "react-hot-toast";
 //import Background from "./Background";
 
 const img = "/rene.png";
@@ -22,21 +24,31 @@ const Register = ({ data, setData, setPage }) => {
     // Example validation rules, you can customize these as needed
     if (!formData.username.trim()) {
       errors.username = "Username is required";
+      toast.error("Username is required");
+    }
+    if (formData.student_from == "") {
+      errors.student_from = "Select college";
+      toast.error("select college");
     }
 
     if (!formData.password.trim()) {
       errors.password = "Password is required";
+      toast.error("password is required");
     }
 
     if (!formData.email.trim()) {
       errors.email = "Email is required";
+      toast.error("email is required");
     } else if (!isValidEmail(formData.email)) {
       errors.email = "Invalid email address";
+      toast.error("invalid email address");
     }
     if (!formData.tel.trim()) {
       errors.tel = "Telephone number is required";
+      toast.error("mobile number is required");
     } else if (!isValidIndianPhoneNumber(formData.tel)) {
       errors.tel = "Invalid Indian telephone number";
+      toast.error("Invalid mobile number");
     }
     // Add more validation rules as needed
 
@@ -62,11 +74,10 @@ const Register = ({ data, setData, setPage }) => {
       ...data,
       [e.target.name]: e.target.value,
     });
-    console.log(data);
   }
 
   //handling the submit and showing otp page
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     //  e.preventDefault();
 
     // Perform validation
@@ -74,12 +85,17 @@ const Register = ({ data, setData, setPage }) => {
 
     if (Object.keys(validationErrors).length === 0) {
       // No errors, submit the form
-      setPage(2);
-      // Your submission logic goes here
-    } else {
-      setErr(validationErrors);
-      // There are errors, update the errors state
-      console.log(validationErrors);
+      const apiResult = await registerUserApi({
+        gender: data.Gender,
+        mobile: data.tel,
+        isMnnitStudent: data.student_from,
+        ...data,
+      });
+      if (apiResult.success === true) {
+        toast.success(apiResult.message);
+      } else {
+        toast.error(apiResult.message);
+      }
     }
   }
 
@@ -96,6 +112,8 @@ const Register = ({ data, setData, setPage }) => {
                 width={700} // Set the width of the image
                 height={250} // Set the height of the image
                 src={img}
+                priority={true}
+                alt="renLogo"
               ></Image>
               <h1 className="tracking-[1.2px] text-gray-500 font-medium mt-[10px] text-lg">
                 Create Account💎
@@ -149,7 +167,7 @@ const Register = ({ data, setData, setPage }) => {
                   </label>
                   <label
                     className="mt-px font-semibold text-gray-700 cursor-pointer select-none"
-                    for="mnnit"
+                    htmlFor="mnnit"
                   >
                     MNNIT Student
                   </label>
@@ -180,7 +198,7 @@ const Register = ({ data, setData, setPage }) => {
                   </label>
                   <label
                     className="mt-px font-semibold text-gray-700 cursor-pointer select-none"
-                    for="other"
+                    htmlFor="other"
                   >
                     Other
                   </label>
@@ -268,12 +286,7 @@ const Register = ({ data, setData, setPage }) => {
                   value={data.Gender}
                   onChange={handleFormChange}
                 >
-                  <option
-                    label="Gender"
-                    value=""
-                    disabled="disabled"
-                    selected="selected"
-                  ></option>
+                  <option label="Gender" value="" disabled="disabled"></option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                   <option value="Other">Other</option>
@@ -289,12 +302,12 @@ const Register = ({ data, setData, setPage }) => {
               </button>
 
               <div className="mt-[30px] flex justify-center items-center">
-                <p className="text-[11.5px] sm:text-[14px] mr-[15px] tracking-[0.6px] text-[14px] text-gray-800">
+                <p className="sm:text-[14px] mr-[15px] tracking-[0.6px] text-[14px] text-gray-800">
                   Already Have An Account💎
                 </p>
                 <Link
                   href="/auth/login"
-                  className="text-[11.5px] sm:text-[14px] font-bold ml-[15px] tracking-[1px] text-[14px] text-back hover:text-slate-600"
+                  className="sm:text-[14px] font-bold ml-[15px] tracking-[1px] text-[14px] text-back hover:text-slate-600"
                 >
                   Log-In
                 </Link>
