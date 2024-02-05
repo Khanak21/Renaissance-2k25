@@ -13,7 +13,10 @@ export const Hero = () => {
         loop
         muted
       >
-        <source src={process.env.NEXT_PUBLIC_VIDEO_SERVER} type="video/mp4" />
+        <source
+          src={`${process.env.NEXT_PUBLIC_SERVER}video`}
+          type="video/mp4"
+        />
       </video>
 
       {/* in case we want a img in background */}
