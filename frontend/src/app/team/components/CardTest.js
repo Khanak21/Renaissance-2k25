@@ -6,8 +6,8 @@ const people1 =
 const CardTest = () => {
   return (
     <>
-      <h2 class="design">Design Team</h2>
-      <div class="box">
+      <h2 className="design">DESIGN TEAM</h2>
+      <div className="flex flex-wrap gap-[5.6em] justify-center">
         <Details
           image={people1}
           name="Someone"

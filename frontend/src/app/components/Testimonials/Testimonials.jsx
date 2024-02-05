@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import data from "./data";
 import "./Testimonial.css";
-import Quote from "./quote.png";
+import Quote from "./quote.svg";
 
 const Testimonials = () => {
   const [people] = useState(data);
@@ -32,9 +32,9 @@ const Testimonials = () => {
   return (
     <div className="flex flex-col sm:flex-row align-middle overflow-x-hidden overflow-y-hidden w-full h-[650px] sm:h-full items-center bg-[#27282A] py-10 px-2 sm:justify-around">
       {/* prev arrow for desktop view */}
-      <div className="section-left hidden sm:block mx-2">
+      <div className="hidden mx-2 section-left sm:block">
         <button
-          className="hover:cursor-pointer hover:scale-125 ease-in-out duration-300"
+          className="duration-300 ease-in-out hover:cursor-pointer hover:scale-125"
           onClick={prevSlide}
         >
           <svg
@@ -55,7 +55,7 @@ const Testimonials = () => {
       </div>
 
       {/* container of cards */}
-      <div className=" section-center flex items-center justify-center w-full sm:w-4/6 h-full  overflow-y-hidden overflow-x-hidden relative">
+      <div className="relative flex items-center justify-center w-full h-full overflow-x-hidden overflow-y-hidden  section-center sm:w-4/6">
         {people.map((item, indexPeople) => {
           const { id, image, name, title, headline, text } = item;
           let position = "";
@@ -76,33 +76,33 @@ const Testimonials = () => {
               <div className="my-2">
                 <div
                   id="height"
-                  className="bg-white relative flex flex-grow rounded-3xl py-12 px-2 items-center flex-col lg:flex-row justify-center lg:justify-between m-5"
+                  className="relative flex flex-col items-center justify-center flex-grow px-2 py-12 m-5 bg-white rounded-3xl lg:flex-row lg:justify-between"
                 >
-                  <div className="flex flex-col  xl:w-2/5 lg:w-2/5 md:w-2/5 md:pl-6 items-center">
-                    <div className="w-20 h-20 xl:lg:w-40 xl:lg:h-40 md:w-40  sm:w-40 md:h-40 sm:h-40  mb-2 hover:cursor-pointer hover:scale-105 ease-in-out duration-300 ">
+                  <div className="flex flex-col items-center xl:w-2/5 lg:w-2/5 md:w-2/5 md:pl-6">
+                    <div className="w-20 h-20 mb-2 duration-300 ease-in-out xl:lg:w-40 xl:lg:h-40 md:w-40 sm:w-40 md:h-40 sm:h-40 hover:cursor-pointer hover:scale-105 ">
                       <img
                         src={image.src}
                         alt={name}
-                        className="person-img object-cover object-center rounded-xl "
+                        className="object-cover object-center person-img rounded-xl "
                       />
                     </div>
-                    <div className="pb-1 text-center font-bold text-lg mt-8 ">
+                    <div className="pb-1 mt-8 text-lg font-bold text-center ">
                       {name}
                     </div>
-                    <div className="text-center text-wrap mb-4">{title}</div>
+                    <div className="mb-4 text-center text-wrap">{title}</div>
                   </div>
-                  <div className="flex w-11/12 items-center justify-center">
+                  <div className="flex items-center justify-center w-11/12">
                     <div className="  max-w-[20rem] justify-center">
-                      <div className=" md:mb-4  font-bold text-xl text-center ">
+                      <div className="text-xl font-bold text-center  md:mb-4">
                         {headline}
                       </div>
-                      <div className="justify-center items-center">
+                      <div className="items-center justify-center">
                         <p className="text-center md:px-6 text-wrap">{text}</p>
                       </div>
                     </div>
                   </div>
-                  <div className="hidden lg:block absolute top-10 right-20">
-                    <img className="w-24 h-24" src={Quote.src} alt="" />
+                  <div className="absolute hidden lg:block top-10 right-20">
+                    <img className="w-32 h-32" src={Quote.src} alt="" />
                   </div>
                 </div>
               </div>
@@ -112,9 +112,9 @@ const Testimonials = () => {
       </div>
 
       {/* next arrow for desktop view */}
-      <div className="section-right hidden sm:block mx-2">
+      <div className="hidden mx-2 section-right sm:block">
         <button
-          className="hover:cursor-pointer hover:scale-125 ease-in-out duration-300"
+          className="duration-300 ease-in-out hover:cursor-pointer hover:scale-125"
           onClick={nextSlide}
         >
           <svg
@@ -134,9 +134,9 @@ const Testimonials = () => {
         </button>
       </div>
 
-      <div className="flex w-1/2 justify-around sm:hidden mx-2 mt-4">
+      <div className="flex justify-around w-1/2 mx-2 mt-4 sm:hidden">
         {/* prev arrow for mobile view */}
-        <div className="section-left relative bottom-8">
+        <div className="relative section-left bottom-8">
           <button
             onClick={prevSlide}
             className="hover:cursor-pointer"
@@ -159,7 +159,7 @@ const Testimonials = () => {
         </div>
 
         {/* next arrow for mobile view */}
-        <div className="section-left relative bottom-8">
+        <div className="relative section-left bottom-8">
           <button
             onClick={nextSlide}
             className="hover:cursor-pointer"

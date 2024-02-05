@@ -101,11 +101,11 @@ const Register = ({ data, setData, setPage }) => {
 
   return (
     <>
-      <div className="bg-[#1D174F] w-full">
+      <div className="bg-bubble1 w-full">
         <div className=""></div>
 
-        <div className="bg-[#1D174F] w-screen h-screen flex justify-center p-[20px] ">
-          <div className=" w-screen opacity-[0.85] z-20 h-[50em] sm:w-[500px] sm:h-[50em] bg-[#EEF5DB] flex flex-col rounded p-[25px] sm:p-[50px]">
+        <div className="bg-bubble1 w-screen h-screen flex justify-center p-[20px] ">
+          <div className=" w-screen  z-20 h-[50em] sm:w-[500px] sm:h-[50em] bg-bubble flex flex-col rounded p-[25px] sm:p-[50px]">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <Image
                 className=""

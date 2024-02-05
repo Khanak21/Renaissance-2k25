@@ -49,7 +49,7 @@ function StickyNavbar() {
     // navbar component
     <nav
       className={`w-full text-white  flex flex-row justify-between z-[1000] transition duration-600 ${
-        navScroll ? "shadow-xl bg-[#27282A]" : ""
+        navScroll ? "shadow-xl bg-bubble" : ""
       }`}
     >
       {/* logo  */}
