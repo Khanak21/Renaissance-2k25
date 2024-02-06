@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { FaUserCircle } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { BsEyeSlashFill } from "react-icons/bs";
-import { AiFillEye } from "react-icons/ai";
+import { AiFillEye, AiOutlineCloseCircle } from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
 import StickyNavbar from "../StickyNavbar/StickyNavbar";
@@ -44,7 +44,14 @@ const Login = ({ type }) => {
       }
       const apiResult = await forgetPasswordApi({ email });
       if (apiResult.success) {
-        toast.success(apiResult.message);
+        toast((t) => (
+          <span className="flex w-full h-full justify-between items-center">
+            {apiResult.message}
+            <button onClick={() => toast.dismiss(t.id)} className="ml-2">
+              <AiOutlineCloseCircle />
+            </button>
+          </span>
+        ));
         router.push("/");
       } else {
         toast.error(apiResult.message);

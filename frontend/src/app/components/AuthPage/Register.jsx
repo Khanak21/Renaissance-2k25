@@ -93,7 +93,14 @@ const Register = ({ data, setData, setPage }) => {
         ...data,
       });
       if (apiResult.success === true) {
-        toast.success(apiResult.message);
+        toast((t) => (
+          <span className="flex w-full h-full justify-between items-center">
+            {apiResult.message}
+            <button onClick={() => toast.dismiss(t.id)} className="ml-2">
+              <AiOutlineCloseCircle />
+            </button>
+          </span>
+        ));
         router.push("/");
       } else {
         toast.error(apiResult.message);

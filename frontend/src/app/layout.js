@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <Toaster
           position="top-right"
           reverseOrder={false}
-          toastOptions={{ success: { duration: 5000 } }}
+          toastOptions={{ duration: 10000 }}
         />
         {children}
       </body>
