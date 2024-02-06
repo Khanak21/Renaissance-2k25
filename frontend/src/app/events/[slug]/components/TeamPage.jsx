@@ -33,7 +33,7 @@ const TeamPage = ({ eventid }) => {
         }
       });
     } else {
-      toast.error("register yourself continue.");
+      toast.error("register yourself to continue.");
       router.push("/auth/register");
     }
   };

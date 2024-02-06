@@ -2,13 +2,20 @@ import React from "react";
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import speakersData from "./data"; // Importing speaker data from data.js
 import Link from "next/link";
+import Image from "next/image";
 
 // Card component for rendering each speaker
 export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
   <section className="w-full mx-auto duration-500 transform bg-white shadow-lg sm:container rounded-3xl">
     <section className="flex flex-col h-full max-w-sm mx-auto overflow-hidden">
       <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
-        <img className="object-cover object-center w-full h-52" src={`${img}`} alt="" />
+        <Image
+          className="object-cover object-center w-full h-52"
+          src={`${img}`}
+          alt="renaissance mnnit speakers"
+          width={400}
+          height={400}
+        />
       </div>
       <div className="flex flex-col items-center justify-between flex-grow p-4 my-auto">
         <div className="text-center">
@@ -107,15 +114,14 @@ const Speakers = () => {
           SPEAKERS
         </h2>
         <div className="justify-center hidden md:flex lg:block">
-          <Link
-            href="/allspeakers"
-          >
-            <button className="p-3 uppercase border-[1px] bg-[#27282A] border-white shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300 text-base text-white">View All Speakers</button>
+          <Link href="/allspeakers">
+            <button className="p-3 uppercase border-[1px] bg-[#27282A] border-white shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300 text-base text-white">
+              View All Speakers
+            </button>
             {/* Arrow icon with jiggling animation */}
           </Link>
         </div>
       </div>
-
 
       {/* Speaker cards */}
       <div className="flex justify-center w-full pt-4">
@@ -141,7 +147,9 @@ const Speakers = () => {
           href="/allspeakers"
           className="p-3 border-[1px] bg-[#27282A] border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
         >
-          <button className="mr-2 text-base text-white">View All Speakers</button>
+          <button className="mr-2 text-base text-white">
+            View All Speakers
+          </button>
           {/* Arrow icon with jiggling animation */}
         </Link>
       </div>

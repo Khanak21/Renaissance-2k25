@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import data from "./data";
 import "./Testimonial.css";
+import Image from "next/image";
 
 const Testimonials = () => {
   const [people] = useState(data);
@@ -73,21 +74,23 @@ const Testimonials = () => {
           return (
             <article className={`${position} duration-500`} key={id}>
               <div className="my-2">
-                <div
-                  className="relative flex flex-col items-center justify-center px-2 py-8 m-5 bg-white bg-testimonial rounded-3xl lg:flex-row lg:justify-between"
-                >
+                <div className="relative flex flex-col items-center justify-center px-2 py-8 m-5 bg-white bg-testimonial rounded-3xl lg:flex-row lg:justify-between">
                   <div className="z-10 flex flex-col items-center justify-center w-full lg:w-2/5 md:pl-6">
                     <div className="mb-2 duration-300 ease-in-out hover:cursor-pointer hover:scale-105 ">
-                      <img
+                      <Image
                         src={src}
                         alt={name}
+                        height={500}
+                        width={500}
                         className="object-cover w-40 h-40 rounded-xl lg:w-60 lg:h-60"
                       />
                     </div>
                     <div className="text-base font-bold text-center sm:text-lg lg:mt-8 ">
                       {name}
                     </div>
-                    <div className="mb-4 text-base text-center text-wrap">{title}</div>
+                    <div className="mb-4 text-base text-center text-wrap">
+                      {title}
+                    </div>
                   </div>
                   <div className="z-10 flex items-center justify-center flex-grow w-full lg:w-3/5">
                     <div className="flex flex-col justify-center">
@@ -95,15 +98,25 @@ const Testimonials = () => {
                         {headline}
                       </div>
                       <div className="items-center justify-center">
-                        <p className="text-base text-center md:px-6 text-wrap">{text}</p>
+                        <p className="text-base text-center md:px-6 text-wrap">
+                          {text}
+                        </p>
                       </div>
                     </div>
                   </div>
                   <div className="absolute z-0 hidden lg:block top-10 right-10">
-                    <img className="w-32 h-32" src={`/Testimonials/quote.svg`} alt="" />
+                    <img
+                      className="w-32 h-32"
+                      src={`/Testimonials/quote.svg`}
+                      alt=""
+                    />
                   </div>
                   <div className="absolute z-0 top-[55%] left-5 lg:hidden">
-                    <img className="w-16 h-16" src={`/Testimonials/quote_start.svg`} alt="" />
+                    <img
+                      className="w-16 h-16"
+                      src={`/Testimonials/quote_start.svg`}
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -138,10 +151,7 @@ const Testimonials = () => {
       <div className="flex justify-around w-1/2 mx-2 mt-4 sm:hidden">
         {/* prev arrow for mobile view */}
         <div className="relative section-left bottom-8">
-          <button
-            onClick={prevSlide}
-            className="hover:cursor-pointer"
-          >
+          <button onClick={prevSlide} className="hover:cursor-pointer">
             <svg
               fill="none"
               viewBox="0 0 24 24"
@@ -161,10 +171,7 @@ const Testimonials = () => {
 
         {/* next arrow for mobile view */}
         <div className="relative section-left bottom-8">
-          <button
-            onClick={nextSlide}
-            className="hover:cursor-pointer"
-          >
+          <button onClick={nextSlide} className="hover:cursor-pointer">
             <svg
               fill="none"
               viewBox="0 0 24 24"

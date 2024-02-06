@@ -3,6 +3,7 @@ import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import speakersData from "../components/Speakers/data"; // Importing speaker data from data.js
 import StickyNavbar from "../components/StickyNavbar/StickyNavbar";
 import Footer from "../components/Footer/Footer";
+import Image from "next/image";
 
 // Card component for rendering each speaker
 const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
@@ -10,10 +11,12 @@ const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
     {/* Profile Picture */}
     <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
       {/* Image of the speaker */}
-      <img
+      <Image
         className="w-[200px] h-[200px] p-4 pt-0 object-cover rounded-full border-4 border-white"
         src={img} // Image source
         alt="Profile" // Alternative text for accessibility
+        height={400}
+        width={400}
       />
     </div>
 
