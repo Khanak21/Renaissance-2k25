@@ -41,9 +41,10 @@ const Dashboard = () => {
               </p>
             </div>
             <div className="items-center justify-center  py-[30px] px-[30px] flex flex-wrap gap-[50px]">
-              {eventsData.map((item) => {
+              {eventsData.map((item,index) => {
                 return (
                   <Card
+                  key={index}
                     cardClickHandler={cardClickHandler}
                     eventName={item.eventName}
                     svg={item.svg}
