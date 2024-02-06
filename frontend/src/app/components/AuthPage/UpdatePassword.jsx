@@ -77,7 +77,7 @@ const UpdatePassword = ({
                   onChange={(e) => {
                     setRePassword(e.target.value);
                   }}
-                  type={icon === true ? "password" : "text"}
+                  type="password"
                   className="rounded-l-md outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px] "
                   placeholder="ReEnter - Password"
                   required

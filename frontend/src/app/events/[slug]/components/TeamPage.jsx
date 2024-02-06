@@ -2,16 +2,41 @@ import "./TeamPageStyles.css";
 import img from "../../../assets/EventComponent/Five.jpg";
 import { useEffect, useState } from "react";
 import getEventApi from "../../../../api/getEvent.api";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import registerUserApi from "../../../../api/registerEvent.api";
 
 const TeamPage = ({ eventid }) => {
   const [eventDetails, setEventsDetails] = useState(null);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const router = useRouter();
+
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsUserLoggedIn(true);
+    }
     getEventApi({ eventid }).then((data) => {
       if (data.success) {
         setEventsDetails(data.data);
       }
     });
   }, []);
+
+  const handleParticipateClick = async () => {
+    if (isUserLoggedIn) {
+      registerUserApi({ eventId: eventDetails._id }).then((data) => {
+        if (data.success) {
+          toast.success(data.message);
+        } else {
+          toast.error(data.message);
+        }
+      });
+    } else {
+      toast.error("register yourself continue.");
+      router.push("/auth/register");
+    }
+  };
 
   return (
     <>
@@ -37,7 +62,10 @@ const TeamPage = ({ eventid }) => {
               24th March, 2022
             </div>
             <div className="sm:ml-[110px] flex justify-end">
-              <button className="bg-custom-secondary mt-5 px-3 py-3 pl-4 w-50 text-left rounded-sm font-semibold flex justify-left items-center hover:bg-custom-accent transition ease-in-out duration-700">
+              <button
+                onClick={handleParticipateClick}
+                className="bg-custom-secondary mt-5 px-3 py-3 pl-4 w-50 text-left rounded-sm font-semibold flex justify-left items-center hover:bg-custom-accent transition ease-in-out duration-700"
+              >
                 CONFIRM YOUR SEAT
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -84,8 +112,12 @@ const TeamPage = ({ eventid }) => {
           <div className="w-1/2 lg:pl-40 xl:pl-70 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-10 flex flex-col justify-center items-center text-gray-300">
             <ul className="text-base">
               {eventDetails &&
-                eventDetails.format.map((item,index) => {
-                  return <li key={index} className="mb-2">{item}</li>;
+                eventDetails.format.map((item, index) => {
+                  return (
+                    <li key={index} className="mb-2">
+                      {item}
+                    </li>
+                  );
                 })}
             </ul>
           </div>
