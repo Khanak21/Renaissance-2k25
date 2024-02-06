@@ -56,9 +56,9 @@ export default class Wheel extends Component {
           {this.state.cards}
         </div>
         <div className="lg:mt-[0px] sm:mt-[100px] textHeading" style={Styles.heading}>
-         
-          <h1 className="text-white font-bold text-4xl lg:text-4xl" >OFFICIAL SPONSORS</h1>
-          {/* <h1 className="text-white font-bold sm:text-lg lg:text-2xl" >OFFICIAL SPONSORS</h1> */}
+
+          <h1 className="text-lg font-bold text-white md:text-2xl lg:text-4xl" >OFFICIAL SPONSORS</h1>
+          {/* <h1 className="font-bold text-white sm:text-lg lg:text-2xl" >OFFICIAL SPONSORS</h1> */}
         </div>
       </>
     );

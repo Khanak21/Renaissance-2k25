@@ -50,7 +50,7 @@ const Events = () => {
           <div className="flex items-center justify-center pb-12 text-lg font-extrabold sm:pb-14 sm:text-xl lg:pb-16 lg:text-2xl text-[#ffde89]">
             OUR EVENTS
           </div>
-          <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:flex lg:flex-row lg:flex-wrap lg:justify-center">
+          <div className="grid grid-cols-1 gap-x-5 gap-y-10 sm:grid-cols-2 lg:flex lg:flex-row lg:flex-wrap lg:justify-center">
             {/* <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"> */}
             {EventsData.map((e, index) => (
               <motion.div

@@ -4,11 +4,11 @@ import speakersData from "./data"; // Importing speaker data from data.js
 import Link from "next/link";
 
 // Card component for rendering each speaker
-export const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
+export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
   <section className="w-full mx-auto duration-500 transform bg-white shadow-lg sm:container rounded-3xl">
     <section className="flex flex-col h-full max-w-sm mx-auto overflow-hidden">
       <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
-        <img className="object-cover w-full h-52" src={`${img}`} alt="" />
+        <img className="object-cover object-center w-full h-52" src={`${img}`} alt="" />
       </div>
       <div className="flex flex-col items-center justify-between flex-grow p-4 my-auto">
         <div className="text-center">
@@ -21,7 +21,7 @@ export const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
         <div className="flex justify-center mt-5">
           {/* LinkedIn handle */}
           <a
-            href={linkedin} // LinkedIn profile URL
+            href={linkedIn} // LinkedIn profile URL
             target="_blank" // Opens link in a new tab
             className="mx-2 text-gray-600 hover:text-blue-500"
           >
@@ -119,15 +119,15 @@ const Speakers = () => {
 
       {/* Speaker cards */}
       <div className="flex justify-center w-full pt-4">
-        <div className="grid grid-cols-1 gap-10 px-2 sm:grid-cols-2 sm:px-12 lg:flex lg:justify-around lg:gap-5 lg:px-20">
+        <div className="grid grid-cols-1 gap-10 px-8 sm:grid-cols-2 sm:px-12 lg:flex lg:justify-around lg:gap-5 lg:px-20">
           {/* Mapping over the first three elements of the speakersData array */}
           {speakersData.slice(0, 4).map((speaker) => (
             <Card
               key={speaker.id} // Unique key for React list
-              img={speaker.img.src} // Speaker's image source
+              img={speaker.img} // Speaker's image source
               name={speaker.name} // Speaker's name
               post={speaker.post} // Speaker's position/title
-              linkedin={speaker.linkedin} // Speaker's LinkedIn profile URL
+              linkedIn={speaker.linkedIn} // Speaker's LinkedIn profile URL
               twitter={speaker.twitter} // Speaker's Twitter profile URL
               facebook={speaker.facebook} // Speaker's Facebook profile URL
             />

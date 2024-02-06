@@ -29,7 +29,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row justify-center align-middle overflow-x-hidden overflow-y-hidden w-full h-[80%] sm:h-full items-center bg-[#27282A] md:px-20 sm:justify-around">
+    <div className="flex flex-col sm:flex-row justify-center align-middle overflow-x-hidden overflow-y-hidden w-full h-[80%] items-center bg-[#27282A] md:px-20 sm:justify-around">
       {/* prev arrow for desktop view */}
       <div className="hidden mx-2 section-left sm:block">
         <button

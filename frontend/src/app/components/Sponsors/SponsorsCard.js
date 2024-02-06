@@ -27,7 +27,7 @@ class SponsorsCard extends React.Component {
         className="SponsorsCard"
       >
         <div style={Styles.cardInner}>
-          <img src={require(`${this.props.image}`)} />
+          <img src={`${this.props.image}`} className="object-cover -rotate-12" />
         </div>
       </div>
     );
