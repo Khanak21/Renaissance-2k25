@@ -116,7 +116,7 @@ function About() {
               action. Renaissance includes a gamut of activities all of which
               provide an avenue to harbor entrepreneurial skills and stimulate
               discussion on ideas that possess the potential to turn the issues
-              that plague us into opportunities.{" "}
+              that plague us into opportunities.
             </div>
             <div className="text-[white] flex flex-row px-12 text-sm sm:text-xl md:text-2xl">
               <div className="pb-12 w-1/3 text-left text-[1rem] ">

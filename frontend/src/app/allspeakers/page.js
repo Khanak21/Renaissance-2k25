@@ -5,7 +5,7 @@ import StickyNavbar from "../components/StickyNavbar/StickyNavbar";
 import Footer from "../components/Footer/Footer";
 
 // Card component for rendering each speaker
-export const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
+const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
   <div className="flex flex-col bg-white shadow-lg rounded-3xl overflow-hidden p-4 w-[80%] md:w-[40%] lg:py-4 lg:px-4 lg:w-[17%]">
     {/* Profile Picture */}
     <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
