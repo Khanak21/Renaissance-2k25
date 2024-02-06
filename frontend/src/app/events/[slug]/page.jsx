@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import TeamPage from "./components/TeamPage";
 import StickyNavbar from "../../components/StickyNavbar/StickyNavbar";
@@ -8,7 +9,7 @@ const eventspage = ({ params }) => {
       <div className="sticky top-0 z-[100]">
         <StickyNavbar />
       </div>
-      <TeamPage />
+      <TeamPage eventid={params.slug} />
       <Footer />
     </div>
   );

@@ -1,7 +1,18 @@
 import "./TeamPageStyles.css";
 import img from "../../../assets/EventComponent/Five.jpg";
+import { useEffect, useState } from "react";
+import getEventApi from "../../../../api/getEvent.api";
 
-const TeamPage = () => {
+const TeamPage = ({ eventid }) => {
+  const [eventDetails, setEventsDetails] = useState(null);
+  useEffect(() => {
+    getEventApi({ eventid }).then((data) => {
+      if (data.success) {
+        setEventsDetails(data.data);
+      }
+    });
+  }, []);
+
   return (
     <>
       <div
@@ -9,12 +20,12 @@ const TeamPage = () => {
         className="bg-custom-dark pt-[150px] text-center py-[50px] sm:flex sm:flex-col lg:flex lg:flex-row justify-center items-center"
       >
         <div className="xlsm:h-[400px] xs:h-[370px] sm:h-[350px] lg:h-[260px] mb-[285px] z-10 w-full text-center xlsm:text-7xl xs:text-7xl sm:text-7xl lg:text-9xl font-bold text-custom-secondary tracking-wide absolute">
-          E-PLAN
+          {eventDetails?.eventName}
         </div>
         <div>
           <div className="lg:mr-[110px] bg-white h-[640px] flex items-end w-[500px] z-0 relative">
             <div className="w-full h-full opacity-[30%] bg-black absolute"></div>
-            <img className="bg-white" src={img} alt="" srcset="" />
+            <img className="bg-white" src={img} alt="" />
           </div>
         </div>
         <div className="lg:h-[300px] flex lg:items-end sm:pt-10">
@@ -55,9 +66,8 @@ const TeamPage = () => {
         >
           DESCRIPTION
         </div>
-        <div className="w-1/2 lg:pr-40 xl:pr-70 lg:pl-10 lg:py-10 sm:pb-10 sm:text-center flex justify-center items-center">
-          Provides an opportunity for aspiring entrepreneurs to propose their
-          business ideas and get cash and mentoring from industry experts
+        <div className="text-base w-1/2 lg:pr-40 xl:pr-70 lg:pl-10 lg:py-10 sm:pb-10 sm:text-center flex justify-center items-center">
+          {eventDetails?.description}
         </div>
       </div>
       <div className="">
@@ -72,13 +82,12 @@ const TeamPage = () => {
             FORMAT
           </div>
           <div className="w-1/2 lg:pl-40 xl:pl-70 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-10 flex flex-col justify-center items-center text-gray-300">
-            E-Plan will consist of 5 rounds. Round 1 is an elimination round in
-            which the teams need to submit the abstract. Selected teams from the
-            first round will be given feedback and mentoring in round 2. In
-            round 3, teams need to give powerpoint presentations and pitch their
-            ideas. Selected teams will submit their final ppts in round 4. In
-            the 5th and final round, teams need to pitch their ideas and give a
-            final presentation in front of judges
+            <ul className="text-base">
+              {eventDetails &&
+                eventDetails.format.map((item,index) => {
+                  return <li key={index} className="mb-2">{item}</li>;
+                })}
+            </ul>
           </div>
           <div
             id="FormatHeadDown"

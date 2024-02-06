@@ -7,7 +7,6 @@ import { useState } from "react";
 import "./About.css";
 
 function About() {
-
   const myRef = useRef();
   const myRef1 = useRef();
   // const [myElementIsVisible, setMyElementIsVisible] = useState(false);
@@ -19,7 +18,7 @@ function About() {
   //     (entries) => {
   //       entries.forEach((entry) => {
   //         if (entry.isIntersecting && !animationsTriggered) {
-        
+
   //           gsap.fromTo(
   //             entry.target,
   //             { opacity: 0, x: 100 },
@@ -29,9 +28,9 @@ function About() {
   //         }
   //       });
   //     },
-  //     { threshold: 0.5 } 
+  //     { threshold: 0.5 }
   //   );
-  
+
   //   if (myRef1.current) {
   //     observer.observe(myRef1.current);
   //   }
@@ -62,7 +61,7 @@ function About() {
   //       { opacity: 0, x: 100 },
   //       { opacity: 1, x: 0, ease: "power3.inOut", duration: 2 }
   //     );
-  //     setAnimationsTriggered(true); 
+  //     setAnimationsTriggered(true);
   //   }
   // }, [myElementIsVisible1, animationsTriggered]);
 
@@ -70,9 +69,9 @@ function About() {
     <div>
       {/* div for the main section */}
       <div className="relative  h-screen ">
-        <div className="floating-div font-['Raleway'] absolute top-1/2 left-[25%] md:left-[35%] lg:left-[40%]  text-4xl sm:text-6xl text-left text-[white]">
-          RENAISSANCE <br />
-          <span className="transform  text-white">8.0</span>
+        <div className="floating-div font-['Raleway'] absolute top-1/3 left-[25%] md:left-[35%] lg:left-[10%]  text-4xl sm:text-[4rem] font-extrabold text-left text-[white]">
+          <p>RENAISSANCE</p>
+          <p className="mt-8">8.0</p>
         </div>
         <div className="absolute bottom-[5rem] right-[2rem] md:right-[5rem] text-white font-['Raleway'] text-right text-xs">
           <span className="text-xl sm:text-2xl md:text-4xl">11 FEB 2024</span>
@@ -93,11 +92,11 @@ function About() {
         >
           <div className="flex flex-col items-center text-4xl font-['Raleway'] absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2 text-[#354F52] ">
             <div className="text-white text-[1.5rem] pb-0 mb-0 pl-4">ABOUT</div>
-            
-            <div className="text-white  text-[1.5rem] pl-3">    DESIGN</div>
-            
+
+            <div className="text-white  text-[1.5rem] pl-3"> DESIGN</div>
+
             <div className="text-white text-[1.5rem] pl-5">WEEK</div>
-            
+
             <button className="mt-[20px] text-left text-[12px] w-[10.3rem] text-white bg-[#354F52] p-2 hover:bg-[#2F3E46] md:w-[10.3rem]">
               CONFIRM YOUR SEAT &rarr;
             </button>

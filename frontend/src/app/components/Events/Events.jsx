@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import EventCard from "./EventCard";
 import { motion, useAnimation } from "framer-motion";
-import { EventsData } from "./data";
 import { useInView } from "react-intersection-observer";
+import getAllEventsApi from "../../../api/getAllEvents.api";
 
 const Events = () => {
   const container = {
@@ -29,6 +29,16 @@ const Events = () => {
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
+  const [EventsData, setEventsData] = useState([]);
+
+  useEffect(() => {
+    getAllEventsApi().then((data) => {
+      console.log(data);
+      if (data.success) {
+        setEventsData(data.data);
+      }
+    });
+  }, []);
 
   useEffect(() => {
     if (inView) {
@@ -60,8 +70,8 @@ const Events = () => {
               >
                 <EventCard
                   id={index}
-                  title={e.title}
-                  description={e.desc}
+                  title={e.eventName}
+                  description={e.description}
                   route={e.route}
                   svg={e.svg}
                 />
