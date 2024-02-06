@@ -4,7 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { BsEyeSlashFill, BsGenderAmbiguous } from "react-icons/bs";
-import { AiOutlineMail, AiFillEye } from "react-icons/ai";
+import { AiOutlineMail, AiFillEye, AiOutlineCloseCircle } from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
 import registerUserApi from "../../../api/registerUser.api";
