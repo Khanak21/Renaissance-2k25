@@ -3,17 +3,20 @@ import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import speakersData from "../components/Speakers/data"; // Importing speaker data from data.js
 import StickyNavbar from "../components/StickyNavbar/StickyNavbar";
 import Footer from "../components/Footer/Footer";
+import Image from "next/image";
 
 // Card component for rendering each speaker
-const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
+const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
   <div className="flex flex-col bg-white shadow-lg rounded-3xl overflow-hidden p-4 w-[80%] md:w-[40%] lg:py-4 lg:px-4 lg:w-[17%]">
     {/* Profile Picture */}
     <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
       {/* Image of the speaker */}
-      <img
+      <Image
         className="w-[200px] h-[200px] p-4 pt-0 object-cover rounded-full border-4 border-white"
         src={img} // Image source
         alt="Profile" // Alternative text for accessibility
+        height={400}
+        width={400}
       />
     </div>
 
@@ -30,7 +33,7 @@ const Card = ({ img, name, post, linkedin, twitter, facebook }) => (
       <div className="flex justify-center mt-5">
         {/* LinkedIn handle */}
         <a
-          href={linkedin} // LinkedIn profile URL
+          href={linkedIn} // LinkedIn profile URL
           target="_blank" // Opens link in a new tab
           className="mx-2 text-gray-600 hover:text-blue-500"
         >
@@ -75,10 +78,10 @@ const AllSpeakersPage = () => {
           {speakersData.map((speaker) => (
             <Card
               key={speaker.id} // Unique key for React list
-              img={speaker.img.src} // Speaker's image source
+              img={speaker.img} // Speaker's image source
               name={speaker.name} // Speaker's name
               post={speaker.post} // Speaker's position/title
-              linkedin={speaker.linkedin} // Speaker's LinkedIn profile URL
+              linkedin={speaker.linkedIn} // Speaker's LinkedIn profile URL
               twitter={speaker.twitter} // Speaker's Twitter profile URL
               facebook={speaker.facebook} // Speaker's Facebook profile URL
             />

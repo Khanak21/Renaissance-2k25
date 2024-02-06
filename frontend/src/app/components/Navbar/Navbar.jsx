@@ -43,8 +43,13 @@ const HamClose = (
 function Navbar() {
   const [toggle, setToggle] = useState(false);
   const [navScroll, setScroll] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsUserLoggedIn(true);
+    }
     const handleScroll = () => {
       if (window.scrollY > 500) setScroll(true);
       else setScroll(false);
@@ -101,11 +106,11 @@ function Navbar() {
             </Link>
           ))}
           <Link
-            href="/auth/register"
+            href={isUserLoggedIn ? "/dashboard" : "/auth/register"}
             className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
           >
             <li className="cursor-pointer" key={`link-confirmYourSeat`}>
-              CONFIRM YOUR SEAT
+              {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
             </li>
           </Link>
         </ul>
@@ -166,12 +171,12 @@ function Navbar() {
                   </li>
                 ))}
                 <Link
-                  href="/auth/register"
+                  href={isUserLoggedIn ? "/dashboard" : "/auth/register"}
                   onClick={() => setToggle(false)}
                   className=""
                 >
                   <li className="my-4 p-4 cursor-pointer bg-custom-secondary shadow-sm text-base xs:text-xl font-bold text-custom-accent">
-                    CONFIRM YOUR SEAT
+                    {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
                   </li>
                 </Link>
               </ul>

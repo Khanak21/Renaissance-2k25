@@ -33,6 +33,8 @@ const Login = ({ type }) => {
         toast.success(apiResult.message);
         setEmail("");
         setPassword("");
+        const token = apiResult.data.accessToken;
+        localStorage.setItem("token", token);
         router.push("/");
       } else {
         toast.error(apiResult.message);

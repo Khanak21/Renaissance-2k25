@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 class SponsorsCard extends React.Component {
@@ -27,7 +28,13 @@ class SponsorsCard extends React.Component {
         className="SponsorsCard"
       >
         <div style={Styles.cardInner}>
-          <img src={require(`${this.props.image}`)} />
+          <Image
+            src={`${this.props.image}`}
+            alt="renaissance mnnit sponsors"
+            className="object-cover -rotate-12"
+            height={100}
+            width={100}
+          />
         </div>
       </div>
     );

@@ -3,7 +3,7 @@ const serverUrl = process.env.NEXT_PUBLIC_SERVER;
 
 const forgetPasswordUrl = "api/auth/forgetpassword";
 
-const emailVerifyApi = async (data) => {
+const forgetPasswordApi = async (data) => {
   const { email } = data;
   return await axios
     .post(`${serverUrl}${forgetPasswordUrl}`, { email })
@@ -15,4 +15,4 @@ const emailVerifyApi = async (data) => {
       return { success: false, message: message };
     });
 };
-export default emailVerifyApi;
+export default forgetPasswordApi;
