@@ -3,14 +3,20 @@ import { FaUserCircle } from "react-icons/fa";
 import Card from "./Components/Card";
 import getAllUserDetailsApi from "../../../api/getAllUserDetails.api";
 import getAllEventsApi from "../../../api/getAllEvents.api";
+import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
+  const router = useRouter();
   const [userData, setUserData] = useState(null);
   const [eventsData, setEventsData] = useState([]);
+
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/");
+    }
     getAllUserDetailsApi()
       .then((userfetchData) => {
-        console.log(userfetchData);
         if (userfetchData.success) {
           setUserData(userfetchData.data);
         }
@@ -41,15 +47,15 @@ const Dashboard = () => {
               </p>
             </div>
             <div className="items-center justify-center  py-[30px] px-[30px] flex flex-wrap gap-[50px]">
-              {eventsData.map((item,index) => {
+              {eventsData.map((item, index) => {
                 return (
                   <Card
-                  key={index}
+                    key={index}
                     cardClickHandler={cardClickHandler}
                     eventName={item.eventName}
                     svg={item.svg}
                     eventId={item._id}
-                    isUserRegistered={userData.eventsParticipated.includes(
+                    isUserRegistered={userData?.eventsParticipated.includes(
                       item._id
                     )}
                   />
