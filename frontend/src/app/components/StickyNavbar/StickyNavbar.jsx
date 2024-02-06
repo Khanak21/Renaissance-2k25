@@ -51,6 +51,10 @@ function StickyNavbar() {
       setIsUserLoggedIn(true);
     }
   });
+  const handleLogoutClick = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
 
   return (
     // Rest of your component code remains unchanged
@@ -103,6 +107,16 @@ function StickyNavbar() {
               {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
             </li>
           </Link>
+          {isUserLoggedIn && (
+            <button
+              onClick={handleLogoutClick}
+              className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+            >
+              <li className="cursor-pointer" key={`logout`}>
+                LOGOUT
+              </li>
+            </button>
+          )}
         </ul>
       </div>
 
@@ -168,6 +182,16 @@ function StickyNavbar() {
                     {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
                   </li>
                 </Link>
+                {isUserLoggedIn && (
+                  <button
+                    onClick={handleLogoutClick}
+                    className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+                  >
+                    <li className="cursor-pointer" key={`logout`}>
+                      LOGOUT
+                    </li>
+                  </button>
+                )}
               </ul>
             </motion.div>
           </div>

@@ -5,10 +5,13 @@ import getEventApi from "../../../../api/getEvent.api";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import registerUserApi from "../../../../api/registerEvent.api";
+import getAllUserDetailsApi from "../../../../api/getAllUserDetails.api";
+import unregisterUserApi from "../../../../api/unregisterEvent.api";
 
 const TeamPage = ({ eventid }) => {
   const [eventDetails, setEventsDetails] = useState(null);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isUserRegistered, setIsUserRegistered] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -20,18 +23,40 @@ const TeamPage = ({ eventid }) => {
       if (data.success) {
         setEventsDetails(data.data);
       }
+      if (token) {
+        getAllUserDetailsApi().then((userData) => {
+          if (userData.success) {
+            const userRegisteredEventsArray = userData.data.eventsParticipated;
+            if (userRegisteredEventsArray.includes(data.data._id)) {
+              setIsUserRegistered(true);
+            }
+          }
+        });
+      }
     });
   }, []);
 
   const handleParticipateClick = async () => {
     if (isUserLoggedIn) {
-      registerUserApi({ eventId: eventDetails._id }).then((data) => {
-        if (data.success) {
-          toast.success(data.message);
-        } else {
-          toast.error(data.message);
-        }
-      });
+      if (isUserRegistered) {
+        unregisterUserApi({ eventId: eventDetails._id }).then((data) => {
+          if (data.success) {
+            toast.success(data.message);
+            setIsUserRegistered(false);
+          } else {
+            toast.error(data.message);
+          }
+        });
+      } else {
+        registerUserApi({ eventId: eventDetails._id }).then((data) => {
+          if (data.success) {
+            toast.success(data.message);
+            setIsUserRegistered(true);
+          } else {
+            toast.error(data.message);
+          }
+        });
+      }
     } else {
       toast.error("register yourself to continue.");
       router.push("/auth/register");
@@ -66,7 +91,7 @@ const TeamPage = ({ eventid }) => {
                 onClick={handleParticipateClick}
                 className="bg-custom-secondary mt-5 px-3 py-3 pl-4 w-50 text-left rounded-sm font-semibold flex justify-left items-center hover:bg-custom-accent transition ease-in-out duration-700"
               >
-                CONFIRM YOUR SEAT
+                {isUserRegistered ? "UNREGISTER" : "CONFIRM YOUR SEAT"}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

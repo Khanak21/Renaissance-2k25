@@ -1,15 +1,14 @@
 import axios from "axios";
 const serverUrl = process.env.NEXT_PUBLIC_SERVER;
 
-const registerEventUrl = "api/participate/register";
+const getAllUserDetailsUrl = "api/participate/getalluserdetails";
 
-const registerEventApi = async (data) => {
-  const { eventId } = data;
+const getAllUserDetailsApi = async (data) => {
   const token = localStorage.getItem("token");
   return await axios
     .post(
-      `${serverUrl}${registerEventUrl}`,
-      { eventId },
+      `${serverUrl}${getAllUserDetailsUrl}`,
+      {},
       { headers: { Authorization: "Bearer " + token } }
     )
     .then((res) => {
@@ -23,4 +22,4 @@ const registerEventApi = async (data) => {
       return { success: false, message: message };
     });
 };
-export default registerEventApi;
+export default getAllUserDetailsApi;

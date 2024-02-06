@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import logo from "./logo.png";
+import { useRouter } from "next/navigation";
 
 const navItems = ["home", "events", "speakers", "location", "team", "contact"];
 
@@ -41,6 +42,7 @@ const HamClose = (
 );
 
 function Navbar() {
+  const router = useRouter();
   const [toggle, setToggle] = useState(false);
   const [navScroll, setScroll] = useState(false);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -61,6 +63,11 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleLogoutClick = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
 
   return (
     // Rest of your component code remains unchanged
@@ -113,6 +120,16 @@ function Navbar() {
               {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
             </li>
           </Link>
+          {isUserLoggedIn && (
+            <button
+              onClick={handleLogoutClick}
+              className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+            >
+              <li className="cursor-pointer" key={`logout`}>
+                LOGOUT
+              </li>
+            </button>
+          )}
         </ul>
       </div>
 
@@ -179,6 +196,16 @@ function Navbar() {
                     {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
                   </li>
                 </Link>
+                {isUserLoggedIn && (
+                  <button
+                    onClick={handleLogoutClick}
+                    className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+                  >
+                    <li className="cursor-pointer" key={`logout`}>
+                      LOGOUT
+                    </li>
+                  </button>
+                )}
               </ul>
             </motion.div>
           </div>
