@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import StickyNavbar from "../components/StickyNavbar/StickyNavbar";
 import Dashboard from "../components/DashBoard/Dashboard";
