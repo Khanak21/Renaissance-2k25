@@ -6,10 +6,10 @@ import StickyNavbar from "../components/StickyNavbar/StickyNavbar";
 const team = () => {
   return (
     <>
-      <div className="sticky top-0 z-[100]">
+      <div className="sticky top-0 z-[100] ">
         <StickyNavbar />
       </div>
-      <div className="bg-custom-dark py-4">
+      <div className="py-4 bg-custom-dark">
         <CardTest />
       </div>
       <Footer />
