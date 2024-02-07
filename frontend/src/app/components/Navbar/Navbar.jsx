@@ -79,11 +79,10 @@ function Navbar() {
     >
       {/* logo  */}
       <div
-        className={`logo px-4 py-4 md:px-8 md:py-2 flex justify-center items-center w-1/3 h-1/3 ${
-          !navScroll
-            ? "lg:w-1/3 lg:h-1/3"
-            : "md:w-1/3 md:h-1/3 lg:w-1/6 lg:h-1/6"
-        } xs:px-8 xs:py-8 transition duration-600`}
+        className={`logo px-4 py-4 md:px-8 md:py-2 flex justify-center items-center w-1/3 h-1/3 ${!navScroll
+          ? "lg:w-1/3 lg:h-1/3"
+          : "md:w-1/3 md:h-1/3 lg:w-1/6 lg:h-1/6"
+          } xs:px-8 xs:py-8 transition duration-600`}
       >
         <Link href="/">
           <img
@@ -104,8 +103,8 @@ function Navbar() {
                 item === "team"
                   ? "/team"
                   : item === "speakers"
-                  ? "/allspeakers"
-                  : `/#${item}`
+                    ? "/allspeakers"
+                    : `/#${item}`
               }
               className={`mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute ${navScroll?"before:bg-[#FFDE89]":"before:bg-[#27282A]"} before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full ${navScroll?"hover:text-[#FFDE89]":"hover:text-[#27282A]"}`}
             >
@@ -123,7 +122,7 @@ function Navbar() {
           {isUserLoggedIn && (
             <button
               onClick={handleLogoutClick}
-              className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+              className="mx-4 px-6 py-4 bg-[#EEF5DB] text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
             >
               <li className="cursor-pointer" key={`logout`}>
                 LOGOUT
@@ -134,14 +133,14 @@ function Navbar() {
       </div>
 
       {/* Hamburger Navigation Menu  */}
-      <div className="md:hidden relative flex justify-center items-center cursor-pointer mr-3 ">
+      <div className="relative flex items-center justify-center mr-3 cursor-pointer md:hidden ">
         <div className="flex" onClick={() => setToggle(true)}>
           {HamOpen}
         </div>
         {toggle && (
           <div>
             <motion.div
-              className="md:hidden fixed top-0 left-0 right-0 p-1 w-screen h-screen flex justify-end items-end flex-col bg-custom-dark shadow-lg z-50 pb-4"
+              className="fixed top-0 left-0 right-0 z-50 flex flex-col items-end justify-end w-screen h-screen p-1 pb-4 shadow-lg md:hidden bg-custom-dark"
               animate={{ y: [-500, 0] }}
               exit={{ y: [0, -500] }}
               transition={{
@@ -156,7 +155,7 @@ function Navbar() {
               </div>
 
               {/* logo */}
-              <div className="logo p-1 my-5 w-full flex justify-center items-center">
+              <div className="flex items-center justify-center w-full p-1 my-5 logo">
                 <img
                   className="w-[70%]"
                   src={logo.src}
@@ -165,7 +164,7 @@ function Navbar() {
               </div>
 
               {/* Nav-items  */}
-              <ul className="m-0 p-0 h-full w-full text-custom-nav text-xs flex flex-col justify-start items-center ">
+              <ul className="flex flex-col items-center justify-start w-full h-full p-0 m-0 text-xs text-custom-nav ">
                 {navItems.map((item) => (
                   <li
                     className="mx-10 my-3 cursor-pointer"
@@ -177,11 +176,11 @@ function Navbar() {
                         item === "team"
                           ? "/team"
                           : item === "speakers"
-                          ? "/allspeakers"
-                          : `/#${item}`
+                            ? "/allspeakers"
+                            : `/#${item}`
                       }
                       onClick={() => setToggle(false)}
-                      className="text-base xs:text-base font-light text-custom-light"
+                      className="text-base font-light xs:text-base text-custom-light"
                     >
                       {item.toUpperCase()}
                     </Link>
@@ -192,7 +191,7 @@ function Navbar() {
                   onClick={() => setToggle(false)}
                   className=""
                 >
-                  <li className="my-4 p-4 cursor-pointer bg-custom-secondary shadow-sm text-base xs:text-xl font-bold text-custom-accent">
+                  <li className="p-4 my-4 text-base font-bold shadow-sm cursor-pointer bg-custom-secondary xs:text-xl text-custom-accent">
                     {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
                   </li>
                 </Link>

@@ -68,7 +68,7 @@ function About() {
   return (
     <div>
       {/* div for the main section */}
-      <div className="relative  h-screen ">
+      <div className="relative h-screen ">
         <div className="floating-div font-['Raleway'] absolute top-1/3 left-[25%] md:left-[35%] lg:left-[10%]  text-4xl sm:text-[4rem] font-extrabold text-left text-[white]">
           <p>RENAISSANCE</p>
           <p className="mt-8">8.0</p>

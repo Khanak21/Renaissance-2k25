@@ -32,8 +32,8 @@ class SponsorsCard extends React.Component {
             src={`${this.props.image}`}
             alt="renaissance mnnit sponsors"
             className="object-cover -rotate-12"
-            height={100}
-            width={100}
+            height={150}
+            width={150}
           />
         </div>
       </div>
