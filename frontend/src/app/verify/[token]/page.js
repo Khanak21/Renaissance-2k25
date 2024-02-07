@@ -9,7 +9,7 @@ const VerifyEmail = ({ params }) => {
   useEffect(() => {
     emailVerifyApi({ token: params.token }).then((data) => {
       if (data.success == true) {
-        const token = apiResult.data.accessToken;
+        const token = data.data.accessToken;
         localStorage.setItem("token", token);
         toast.success(data.message);
         window.location.href = "/";
