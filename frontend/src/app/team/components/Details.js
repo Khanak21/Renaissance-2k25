@@ -5,12 +5,12 @@ import "./CardTest.css";
 const Details = (prop) => {
   return (
     <>
-      <div className="all cursor-pointer">
-        <div class="card">
-          <div class="imgBx">
+      <div className="all cursor-pointer z-10">
+        <div className="card ">
+          <div className="imgBx">
             <img src={prop.image} alt="images" />
           </div>
-          <div class="details">
+          <div className="details">
             <h2>
               {prop.name}
               <br />

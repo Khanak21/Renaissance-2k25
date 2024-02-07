@@ -3,7 +3,7 @@ const serverUrl = process.env.NEXT_PUBLIC_SERVER;
 
 const getAllUserDetailsUrl = "api/participate/getalluserdetails";
 
-const getAllUserDetailsApi = async (data) => {
+const getAllUserDetailsApi = async () => {
   const token = localStorage.getItem("token");
   return await axios
     .post(
