@@ -40,11 +40,11 @@ const FAQ = () => {
   }, [controls, inView]);
 
   return (
-    <div className="mx-auto mt-10">
-      <h2 className="text-lg lg:text-2xl font-bold text-center mb-4 px-8">
+    <div className="mx-auto pt-10 bg-[#EEF5DB]">
+      <h2 className="px-8 mb-4 text-lg font-bold text-center lg:text-2xl">
         FREQUENTLY ASKED QUESTIONS
       </h2>
-      <div className="px-4 md:px-12 lg:px-20 flex justify-center items-center">
+      <div className="flex items-center justify-center px-4 md:px-12 lg:px-20">
         <motion.div
           className="w-full"
           variants={container}
@@ -57,12 +57,11 @@ const FAQ = () => {
               <motion.div
                 key={index}
                 variants={item}
-                className="bg-gray-100 p-4 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out max-h-full"
+                className="max-h-full p-4 overflow-hidden transition-all duration-300 ease-in-out bg-gray-100 rounded-lg shadow-md"
               >
                 <h3
-                  className={`text-base font-semibold cursor-pointer ${
-                    selectedQuestion === index ? "text-blue-500" : "text-black"
-                  }`}
+                  className={`text-base font-semibold cursor-pointer ${selectedQuestion === index ? "text-blue-500" : "text-black"
+                    }`}
                   onClick={() => handleToggle(index)}
                 >
                   <div className="flex justify-between">
@@ -100,7 +99,7 @@ const FAQ = () => {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="text-gray-700 overflow-hidden mt-2 text-sm"
+                      className="mt-2 overflow-hidden text-sm text-gray-700"
                     >
                       {faq.answer}
                     </motion.p>

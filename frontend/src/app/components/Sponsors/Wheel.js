@@ -57,7 +57,7 @@ export default class Wheel extends Component {
         </div>
         <div className="lg:mt-[0px] sm:mt-[100px] textHeading" style={Styles.heading}>
 
-          <h1 className="text-lg font-bold text-white md:text-2xl lg:text-4xl" >OFFICIAL SPONSORS</h1>
+          <h1 className="text-lg font-bold text-[#27282A] md:text-2xl lg:text-4xl" >OFFICIAL SPONSORS</h1>
           {/* <h1 className="font-bold text-white sm:text-lg lg:text-2xl" >OFFICIAL SPONSORS</h1> */}
         </div>
       </>
@@ -74,7 +74,7 @@ const Styles = {
     height: "3600px",
     width: "3600px",
     borderRadius: "50%",
-    backgroundColor: "#2F3E46",
+    backgroundColor: "#FFDE89",
     overflowLeft: "hidden",
   },
   heading: {

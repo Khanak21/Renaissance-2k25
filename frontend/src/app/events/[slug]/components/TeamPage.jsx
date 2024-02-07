@@ -81,7 +81,7 @@ const TeamPage = ({ eventid }) => {
         <div className="lg:h-[300px] flex lg:items-end sm:pt-10">
           <div
             id="Participate"
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col items-center justify-center"
           >
             <div className="sm:ml-[110px] text-custom-secondary text-4xl font-semibold">
               24th March, 2022
@@ -89,7 +89,7 @@ const TeamPage = ({ eventid }) => {
             <div className="sm:ml-[110px] flex justify-end">
               <button
                 onClick={handleParticipateClick}
-                className="bg-custom-secondary mt-5 px-3 py-3 pl-4 w-50 text-left rounded-sm font-semibold flex justify-left items-center hover:bg-custom-accent transition ease-in-out duration-700"
+                className="bg-[#EEF5DB] mt-5 px-3 py-3 pl-4 w-50 text-left rounded-sm font-semibold flex justify-left items-center hover:bg-custom-accent transition ease-in-out duration-700"
               >
                 {isUserRegistered ? "UNREGISTER" : "CONFIRM YOUR SEAT"}
                 <svg
@@ -97,7 +97,7 @@ const TeamPage = ({ eventid }) => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="ml-1 w-7 h-6"
+                  className="h-6 ml-1 w-7"
                 >
                   <path
                     strokeLinecap="round"
@@ -111,30 +111,30 @@ const TeamPage = ({ eventid }) => {
       </div>
       <div
         id="Description"
-        className="bg-white sm:flex sm:flex-col justify-center items-center lg:flex lg:flex-row"
+        className="items-center justify-center bg-white sm:flex sm:flex-col lg:flex lg:flex-row"
       >
         <div
           id="DesHead"
-          className="w-1/2 lg:pl-40 xl:pl-80 lg:pr-10 xl:pr-20 lg:py-20 sm:pt-10 sm:pb-5 flex justify-center items-center text-4xl font-semibold tracking-wide"
+          className="flex items-center justify-center w-1/2 text-4xl font-semibold tracking-wide lg:pl-40 xl:pl-80 lg:pr-10 xl:pr-20 lg:py-20 sm:pt-10 sm:pb-5"
         >
           DESCRIPTION
         </div>
-        <div className="text-base w-1/2 lg:pr-40 xl:pr-70 lg:pl-10 lg:py-10 sm:pb-10 sm:text-center flex justify-center items-center">
+        <div className="flex items-center justify-center w-1/2 text-base lg:pr-40 xl:pr-70 lg:pl-10 lg:py-10 sm:pb-10 sm:text-center">
           {eventDetails?.description}
         </div>
       </div>
       <div className="">
         <div
           id="Format"
-          className="bg-custom-dark lg:flex lg:flex-row sm:flex sm:flex-col justify-center items-center pt-10 lg:pb-10 xlsm:pb-20 xs:pb-20 sm:pb-0"
+          className="items-center justify-center pt-10 bg-custom-dark lg:flex lg:flex-row sm:flex sm:flex-col lg:pb-10 xlsm:pb-20 xs:pb-20 sm:pb-0"
         >
           <div
             id="FormatHead"
-            className="lg:hidden w-1/2 lg:pl-40 xl:pl-60 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-8 flex justify-center items-center text-4xl font-semibold tracking-wide text-gray-300"
+            className="flex items-center justify-center w-1/2 text-4xl font-semibold tracking-wide text-gray-300 lg:hidden lg:pl-40 xl:pl-60 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-8"
           >
             FORMAT
           </div>
-          <div className="w-1/2 lg:pl-40 xl:pl-70 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-10 flex flex-col justify-center items-center text-gray-300">
+          <div className="flex flex-col items-center justify-center w-1/2 text-gray-300 lg:pl-40 xl:pl-70 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-10">
             <ul className="text-base">
               {eventDetails &&
                 eventDetails.format.map((item, index) => {
@@ -148,7 +148,7 @@ const TeamPage = ({ eventid }) => {
           </div>
           <div
             id="FormatHeadDown"
-            className="w-1/2 lg:pr-40 xl:pr-60 lg:pl-10 xl:pl-10 lg:py-10 sm:pb-8 flex justify-center items-center text-4xl font-semibold tracking-wide text-gray-300"
+            className="flex items-center justify-center w-1/2 text-4xl font-semibold tracking-wide text-gray-300 lg:pr-40 xl:pr-60 lg:pl-10 xl:pl-10 lg:py-10 sm:pb-8"
           >
             FORMAT
           </div>

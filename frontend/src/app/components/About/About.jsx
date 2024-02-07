@@ -68,7 +68,7 @@ function About() {
   return (
     <div>
       {/* div for the main section */}
-      <div className="relative  h-screen ">
+      <div className="relative h-screen ">
         <div className="floating-div font-['Raleway'] absolute top-1/3 left-[25%] md:left-[35%] lg:left-[10%]  text-4xl sm:text-[4rem] font-extrabold text-left text-[white]">
           <p>RENAISSANCE</p>
           <p className="mt-8">8.0</p>
@@ -84,7 +84,7 @@ function About() {
         </div>
       </div>
       {/* div for the about section */}
-      <div className="md:flex md:flex-row md:items-center md:h-[30rem] bg-gray-800">
+      <div className="md:flex md:flex-row md:items-center md:h-[30rem] bg-[#27282A]">
         {/* div for seat confirmation and heading */}
         <div
           ref={myRef}

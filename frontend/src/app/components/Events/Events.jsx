@@ -18,8 +18,8 @@ const Events = () => {
   return (
     <>
       <div id="events" className="w-full">
-        <div className="px-10 py-10 mx-auto bg-black sm:p-8 md:p-12">
-          <div className="flex items-center justify-center pb-12 text-lg font-extrabold sm:pb-14 sm:text-xl lg:pb-16 lg:text-2xl text-[#ffde89]">
+        <div className="px-10 py-10 mx-auto bg-[#FFDE89] sm:p-8 md:p-12">
+          <div className="flex items-center justify-center pb-12 text-lg font-extrabold sm:pb-14 sm:text-xl lg:pb-16 lg:text-2xl text-[#27282A]">
             OUR EVENTS
           </div>
           <div className="grid grid-cols-1 gap-x-5 gap-y-10 sm:grid-cols-2 lg:flex lg:flex-row lg:flex-wrap lg:justify-center">
