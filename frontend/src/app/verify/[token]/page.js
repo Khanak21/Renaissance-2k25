@@ -12,10 +12,11 @@ const VerifyEmail = ({ params }) => {
         const token = apiResult.data.accessToken;
         localStorage.setItem("token", token);
         toast.success(data.message);
+        window.location.href = "/";
       } else {
         toast.error(data.message);
+        window.location.href = "/";
       }
-      router.push("/");
     });
   }, []);
   return (
