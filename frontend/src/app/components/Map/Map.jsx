@@ -9,7 +9,7 @@ const MapLocation = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <div className="px-4 md:px-12 lg:px-20 py-10 w-full flex justify-center bg-[#EEF5DB]">
+        <div className="px-4 md:px-12 lg:px-20 py-10 w-full flex justify-center bg-custom-light">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14405.129734464535!2d81.85725744999999!3d25.49562555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399aca78818ddc51%3A0x6690dd2de3a1415b!2sMotilal%20Nehru%20National%20Institute%20of%20Technology%2C%20Allahabad!5e0!3m2!1sen!2sin!4v1706642825994!5m2!1sen!2sin"
             width="100%"

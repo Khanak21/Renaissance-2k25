@@ -34,6 +34,7 @@ class SponsorsCard extends React.Component {
             className="object-cover -rotate-12"
             height={150}
             width={150}
+            loading="lazy"
           />
         </div>
       </div>

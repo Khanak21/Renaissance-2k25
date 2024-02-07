@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   BsFillCheckCircleFill,
@@ -10,7 +11,7 @@ import { RiArrowDropUpLine } from "react-icons/ri";
 const Footer = () => {
   return (
     <>
-      <div className="w-full bg-[#1b1c1c] pt-8" id="contact">
+      <div className="w-full bg-custom-primary pt-8" id="contact">
         <div className="Header text-white text-lg lg:text-2xl flex flex-col justify-center align-middle items-center p-4 px-16 md:px-4">
           <p className="text-center">We Have Top Executives And Startup Here</p>
         </div>
@@ -49,48 +50,69 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer bg-[#2F3E46] ">
+        <div className="footer bg-custom-accent ">
           <div className="flex justify-center items-center">
             <div className="logo w-1/4"></div>
 
             <div className="Event w-3/4  ">
               <div className="bg-gradient-to-r from-white to-gray-900 mt-20 mb-8 p-0.5 shadow-2xl">
-                <div className="bg-[#181818] h-full flex flex-col lg:flex-row pt-10 pb-10 pr-4 pl-4">
+                <div className="bg-custom-primary h-full flex flex-col lg:flex-row pt-10 pb-10 pr-4 pl-4">
                   <div className="flex w-full">
                     <div className="h-80 flex flex-col justify-center text-left pl-10 lg:ml-40">
                       <p className="text-white text-base mt-4 mb-4">
                         EVENT <br></br>DETAILS
                       </p>
-                      <p className="text-[#52796F] mt-4 mb-4">
-                        January 5 to 9,2019
+                      <p className="text-custom-secondary mt-4 mb-4">
+                        Febraury 10-11,2021
                       </p>
                       <p className="text-white mt-4 mb-4">
-                        66 Road brolyln street BNG 272 new york
+                        PRAYAGRAJ, UTTAR PRADESH, INDIA – 211004
                       </p>
-                      <p className="text-white mt-4 mb-4">View Map Locations</p>
+                      <Link href="/#location">
+                        <p className="text-white mt-4 mb-4">
+                          View Map Locations
+                        </p>
+                      </Link>
                     </div>
                   </div>
 
                   <div className="flex  justify-center  w-full lg:mr-80 lg:mt-10 pl-10 ">
                     <div className="h-80 text-white flex flex-col justify-center text-left lg:ml-40">
                       <p>SOCIAL UPDATES</p>
-                      <p className="mt-12">
-                        You May Wonder : Why This Event Is So Popular
-                      </p>
 
                       <div className="icons justify-around flex h-40 items-center text-3xl  w-full">
-                        <div className="bg-[#CAD2C5]  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
-                          <BsFacebook className=" text-[#2F3E46] rounded-full shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-600" />
-                        </div>
-                        <div className="bg-[#CAD2C5]  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
-                          <BsTwitter className=" text-[#2F3E46] shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-400" />
-                        </div>
-                        <div className="bg-[#CAD2C5]  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
-                          <BsLinkedin className=" text-[#2F3E46] shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-800" />
-                        </div>
-                        <div className="bg-[#CAD2C5]  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
-                          <BsYoutube className=" text-[#2F3E46] hover:p-[2px] hover:text-red-900 cursor-pointer" />
-                        </div>
+                        <a
+                          href="https://www.facebook.com/mnnitecell"
+                          target="_blank"
+                        >
+                          <div className="bg-custom-secondary  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
+                            <BsFacebook className=" text-custom-primary rounded-full shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-600" />
+                          </div>
+                        </a>
+                        <a
+                          href="https://twitter.com/ECellMNNIT"
+                          target="_blank"
+                        >
+                          <div className="bg-custom-secondary  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
+                            <BsTwitter className=" text-custom-primary shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-400" />
+                          </div>
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/company/13249340"
+                          target="_blank"
+                        >
+                          <div className="bg-custom-secondary  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
+                            <BsLinkedin className=" text-custom-primary shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-800" />
+                          </div>
+                        </a>
+                        <a
+                          href="https://www.instagram.com/ecellmnnit/"
+                          target="_blank"
+                        >
+                          <div className="bg-custom-secondary w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
+                            <BsYoutube className=" text-custom-primary hover:p-[2px] hover:text-red-700 cursor-pointer" />
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>

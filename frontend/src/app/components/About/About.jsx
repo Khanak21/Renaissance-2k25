@@ -69,35 +69,35 @@ function About() {
     <div>
       {/* div for the main section */}
       <div className="relative h-screen ">
-        <div className="floating-div font-['Raleway'] absolute top-1/3 left-[25%] md:left-[35%] lg:left-[10%]  text-4xl sm:text-[4rem] font-extrabold text-left text-[white]">
+        <div className="floating-div  absolute top-1/3 left-[25%] md:left-[35%] lg:left-[10%]  text-4xl sm:text-[4rem] font-extrabold text-left text-[white]">
           <p>RENAISSANCE</p>
           <p className="mt-8">8.0</p>
         </div>
-        <div className="absolute bottom-[5rem] right-[2rem] md:right-[5rem] text-white font-['Raleway'] text-right text-xs">
-          <span className="text-xl sm:text-2xl md:text-4xl">11 FEB 2024</span>
+        <div className="absolute bottom-[5rem] right-[2rem] md:right-[5rem] text-white text-right text-xs">
+          <span className="text-xl sm:text-2xl md:text-4xl">10 FEB 2024</span>
           <br />
           <span className="">MNNIT Allahabad,Prayagraj</span>
           <br />
-          <button className="p-3 border-2 border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300">
+          <button className="p-3 border-2 border-white mt-6 shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:border-custom-accent hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300">
             BUY TICKET
           </button>
         </div>
       </div>
       {/* div for the about section */}
-      <div className="md:flex md:flex-row md:items-center md:h-[30rem] bg-[#27282A]">
+      <div className="md:flex md:flex-row md:items-center md:h-[30rem] bg-custom-primary">
         {/* div for seat confirmation and heading */}
         <div
           ref={myRef}
           className="left-right relative h-[18rem] md:w-1/3 md:h-[30rem]"
         >
-          <div className="flex flex-col items-center text-4xl font-['Raleway'] absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2 text-[#354F52] ">
-            <div className="text-white text-[1.5rem] pb-0 mb-0 pl-4">ABOUT</div>
+          <div className="font-bold text-custom-warm flex flex-col items-center text-lg lg:text-2xl absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2">
+            <div className="text-[1.5rem] pb-0 mb-0 pl-4">ABOUT</div>
 
-            <div className="text-white  text-[1.5rem] pl-3"> DESIGN</div>
+            <div className="text-[1.5rem] pl-3"> DESIGN</div>
 
-            <div className="text-white text-[1.5rem] pl-5">WEEK</div>
+            <div className="text-[1.5rem] pl-5">WEEK</div>
 
-            <button className="mt-[20px] text-left text-[12px] w-[10.3rem] text-white bg-[#354F52] p-2 hover:bg-[#2F3E46] md:w-[10.3rem]">
+            <button className="mt-[20px] text-left text-[12px] w-[10.3rem] bg-custom-secondary text-custom-dark p-2 hover:bg-[#e3f1bd] md:w-[10.3rem] transition-all duration-100">
               CONFIRM YOUR SEAT &rarr;
             </button>
           </div>
@@ -119,19 +119,19 @@ function About() {
             </div>
             <div className="text-[white] flex flex-row px-12 text-sm sm:text-xl md:text-2xl">
               <div className="pb-12 w-1/3 text-left text-[1rem] ">
-                <div className="text-[1.5rem] font-semibold text-[white]">
+                <div className="text-[1.5rem] font-semibold text-custom-warm">
                   <Counter last={8} />
                 </div>
                 Events
               </div>
               <div className="pb-12 w-1/3  text-left  text-[1rem]">
-                <div className="text-[1.5rem] font-semibold text-[white]">
+                <div className="text-[1.5rem] font-semibold text-custom-warm">
                   <Counter last={9} />
                 </div>
                 Speakers
               </div>
               <div className="pb-12 w-1/3  text-left  text-[1rem]">
-                <div className="text-[1.5rem] font-semibold text-[white]">
+                <div className="text-[1.5rem] font-semibold text-custom-warm">
                   <Counter last={25} />
                 </div>
                 Sponsors

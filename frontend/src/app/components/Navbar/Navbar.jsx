@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import logo from "./logo.png";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const navItems = ["home", "events", "speakers", "location", "team", "contact"];
 
@@ -42,7 +41,6 @@ const HamClose = (
 );
 
 function Navbar() {
-  const router = useRouter();
   const [toggle, setToggle] = useState(false);
   const [navScroll, setScroll] = useState(false);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -79,23 +77,30 @@ function Navbar() {
     >
       {/* logo  */}
       <div
-        className={`logo px-4 py-4 md:px-8 md:py-2 flex justify-center items-center w-1/3 h-1/3 ${!navScroll
-          ? "lg:w-1/3 lg:h-1/3"
-          : "md:w-1/3 md:h-1/3 lg:w-1/6 lg:h-1/6"
-          } xs:px-8 xs:py-8 transition duration-600`}
+        className={`logo px-4 py-4 md:px-8 md:py-2 flex justify-center items-center w-1/3 h-1/3 ${
+          !navScroll
+            ? "lg:w-1/3 lg:h-1/3"
+            : "md:w-1/3 md:h-1/3 lg:w-1/6 lg:h-1/6"
+        } xs:px-8 xs:py-8 transition duration-600`}
       >
         <Link href="/">
-          <img
+          <Image
             className="cursor-pointer"
-            src={logo.src}
+            src="/rene.png"
             alt="Renaissance Logo"
+            height={400}
+            width={400}
           />
         </Link>
       </div>
 
       {/* Navigation Menu  */}
       <div className="container hidden md:flex justify-end px-3 xl:px-12">
-        <ul className={`${navScroll?"text-[#EEF5DB]":"text-[#27282A]"} text-sm font-light flex flex-row justify-center items-center`}>
+        <ul
+          className={`${
+            navScroll ? "text-custom-secondary" : "text-custom-primary"
+          } text-sm font-light flex flex-row justify-center items-center`}
+        >
           {navItems.map((item) => (
             <Link
               key={`link-${item}`}
@@ -103,17 +108,23 @@ function Navbar() {
                 item === "team"
                   ? "/team"
                   : item === "speakers"
-                    ? "/allspeakers"
-                    : `/#${item}`
+                  ? "/allspeakers"
+                  : `/#${item}`
               }
-              className={`mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute ${navScroll?"before:bg-[#FFDE89]":"before:bg-[#27282A]"} before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full ${navScroll?"hover:text-[#FFDE89]":"hover:text-[#27282A]"}`}
+              className={`mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute ${
+                navScroll ? "before:bg-custom-warm" : "before:bg-custom-primary"
+              } before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full ${
+                navScroll
+                  ? "hover:text-custom-warm"
+                  : "hover:text-custom-primary"
+              }`}
             >
               <li className="cursor-pointer">{item.toUpperCase()}</li>
             </Link>
           ))}
           <Link
             href={isUserLoggedIn ? "/dashboard" : "/auth/register"}
-            className="mx-4 px-6 py-4 bg-[#EEF5DB] text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300"
+            className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300"
           >
             <li className="cursor-pointer" key={`link-confirmYourSeat`}>
               {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
@@ -122,7 +133,7 @@ function Navbar() {
           {isUserLoggedIn && (
             <button
               onClick={handleLogoutClick}
-              className="mx-4 px-6 py-4 bg-[#EEF5DB] text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+              className="mx-4 px-6 py-4 bg-[#EEF5DB] text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300"
             >
               <li className="cursor-pointer" key={`logout`}>
                 LOGOUT
@@ -140,7 +151,7 @@ function Navbar() {
         {toggle && (
           <div>
             <motion.div
-              className="fixed top-0 left-0 right-0 z-50 flex flex-col items-end justify-end w-screen h-screen p-1 pb-4 shadow-lg md:hidden bg-custom-dark"
+              className="fixed top-0 left-0 right-0 z-50 flex flex-col items-end justify-end w-screen h-screen p-1 pb-4 shadow-lg md:hidden bg-custom-primary"
               animate={{ y: [-500, 0] }}
               exit={{ y: [0, -500] }}
               transition={{
@@ -156,10 +167,12 @@ function Navbar() {
 
               {/* logo */}
               <div className="flex items-center justify-center w-full p-1 my-5 logo">
-                <img
-                  className="w-[70%]"
-                  src={logo.src}
+                <Image
+                  className="cursor-pointer"
+                  src="/rene.png"
                   alt="Renaissance Logo"
+                  height={400}
+                  width={400}
                 />
               </div>
 
@@ -176,8 +189,8 @@ function Navbar() {
                         item === "team"
                           ? "/team"
                           : item === "speakers"
-                            ? "/allspeakers"
-                            : `/#${item}`
+                          ? "/allspeakers"
+                          : `/#${item}`
                       }
                       onClick={() => setToggle(false)}
                       className="text-base font-light xs:text-base text-custom-light"
@@ -191,14 +204,14 @@ function Navbar() {
                   onClick={() => setToggle(false)}
                   className=""
                 >
-                  <li className="p-4 my-4 text-base font-bold shadow-sm cursor-pointer bg-custom-secondary xs:text-xl text-custom-accent">
+                  <li className="p-4 my-4 text-base font-bold shadow-sm cursor-pointer bg-custom-secondary xs:text-xl text-custom-dark">
                     {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
                   </li>
                 </Link>
                 {isUserLoggedIn && (
                   <button
                     onClick={handleLogoutClick}
-                    className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+                    className="p-4 my-4 text-base font-bold shadow-sm cursor-pointer bg-custom-secondary xs:text-xl text-custom-dark"
                   >
                     <li className="cursor-pointer" key={`logout`}>
                       LOGOUT

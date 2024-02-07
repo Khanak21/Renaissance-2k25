@@ -40,7 +40,7 @@ const FAQ = () => {
   }, [controls, inView]);
 
   return (
-    <div className="mx-auto pt-10 bg-[#EEF5DB]">
+    <div className="mx-auto pt-10 bg-custom-light">
       <h2 className="px-8 mb-4 text-lg font-bold text-center lg:text-2xl">
         FREQUENTLY ASKED QUESTIONS
       </h2>
@@ -60,8 +60,7 @@ const FAQ = () => {
                 className="max-h-full p-4 overflow-hidden transition-all duration-300 ease-in-out bg-gray-100 rounded-lg shadow-md"
               >
                 <h3
-                  className={`text-base font-semibold cursor-pointer ${selectedQuestion === index ? "text-blue-500" : "text-black"
-                    }`}
+                  className={`text-base font-semibold cursor-pointer text-custom-black `}
                   onClick={() => handleToggle(index)}
                 >
                   <div className="flex justify-between">

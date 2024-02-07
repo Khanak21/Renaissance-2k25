@@ -1,18 +1,18 @@
 const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
 const unsplashPhotos = [
-  { url: "/images/Gallery/gallery1.jpeg", width: 1080, height: 800 },
-  { url: "/images/Gallery/gallery2.jpeg", width: 1080, height: 1620 },
-  { url: "/images/Gallery/gallery3.jpeg", width: 1080, height: 720 },
-  { url: "/images/Gallery/gallery4.jpeg", width: 1080, height: 721 },
-  { url: "/images/Gallery/gallery5.jpeg", width: 1080, height: 1620 },
-  { url: "/images/Gallery/gallery6.jpeg", width: 1080, height: 607 },
-  { url: "/images/Gallery/gallery1.jpeg", width: 1080, height: 608 },
-  { url: "/images/Gallery/gallery2.jpeg", width: 1080, height: 720 },
-  { url: "/images/Gallery/gallery3.jpeg", width: 1080, height: 1549 },
-  { url: "/images/Gallery/gallery4.jpeg", width: 1080, height: 720 },
-  { url: "/images/Gallery/gallery5.jpeg", width: 1080, height: 694 },
-  { url: "/images/Gallery/gallery6.jpeg", width: 1080, height: 1620 },
+  { url: "/images/Gallery/gallery1.jpeg", width: 1280, height: 781 },
+  { url: "/images/Gallery/gallery2.jpeg", width: 1110, height: 858 },
+  { url: "/images/Gallery/gallery3.jpeg", width: 996, height: 862 },
+  { url: "/images/Gallery/gallery4.jpeg", width: 919, height: 869 },
+  { url: "/images/Gallery/gallery5.jpeg", width: 1096, height: 860 },
+  { url: "/images/Gallery/gallery6.jpeg", width: 1280, height: 723 },
+  { url: "/images/Gallery/gallery1.jpeg", width: 1280, height: 781 },
+  { url: "/images/Gallery/gallery2.jpeg", width: 1110, height: 858 },
+  { url: "/images/Gallery/gallery3.jpeg", width: 996, height: 862 },
+  { url: "/images/Gallery/gallery4.jpeg", width: 919, height: 869 },
+  { url: "/images/Gallery/gallery5.jpeg", width: 1096, height: 860 },
+  { url: "/images/Gallery/gallery6.jpeg", width: 1280, height: 723 },
 ];
 
 const photos = unsplashPhotos.map((photo) => ({
