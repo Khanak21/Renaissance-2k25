@@ -18,7 +18,7 @@ const Events = () => {
   return (
     <>
       <div id="events" className="w-full">
-        <div className="px-10 py-10 mx-auto bg-black sm:p-8 md:p-12">
+        <div className="px-10 py-10 mx-auto bg-[#DB5461] sm:p-8 md:p-12">
           <div className="flex items-center justify-center pb-12 text-lg font-extrabold sm:pb-14 sm:text-xl lg:pb-16 lg:text-2xl text-[#ffde89]">
             OUR EVENTS
           </div>

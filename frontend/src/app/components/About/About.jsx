@@ -84,7 +84,7 @@ function About() {
         </div>
       </div>
       {/* div for the about section */}
-      <div className="md:flex md:flex-row md:items-center md:h-[30rem] bg-gray-800">
+      <div className="md:flex md:flex-row md:items-center md:h-[30rem] bg-[#27282A]">
         {/* div for seat confirmation and heading */}
         <div
           ref={myRef}

@@ -14,7 +14,7 @@ const EventCard = ({ title, description, route, svg, id }) => {
         className="absolute object-cover w-36 h-36 top-12 opacity-70 group-hover:opacity-90"
       />
 
-      <div className="absolute text-[#EFF5DB] bottom-12 text-6xl opacity-30">
+      <div className="absolute text-[#EFF5DB] bottom-12 text-6xl opacity-40">
         0{id + 1}
       </div>
 

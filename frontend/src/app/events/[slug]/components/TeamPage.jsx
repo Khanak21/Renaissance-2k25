@@ -67,9 +67,9 @@ const TeamPage = ({ eventid }) => {
     <>
       <div
         id="Heading"
-        className="bg-custom-dark pt-[150px] text-center py-[50px] sm:flex sm:flex-col lg:flex lg:flex-row justify-center items-center"
+        className="bg-[#DB5461] pt-[150px] text-center py-[50px] sm:flex sm:flex-col lg:flex lg:flex-row justify-center items-center"
       >
-        <div className="xlsm:h-[400px] xs:h-[370px] sm:h-[350px] lg:h-[260px] mb-[285px] z-10 w-full text-center xlsm:text-7xl xs:text-7xl sm:text-7xl lg:text-9xl font-bold text-custom-secondary tracking-wide absolute">
+        <div className="xlsm:h-[400px] xs:h-[370px] sm:h-[350px] lg:h-[260px] mb-[285px] z-10 w-full text-center xlsm:text-7xl xs:text-7xl sm:text-7xl lg:text-9xl font-bold text-[#EEF5DB] tracking-wide absolute">
           {eventDetails?.eventName}
         </div>
         <div>
@@ -126,15 +126,15 @@ const TeamPage = ({ eventid }) => {
       <div className="">
         <div
           id="Format"
-          className="bg-custom-dark lg:flex lg:flex-row sm:flex sm:flex-col justify-center items-center pt-10 lg:pb-10 xlsm:pb-20 xs:pb-20 sm:pb-0"
+          className="bg-[#eef5db] lg:flex lg:flex-row sm:flex sm:flex-col justify-center items-center pt-10 lg:pb-10 xlsm:pb-20 xs:pb-20 sm:pb-0"
         >
           <div
             id="FormatHead"
-            className="lg:hidden w-1/2 lg:pl-40 xl:pl-60 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-8 flex justify-center items-center text-4xl font-semibold tracking-wide text-gray-300"
+            className="lg:hidden w-1/2 lg:pl-40 xl:pl-60 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-8 flex justify-center items-center text-4xl font-semibold tracking-wide text-black"
           >
             FORMAT
           </div>
-          <div className="w-1/2 lg:pl-40 xl:pl-70 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-10 flex flex-col justify-center items-center text-gray-300">
+          <div className="backdrop-blur-sm bg-white/30 w-1/2 lg:pl-40 xl:pl-70 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-10 flex flex-col justify-center items-center text-black">
             <ul className="text-base">
               {eventDetails &&
                 eventDetails.format.map((item, index) => {
@@ -148,7 +148,7 @@ const TeamPage = ({ eventid }) => {
           </div>
           <div
             id="FormatHeadDown"
-            className="w-1/2 lg:pr-40 xl:pr-60 lg:pl-10 xl:pl-10 lg:py-10 sm:pb-8 flex justify-center items-center text-4xl font-semibold tracking-wide text-gray-300"
+            className="w-1/2 lg:pr-40 xl:pr-60 lg:pl-10 xl:pl-10 lg:py-10 sm:pb-8 flex justify-center items-center text-4xl font-semibold tracking-wide text-black"
           >
             FORMAT
           </div>

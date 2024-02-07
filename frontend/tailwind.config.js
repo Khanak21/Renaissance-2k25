@@ -25,35 +25,37 @@ module.exports = {
         twitter: "#1DA1F2",
         facebook: "#4267B2",
         instagram: "#e95950",
-        back: "#2F3E46",
-        lgreen: "#84A98C",
-        bubble: "#27282A",
-        bubble1: "#EEF5DB",
         custom: {
-          accent: withOpacity("--color-accent"),
+          primary: withOpacity("--color-primary"),
           secondary: withOpacity("--color-secondary"),
-          dark: withOpacity("--color-dark"),
-          light: withOpacity("--color-light"),
-          nav: "#CAD2C5",
+          accent: withOpacity("--color-accent"),
+          warm: withOpacity("--color-warm"),
+          dark: "#000000",
+          light: "#ffffff",
         },
       }, //usage: text-custom-accent
       backgroundColor: {
         custom: {
-          accent: withOpacity("--bg-accent"),
-          dark: withOpacity("--bg-dark"),
-          light: withOpacity("--bg-light"),
+          primary: withOpacity("--bg-primary"),
           secondary: withOpacity("--bg-secondary"),
+          accent: withOpacity("--bg-accent"),
+          warm: withOpacity("--bg-warm"),
+          dark: "#000000",
+          light: "#ffffff",
         },
       }, //usage: bg-custom-dark
       borderColor: {
         custom: {
-          accent: withOpacity("--border-accent"),
           primary: withOpacity("--border-primary"),
           secondary: withOpacity("--border-secondary"),
+          accent: withOpacity("--border-accent"),
+          warm: withOpacity("--border-warm"),
+          dark: "#000000",
+          light: "#ffffff",
         },
       }, //usage: border-custom-primary
       backgroundImage: {
-        'testimonial': "url('/EventPage/bggg-01.svg')",
+        testimonial: "url('/EventPage/bggg-01.svg')",
       },
 
       keyframes: {

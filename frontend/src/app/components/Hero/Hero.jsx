@@ -27,7 +27,7 @@ export const Hero = () => {
       /> */}
 
       {/*using a div to blend bottom border of about and hero section */}
-      <div className="content-overlay absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-gray-800"></div>
+      <div className="content-overlay absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[#27282A]"></div>
       {/* <Navbar />
       <About /> */}
     </div>

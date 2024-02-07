@@ -7,19 +7,21 @@
   /* default theme */
   :root {
     /* --var-name: rgb value */
-    --color-accent: 53, 79, 82;
-    --color-secondary: 132, 169, 140;
-    --color-dark: 47, 62, 70;
-    --color-light: 253, 252, 255;
+    --color-primary: 39, 40, 42;
+    --color-secondary: 238, 245, 219;
+    --color-accent: 219, 84, 97;
+    --color-warm: 255, 222, 137;
 
-    --bg-accent: 132, 169, 140;
-    --bg-dark: 53, 79, 82;
-    --bg-light: 253, 252, 255;
-    --bg-secondary: 202, 210, 197;
 
-    --border-accent: 253, 252, 255;
-    --border-primary: 253, 252, 255;
-    --border-secondary: 253, 252, 255;
+    --bg-primary: 39, 40, 42;
+    --bg-secondary: 238, 245, 219;
+    --bg-accent: 219, 84, 97;
+    --bg-warm: 255, 222, 137;
+
+    --border-primary: 39, 40, 42;
+    --border-secondary: 238, 245, 219;
+    --border-accent: 219, 84, 97;
+    --border-warm: 255, 222, 137;
   }
 
   /* .dark-gradient {

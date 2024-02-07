@@ -38,30 +38,46 @@ const Dashboard = () => {
   };
   return (
     <>
-      <div className="flex flex-col-reverse px-[40px] md:flex-row-reverse">
+      <div className="flex flex-col-reverse px-[40px] md:flex-row-reverse bg-[#27282A] min-h-screen">
         <div className="mt-[40px] md:p-4 flex-1 md:flex-[0.65] xl:flex-[0.75]">
-          <div className="w-full bg-gray-200 p-2 rounded-md shadow-md">
+          <div className="w-full bg-[#EEF5DB] p-2 rounded-md shadow-md">
             <div className="text-base w-full px-6 py-2 flex flex-col justify-center items-center">
               <p className="font-bold text-base lg:text-lg">
                 RENESSANCE EVENTS
               </p>
             </div>
-            <div className="items-center justify-center  py-[30px] px-[30px] flex flex-wrap gap-[50px]">
-              {eventsData.map((item, index) => {
-                return (
-                  <Card
-                    key={index}
-                    cardClickHandler={cardClickHandler}
-                    eventName={item.eventName}
-                    svg={item.svg}
-                    eventId={item._id}
-                    isUserRegistered={userData?.eventsParticipated.includes(
-                      item._id
-                    )}
-                  />
-                );
-              })}
-            </div>
+            <div>
+  <table class="w-full border-collapse border border-slate-400">
+    <thead>
+      <tr>
+        <th class="border border-slate-300">S.No.</th>
+        <th class="border border-slate-300">Event Name</th>
+        <th class="border border-slate-300">Google form</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-300 pl-2">1</td>
+        {/* <!-- Add the eventPage link as well (so, on clicking on the `Event Name`, the user is redirected to the EventPage) --> */}
+        <td class="border border-slate-300 pl-2"> B-Plan</td>
+        <td class="border border-slate-300 pl-2"> <a href="https://www.google.com">Link</a></td>
+      </tr>
+      <tr>
+        <td class="border border-slate-300 pl-2">2</td>
+        <td class="border border-slate-300 pl-2">Mock IPL Auction</td>
+        <td class="border border-slate-300 pl-2"> <a href="https://www.google.com">Link</a></td>
+      </tr>
+      <tr>
+        <td class="border border-slate-300 pl-2">3</td>
+        <td class="border border-slate-300 pl-2">Blink and Meet</td>
+        <td class="border border-slate-300 pl-2"> <a href="https://www.google.com">Link</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="font-bold">Note:</div>
+  <div class="">Please complete your application by applying through the Google Form. Otherwise, you won't be able to participate in the event.</div>
+</div>
+
           </div>
         </div>
         <div className="w-full mt-[50px] md:mt-[0px] md:flex-[0.35] xl:flex-[0.25] md:pt-[59px]">

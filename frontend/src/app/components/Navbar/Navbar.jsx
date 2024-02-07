@@ -74,7 +74,7 @@ function Navbar() {
     // navbar component
     <nav
       className={`w-full text-white  flex flex-row justify-between z-[1000] fixed transition duration-600 ${
-        navScroll ? "shadow-xl bg-bubble" : ""
+        navScroll ? "shadow-xl bg-custom-primary" : ""
       }`}
     >
       {/* logo  */}
@@ -96,7 +96,7 @@ function Navbar() {
 
       {/* Navigation Menu  */}
       <div className="container hidden md:flex justify-end px-3 xl:px-12">
-        <ul className="text-custom-nav text-sm font-light flex flex-row justify-center items-center">
+        <ul className={`${navScroll?"text-[#EEF5DB]":"text-[#27282A]"} text-sm font-light flex flex-row justify-center items-center`}>
           {navItems.map((item) => (
             <Link
               key={`link-${item}`}
@@ -107,14 +107,14 @@ function Navbar() {
                   ? "/allspeakers"
                   : `/#${item}`
               }
-              className="mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute before:bg-custom-accent before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full hover:text-custom-secondary"
+              className={`mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute ${navScroll?"before:bg-[#FFDE89]":"before:bg-[#27282A]"} before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full ${navScroll?"hover:text-[#FFDE89]":"hover:text-[#27282A]"}`}
             >
               <li className="cursor-pointer">{item.toUpperCase()}</li>
             </Link>
           ))}
           <Link
             href={isUserLoggedIn ? "/dashboard" : "/auth/register"}
-            className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+            className="mx-4 px-6 py-4 bg-[#EEF5DB] text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300"
           >
             <li className="cursor-pointer" key={`link-confirmYourSeat`}>
               {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}

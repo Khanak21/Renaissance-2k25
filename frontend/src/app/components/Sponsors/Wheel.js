@@ -74,7 +74,7 @@ const Styles = {
     height: "3600px",
     width: "3600px",
     borderRadius: "50%",
-    backgroundColor: "#2F3E46",
+    backgroundColor: "#DB5461",
     overflowLeft: "hidden",
   },
   heading: {
