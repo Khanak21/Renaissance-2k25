@@ -83,6 +83,7 @@ const Testimonials = () => {
                         height={500}
                         width={500}
                         className="object-cover w-40 h-40 rounded-xl lg:w-60 lg:h-60"
+                        loading="lazy"
                       />
                     </div>
                     <div className="text-base font-bold text-center sm:text-lg lg:mt-8 ">

@@ -27,7 +27,7 @@ const ButtonBackToTop = () => {
       <>
         <div className="TopButton flex w-full  lg:items-end justify-end pr-8 pb-5 fixed bottom-2 right-2">
           <button
-            className="bg-[#ffffff] h-[47px] w-[47px] flex items-center justify-center shadow-2xl"
+            className="bg-custom-secondary h-[47px] w-[47px] flex items-center justify-center shadow-2xl"
             onClick={ScrollToTop}
           >
             <RiArrowDropUpLine className="text-[30px]" />

@@ -15,7 +15,7 @@ export default function Sponsors(props) {
   };
   return (
     <div style={style2} className="prevent-select sponsorsbox">
-      <div className="h-screen bg-[#27282A]" style={styleSponsorsMargin}>
+      <div className="h-screen bg-custom-primary" style={styleSponsorsMargin}>
         <Wheel Images={props.ImageList} />
       </div>
     </div>

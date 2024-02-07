@@ -47,37 +47,47 @@ const Dashboard = () => {
               </p>
             </div>
             <div>
-  <table class="w-full border-collapse border border-slate-400">
-    <thead>
-      <tr>
-        <th class="border border-slate-300">S.No.</th>
-        <th class="border border-slate-300">Event Name</th>
-        <th class="border border-slate-300">Google form</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="border border-slate-300 pl-2">1</td>
-        {/* <!-- Add the eventPage link as well (so, on clicking on the `Event Name`, the user is redirected to the EventPage) --> */}
-        <td class="border border-slate-300 pl-2"> B-Plan</td>
-        <td class="border border-slate-300 pl-2"> <a href="https://www.google.com">Link</a></td>
-      </tr>
-      <tr>
-        <td class="border border-slate-300 pl-2">2</td>
-        <td class="border border-slate-300 pl-2">Mock IPL Auction</td>
-        <td class="border border-slate-300 pl-2"> <a href="https://www.google.com">Link</a></td>
-      </tr>
-      <tr>
-        <td class="border border-slate-300 pl-2">3</td>
-        <td class="border border-slate-300 pl-2">Blink and Meet</td>
-        <td class="border border-slate-300 pl-2"> <a href="https://www.google.com">Link</a></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="font-bold">Note:</div>
-  <div class="">Please complete your application by applying through the Google Form. Otherwise, you won't be able to participate in the event.</div>
-</div>
-
+              <table class="w-full border-collapse border border-slate-400">
+                <thead>
+                  <tr>
+                    <th class="border border-slate-300">S.No.</th>
+                    <th class="border border-slate-300">Event Name</th>
+                    <th class="border border-slate-300">Google form</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border border-slate-300 pl-2">1</td>
+                    {/* <!-- Add the eventPage link as well (so, on clicking on the `Event Name`, the user is redirected to the EventPage) --> */}
+                    <td class="border border-slate-300 pl-2"> B-Plan</td>
+                    <td class="border border-slate-300 pl-2">
+                      <a href="https://www.google.com">Link</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-slate-300 pl-2">2</td>
+                    <td class="border border-slate-300 pl-2">
+                      Mock IPL Auction
+                    </td>
+                    <td class="border border-slate-300 pl-2">
+                      <a href="https://www.google.com">Link</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-slate-300 pl-2">3</td>
+                    <td class="border border-slate-300 pl-2">Blink and Meet</td>
+                    <td class="border border-slate-300 pl-2">
+                      <a href="https://www.google.com">Link</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="font-bold">Note:</div>
+              <div class="">
+                Please complete your application by applying through the Google
+                Form. Otherwise, you wont be able to participate in the event.
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-full mt-[50px] md:mt-[0px] md:flex-[0.35] xl:flex-[0.25] md:pt-[59px]">
@@ -98,7 +108,7 @@ const Dashboard = () => {
                 {userData?.email}
               </p>
               <p>
-                <span className="font-bold">Phone No. : </span>{" "}
+                <span className="font-bold">Phone No. : </span>
                 {userData?.phone}
               </p>
               <p>

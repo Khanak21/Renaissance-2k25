@@ -3,6 +3,7 @@ import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import speakersData from "./data"; // Importing speaker data from data.js
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // Card component for rendering each speaker
 export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
@@ -15,6 +16,7 @@ export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
           alt="renaissance mnnit speakers"
           width={400}
           height={400}
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col items-center justify-between flex-grow p-4 my-auto">
@@ -107,45 +109,57 @@ export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
 
 const Speakers = () => {
   return (
-    <div className="pt-12 bg-[#27282A] ">
+    <div className="pt-12 bg-custom-primary ">
       {/* Title */}
-      <div className="flex justify-center md:justify-between items-center px-[3rem] md:px-[3rem] lg:px-[7.4rem]">
-        <h2 className="text-lg font-bold text-center text-white lg:text-2xl">
-          SPEAKERS
-        </h2>
-        <div className="justify-center hidden md:flex lg:block">
-          <Link href="/allspeakers">
-            <button className="p-3 uppercase border-[1px] bg-[#27282A] border-white shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300 text-base text-white">
-              View All Speakers
-            </button>
-            {/* Arrow icon with jiggling animation */}
-          </Link>
+      <motion.div
+        whileInView={{ y: [150, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <div className="flex justify-center md:justify-between items-center px-[3rem] md:px-[3rem] lg:px-[7.4rem]">
+          <h2 className="text-lg font-bold text-center text-white lg:text-2xl">
+            SPEAKERS
+          </h2>
+          <div className="justify-center hidden md:flex lg:block">
+            <Link href="/allspeakers">
+              <button className="p-3 uppercase border-[1px] bg-custom-primary border-white shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:border-custom-accent hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300 text-base text-white">
+                View All Speakers
+              </button>
+              {/* Arrow icon with jiggling animation */}
+            </Link>
+          </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Speaker cards */}
-      <div className="flex justify-center w-full pt-4">
-        <div className="grid grid-cols-1 gap-10 px-8 sm:grid-cols-2 sm:px-12 lg:flex lg:justify-around lg:gap-5 lg:px-20">
-          {/* Mapping over the first three elements of the speakersData array */}
-          {speakersData.slice(0, 4).map((speaker) => (
-            <Card
-              key={speaker.id} // Unique key for React list
-              img={speaker.img} // Speaker's image source
-              name={speaker.name} // Speaker's name
-              post={speaker.post} // Speaker's position/title
-              linkedIn={speaker.linkedIn} // Speaker's LinkedIn profile URL
-              twitter={speaker.twitter} // Speaker's Twitter profile URL
-              facebook={speaker.facebook} // Speaker's Facebook profile URL
-            />
-          ))}
+      <motion.div
+        whileInView={{ y: [150, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <div className="flex justify-center w-full pt-4">
+          <div className="grid grid-cols-1 gap-10 px-8 sm:grid-cols-2 sm:px-12 lg:flex lg:justify-around lg:gap-5 lg:px-20">
+            {/* Mapping over the first three elements of the speakersData array */}
+            {speakersData.slice(0, 4).map((speaker) => (
+              <Card
+                key={speaker.id} // Unique key for React list
+                img={speaker.img} // Speaker's image source
+                name={speaker.name} // Speaker's name
+                post={speaker.post} // Speaker's position/title
+                linkedIn={speaker.linkedIn} // Speaker's LinkedIn profile URL
+                twitter={speaker.twitter} // Speaker's Twitter profile URL
+                facebook={speaker.facebook} // Speaker's Facebook profile URL
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* View More Button */}
       <div className="flex justify-center mt-5 md:hidden lg:hidden">
         <Link
           href="/allspeakers"
-          className="p-3 border-[1px] bg-[#27282A] border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+          className="p-3 border-[1px] bg-custom-primary border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
         >
           <button className="mr-2 text-base text-white">
             View All Speakers
