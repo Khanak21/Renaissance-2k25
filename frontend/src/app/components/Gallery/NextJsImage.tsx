@@ -17,6 +17,7 @@ export default function NextJsImage({
         placeholder="blur"
         loading="lazy"
         blurDataURL={dataUrl}
+        style={{ objectFit: "cover", objectPosition: "left top" }}
         {...{ alt, title, sizes, className, onClick }}
       />
     </div>

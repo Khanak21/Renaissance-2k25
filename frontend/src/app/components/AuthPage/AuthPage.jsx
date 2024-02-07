@@ -21,7 +21,7 @@ const AuthPage = () => {
         <StickyNavbar />
       </div>
 
-      <div className="h-[80em] bg-[#1D174F]">
+      <div className="h-screen bg-custom-accent">
         {page === 1 && (
           <Register data={data} setData={setData} setPage={setPage} />
         )}

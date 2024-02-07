@@ -60,14 +60,14 @@ function StickyNavbar() {
     // Rest of your component code remains unchanged
     // navbar component
     <nav
-      className={`w-full text-white  flex flex-row justify-between z-[1000] transition duration-600 ${navScroll ? "shadow-xl bg-bubble" : ""
+      className={`w-full text-custom-light flex flex-row justify-between z-[1000] transition duration-600 ${navScroll ? "shadow-xl bg-custom-primary" : "bg-custom-primary"
         }`}
     >
       {/* logo  */}
       <div
         className={`logo px-4 py-4 md:px-8 md:py-2 flex justify-center items-center w-1/3 h-1/3 ${!navScroll
-            ? "lg:w-1/3 lg:h-1/3"
-            : "md:w-1/3 md:h-1/3 lg:w-1/6 lg:h-1/6"
+          ? "lg:w-1/3 lg:h-1/3"
+          : "md:w-1/3 md:h-1/3 lg:w-1/6 lg:h-1/6"
           } xs:px-8 xs:py-8 transition duration-600`}
       >
         <Link href="/">
@@ -81,7 +81,7 @@ function StickyNavbar() {
 
       {/* Navigation Menu  */}
       <div className="container justify-end hidden px-3 md:flex xl:px-12">
-        <ul className="flex flex-row items-center justify-center text-sm font-light text-custom-nav">
+        <ul className="flex flex-row items-center justify-center text-sm font-light text-custom-secondary">
           {navItems.map((item) => (
             <Link
               key={`link-${item}`}
@@ -92,14 +92,14 @@ function StickyNavbar() {
                     ? "/allspeakers"
                     : `/#${item}`
               }
-              className="mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute before:bg-custom-accent before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full hover:text-custom-secondary"
+              className="mx-2 px-1 lg:mx-4 lg:px-2 relative  before:content-[''] before:absolute before:bg-custom-warm before:h-[3px] before:w-0 before:left-0 before:bottom-[-8px] before:transition-[0.3s] before:duration-300 hover:before:w-full hover:text-custom-secondary"
             >
               <li className="cursor-pointer">{item.toUpperCase()}</li>
             </Link>
           ))}
           <Link
             href={isUserLoggedIn ? "/dashboard" : "/auth/register"}
-            className="mx-4 px-6 py-4 bg-[#EEF5DB] text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+            className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:text-custom-light hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300"
           >
             <li className="cursor-pointer" key={`link-confirmYourSeat`}>
               {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
@@ -108,7 +108,7 @@ function StickyNavbar() {
           {isUserLoggedIn && (
             <button
               onClick={handleLogoutClick}
-              className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+              className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:text-custom-light hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300"
             >
               <li className="cursor-pointer" key={`logout`}>
                 LOGOUT
@@ -176,14 +176,14 @@ function StickyNavbar() {
                   className=""
                   onClick={() => setToggle(false)}
                 >
-                  <li className="p-4 my-4 text-base font-bold shadow-sm cursor-pointer bg-custom-secondary text-custom-accent">
+                  <li className="p-4 my-4 text-base font-bold shadow-sm cursor-pointer bg-custom-secondary text-custom-dark">
                     {isUserLoggedIn ? "DASHBOARD" : "CONFIRM YOUR SEAT"}
                   </li>
                 </Link>
                 {isUserLoggedIn && (
                   <button
                     onClick={handleLogoutClick}
-                    className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:text-white hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+                    className="mx-4 px-6 py-4 bg-custom-secondary text-custom-dark text-sm font-semibold shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:text-custom-light hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300"
                   >
                     <li className="cursor-pointer" key={`logout`}>
                       LOGOUT

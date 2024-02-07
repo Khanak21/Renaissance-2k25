@@ -94,7 +94,7 @@ const Register = ({ data, setData, setPage }) => {
       });
       if (apiResult.success === true) {
         toast((t) => (
-          <span className="flex w-full h-full justify-between items-center">
+          <span className="flex items-center justify-between w-full h-full">
             {apiResult.message}
             <button onClick={() => toast.dismiss(t.id)} className="ml-2">
               <AiOutlineCloseCircle />
@@ -110,21 +110,21 @@ const Register = ({ data, setData, setPage }) => {
 
   return (
     <>
-      <div className="bg-[#DB5461] w-full">
+      <div className="w-full bg-custom-secondary">
         <div className=""></div>
 
-        <div className="bg-[#DB5461] w-screen h-screen flex justify-center p-[20px] ">
-          <div className=" w-screen  z-20 h-[50em] sm:w-[500px] sm:h-[50em] bg-bubble flex flex-col rounded p-[25px] sm:p-[50px]">
-            <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
+        <div className="flex justify-center p-5 md:py-10 md:px-20">
+          <div className="z-20 flex flex-col pb-5 md:pb-10 md:px-20 rounded-2xl bg-custom-primary">
+            <div className="flex flex-col items-center justify-center w-full mb-2 md:mb-4 logo">
               <Image
                 className=""
-                width={700} // Set the width of the image
+                width={500} // Set the width of the image
                 height={250} // Set the height of the image
                 src={img}
                 priority={true}
                 alt="renLogo"
               ></Image>
-              <h1 className="tracking-[1.2px] text-gray-500 font-medium mt-[10px] text-lg">
+              <h1 className="mt-4 text-lg font-medium md:text-2xl text-custom-secondary">
                 Create Account💎
               </h1>
             </div>
@@ -134,192 +134,195 @@ const Register = ({ data, setData, setPage }) => {
                 <span style={{ color: "red" }}>{errors.username}</span>
               )}
             </div>
-
-            <div className="">
-              <div className="mb-[24px] flex">
-                <div className="mr-[10px] flex justify-center items-center">
-                  <FaUserCircle size="21px" color="#2F3E46" />
+            <div className="flex justify-center">
+              <div className="w-[80%]">
+                <div className="flex mt-4 mb-2">
+                  <div className="flex items-center justify-center mr-3">
+                    <FaUserCircle size="24px" color="#EEF5DB" />
+                  </div>
+                  <input
+                    onChange={handleFormChange}
+                    className="rounded outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
+                    placeholder="Username"
+                    name="username"
+                    value={data.username}
+                    required
+                  ></input>
                 </div>
-                <input
-                  onChange={handleFormChange}
-                  className="rounded outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
-                  placeholder="Username"
-                  name="username"
-                  value={data.username}
-                  required
-                ></input>
-              </div>
-              <div className="flex justify-center gap-10">
-                <div className="inline-flex items-center">
-                  <label
-                    className="relative flex items-center p-3 rounded-full cursor-pointer"
-                    htmlFor="stude"
-                  >
-                    <input
-                      onChange={handleFormChange}
-                      name="student_from"
-                      id="mnnit"
-                      value="mnnit"
-                      type="radio"
-                      className="before:content[''] peer relative h-5 w-5 cursor-pointer border-gray-900 appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
-                    />
-                    <span className="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-3.5 w-3.5"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
-                      >
-                        <circle data-name="ellipse" cx={8} cy={8} r={8} />
-                      </svg>
-                    </span>
-                  </label>
-                  <label
-                    className="mt-px font-semibold text-gray-700 cursor-pointer select-none"
-                    htmlFor="mnnit"
-                  >
-                    MNNIT Student
-                  </label>
+                <div className="flex justify-center gap-10 mb-2">
+                  <div className="inline-flex items-center">
+                    <label
+                      className="relative flex items-center p-3 rounded-full cursor-pointer"
+                      htmlFor="stude"
+                    >
+                      <input
+                        onChange={handleFormChange}
+                        name="student_from"
+                        id="mnnit"
+                        value="mnnit"
+                        type="radio"
+                        className="before:content[''] peer relative h-5 w-5 cursor-pointer border-custom-secondary appearance-none rounded-full border border-custom-secondary text-custom-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-custom-secondary checked:before:bg-custom-secondary hover:before:opacity-10"
+                      />
+                      <span className="absolute transition-opacity opacity-0 pointer-events-none text-custom-secondary top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-3.5 w-3.5"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                        >
+                          <circle data-name="ellipse" cx={8} cy={8} r={8} />
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      className="mt-px text-base font-semibold cursor-pointer select-none text-custom-secondary"
+                      htmlFor="mnnit"
+                    >
+                      MNNIT Student
+                    </label>
+                  </div>
+                  <div className="inline-flex items-center">
+                    <label
+                      className="relative flex items-center p-3 rounded-full cursor-pointer"
+                      htmlFor="react"
+                    >
+                      <input
+                        onChange={handleFormChange}
+                        name="student_from"
+                        type="radio"
+                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-custom-secondary text-custom-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-800 before:opacity-0 before:transition-opacity border-custom-secondary checked:border-custom-secondary checked:before:bg-custom-secondary hover:before:opacity-10"
+                        value="other"
+                        id="other"
+                        defaultChecked=""
+                      />
+                      <span className="absolute transition-opacity opacity-0 pointer-events-none text-custom-secondary top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                        <svg
+                          className="h-3.5 w-3.5"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                        >
+                          <circle data-name="ellipse" cx={8} cy={8} r={8} />
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      className="mt-px text-base font-semibold cursor-pointer select-none text-custom-secondary"
+                      htmlFor="other"
+                    >
+                      Other
+                    </label>
+                  </div>
                 </div>
-                <div className="inline-flex items-center">
-                  <label
-                    className="relative flex items-center p-3 rounded-full cursor-pointer"
-                    htmlFor="react"
-                  >
-                    <input
-                      onChange={handleFormChange}
-                      name="student_from"
-                      type="radio"
-                      className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-800 before:opacity-0 before:transition-opacity border-gray-900 checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
-                      value="other"
-                      id="other"
-                      defaultChecked=""
-                    />
-                    <span className="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                      <svg
-                        className="h-3.5 w-3.5"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
-                      >
-                        <circle data-name="ellipse" cx={8} cy={8} r={8} />
-                      </svg>
-                    </span>
-                  </label>
-                  <label
-                    className="mt-px font-semibold text-gray-700 cursor-pointer select-none"
-                    htmlFor="other"
-                  >
-                    Other
-                  </label>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                {" "}
-                {errors.email && (
-                  <span style={{ color: "red" }}>{errors.email}</span>
-                )}
-              </div>
-
-              <div className="mb-[24px] flex">
-                <div className="mr-[10px] flex justify-center items-center">
-                  <AiOutlineMail size="21px" color="#2F3E46" />
-                </div>
-                <input
-                  onChange={handleFormChange}
-                  autoComplete="off"
-                  type="email"
-                  value={data.email}
-                  name="email"
-                  className="rounded outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
-                  placeholder="E-Mail Address"
-                  required
-                ></input>
-              </div>
-
-              <div className="mb-[24px] flex">
-                <div className="mr-[10px] flex justify-center items-center">
-                  <RiLockPasswordFill size="21px" color="hsl(217,10%,25%)" />
-                </div>
-                <input
-                  onChange={handleFormChange}
-                  autoComplete="off"
-                  type={icon === true ? "password" : "text"}
-                  className="rounded-l-md outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
-                  placeholder="Password"
-                  name="password"
-                  value={data.password}
-                  required
-                ></input>
-                <div
-                  onClick={show}
-                  className="rounded-r-md p-[2.6px] flex justify-center items-center bg-white cursor-pointer text-[13px]"
-                >
-                  {icon === true ? (
-                    <AiFillEye size="20px" color="hsl(217,10%,25%)" />
-                  ) : (
-                    <BsEyeSlashFill size="20px" color="hsl(217,10%,25%)" />
+                <div className="flex justify-center">
+                  {" "}
+                  {errors.email && (
+                    <span style={{ color: "red" }}>{errors.email}</span>
                   )}
                 </div>
-              </div>
-              <div className="flex justify-center">
-                {" "}
-                {errors.tel && (
-                  <span style={{ color: "red" }}>{errors.tel}</span>
-                )}
-              </div>
 
-              <div className="mb-[24px] flex">
-                <div className="mr-[10px] flex justify-center items-center">
-                  <FiPhoneCall size="21px" color="#2F3E46" />
+                <div className="flex mb-6">
+                  <div className="flex items-center justify-center mr-3">
+                    <AiOutlineMail size="24px" color="#EEF5DB" />
+                  </div>
+                  <input
+                    onChange={handleFormChange}
+                    autoComplete="off"
+                    type="email"
+                    value={data.email}
+                    name="email"
+                    className="rounded outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
+                    placeholder="E-mail address"
+                    required
+                  ></input>
                 </div>
-                <input
-                  onChange={handleFormChange}
-                  value={data.tel}
-                  type="tel"
-                  name="tel"
-                  className="rounded outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
-                  placeholder="Mobile No."
-                  required
-                  pattern="[0-9]{10}"
-                ></input>
-              </div>
 
-              <div className="mb-[24px] flex items-center justify-center">
-                <div className="mr-[10px] flex justify-center items-center translate-y-[-10px]">
-                  <BsGenderAmbiguous size="21px" color="#2F3E46" />
+                <div className="flex mb-6">
+                  <div className="flex items-center justify-center mr-3">
+                    <RiLockPasswordFill size="24px" color="#EEF5DB" />
+                  </div>
+                  <input
+                    onChange={handleFormChange}
+                    autoComplete="off"
+                    type={icon === true ? "password" : "text"}
+                    className="rounded-l-md outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
+                    placeholder="Password"
+                    name="password"
+                    value={data.password}
+                    required
+                  ></input>
+                  <div
+                    onClick={show}
+                    className="rounded-r-md p-[2.6px] flex justify-center items-center bg-custom-light cursor-pointer text-[13px]"
+                  >
+                    {icon === true ? (
+                      <AiFillEye size="20px" color="#EEF5DB" />
+                    ) : (
+                      <BsEyeSlashFill size="20px" color="#EEF5DB" />
+                    )}
+                  </div>
                 </div>
-                <select
-                  className="rounded h-[36px] mb-[24px] pl-[10px] w-full text-[13px] sm:text-[14px]"
-                  name="Gender"
-                  required
-                  value={data.Gender}
-                  onChange={handleFormChange}
-                >
-                  <option label="Gender" value="" disabled="disabled"></option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
+                <div className="flex justify-center">
+                  {" "}
+                  {errors.tel && (
+                    <span style={{ color: "red" }}>{errors.tel}</span>
+                  )}
+                </div>
 
-              <button
-                type="submit"
-                onClick={handleSubmit}
-                className="w-full p-[5px] bg-[#1D174F] text-white rounded-full hover:bg-zinc-600"
-              >
-                Register
-              </button>
+                <div className="flex mb-6">
+                  <div className="flex items-center justify-center mr-3">
+                    <FiPhoneCall size="24px" color="#EEF5DB" />
+                  </div>
+                  <input
+                    onChange={handleFormChange}
+                    value={data.tel}
+                    type="tel"
+                    name="tel"
+                    className="rounded outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px]"
+                    placeholder="Mobile number"
+                    required
+                    pattern="[0-9]{10}"
+                  ></input>
+                </div>
 
-              <div className="mt-[30px] flex justify-center items-center">
-                <p className="sm:text-[14px] mr-[15px] tracking-[0.6px] text-[14px] text-gray-800">
-                  Already Have An Account💎
-                </p>
-                <Link
-                  href="/auth/login"
-                  className="sm:text-[14px] font-bold ml-[15px] tracking-[1px] text-[14px] text-back hover:text-slate-600"
-                >
-                  Log-In
-                </Link>
+                <div className="flex items-center justify-center">
+                  <div className="mr-3 flex justify-center items-center translate-y-[-10px]">
+                    <BsGenderAmbiguous size="24px" color="#EEF5DB" />
+                  </div>
+                  <select
+                    className="rounded h-[36px] mb-[24px] pl-[10px] w-full text-[13px] sm:text-[14px]"
+                    name="Gender"
+                    required
+                    value={data.Gender}
+                    onChange={handleFormChange}
+                  >
+                    <option label="Gender" value="" disabled="disabled"></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div className="flex justify-center w-full">
+                  <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="w-[50%] px-4 py-2 bg-custom-secondary rounded-full transition duration-500 ease-in-out text-custom-primary hover:bg-custom-primary hover:text-custom-secondary"
+                  >
+                    Register
+                  </button>
+                </div>
+
+                <div className="flex items-center justify-center mt-6">
+                  <p className="mr-3 text-base text-custom-secondary">
+                    Already Have An Account?
+                  </p>
+                  <Link
+                    href="/auth/login"
+                    className="text-base font-bold underline text-custom-secondary hover:text-custom-warm hover:scale-110"
+                  >
+                    Login
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -26,12 +26,12 @@ module.exports = {
         facebook: "#4267B2",
         instagram: "#e95950",
         custom: {
-          primary: withOpacity("--color-primary"),
-          secondary: withOpacity("--color-secondary"),
-          accent: withOpacity("--color-accent"),
-          warm: withOpacity("--color-warm"),
-          dark: "#000000",
-          light: "#ffffff",
+          primary: withOpacity("--color-primary"), // Raisin Black (#27282A)
+          secondary: withOpacity("--color-secondary"), // Beige (#EEF5DB)
+          accent: withOpacity("--color-accent"), // Indian Red (#DB5461)
+          warm: withOpacity("--color-warm"), // Jasmine (#FFDE89)
+          dark: "#000000", // Black
+          light: "#ffffff", // White
         },
       }, //usage: text-custom-accent
       backgroundColor: {
