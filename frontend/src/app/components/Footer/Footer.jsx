@@ -29,7 +29,6 @@ const Footer = () => {
                 <BsFillCheckCircleFill className="mr-4 text-base text-justify md:text-lg text-custom-secondary" />
                 <p className="">
                   Provides a platform for aspiring entrepreneurs
-
                 </p>
               </div>
               <div className="flex p-4 text-base lg:text-lg">
@@ -83,9 +82,11 @@ const Footer = () => {
 
                   <div className="flex justify-start w-full">
                     <div className="flex flex-col justify-start pl-4 mb-4 ml-4 text-left text-white md:mb-0 lg:pl-0 lg:ml-0">
-                      <p className="mt-4 text-base font-bold lg:mt-6 lg:text-lg">SOCIAL UPDATES</p>
+                      <p className="mt-4 text-base font-bold lg:mt-6 lg:text-lg">
+                        SOCIAL UPDATES
+                      </p>
                       <h1 className="mt-3 text-base text-custom-light md:mt-8">
-                        You may wonder: why this event so popular?{" "}
+                        You may wonder: why this event so popular?
                       </h1>
                       <h1 className="text-base text-custom-light">
                         If you do, find more info about it here.
@@ -133,7 +134,6 @@ const Footer = () => {
                   </h1>
                 </div>
               </div>
-
             </div>
           </div>
 
