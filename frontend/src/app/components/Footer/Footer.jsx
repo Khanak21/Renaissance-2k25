@@ -11,35 +11,36 @@ import { RiArrowDropUpLine } from "react-icons/ri";
 const Footer = () => {
   return (
     <>
-      <div className="w-full bg-custom-primary pt-8" id="contact">
-        <div className="Header text-white text-lg lg:text-2xl flex flex-col justify-center align-middle items-center p-4 px-16 md:px-4">
+      <div className="w-full pt-8 bg-custom-primary" id="contact">
+        <div className="flex flex-col items-center justify-center p-4 px-16 text-lg align-middle text-custom-secondary Header lg:text-2xl md:px-4">
           <p className="text-center">We Have Top Executives And Startup Here</p>
         </div>
 
-        <div className="Content mt-4 mb-4 mr-10 ml-10 lg:ml-28 lg:mr-28 flex pt-2 pb-10  lg:h-[400px] flex-col  lg:flex-row">
-          <div className="flex flex-col lg:flex-row w-full">
-            <div className="text-white  w-full flex flex-col justify-around">
-              <div className="flex p-4 text-base  lg:text-lg">
-                <BsFillCheckCircleFill className="text-[42px] md:text-xl text-[#CAD2C5]  mr-4 text-justify" />
+        <div className="Content mt-4 mb-4 mr-10 ml-10 lg:ml-28 lg:mr-28 flex pt-2 pb-10  lg:h-[400px] flex-col lg:flex-row">
+          <div className="flex flex-col w-full lg:flex-row">
+            <div className="flex flex-col justify-around w-full text-custom-light">
+              <div className="flex p-4 text-base lg:text-lg">
+                <BsFillCheckCircleFill className="mr-4 text-base text-justify md:text-lg text-custom-secondary" />
                 <p className="">
-                  Through True Rich Attended does no end it his mother since
+                  Bringing invaluable expertise to guide startup ideas
                 </p>
               </div>
-              <div className="flex p-4">
-                <BsFillCheckCircleFill className="text-[42px] md:text-xl text-[#CAD2C5] mr-4 text-justify" />
+              <div className="flex p-4 text-base lg:text-lg">
+                <BsFillCheckCircleFill className="mr-4 text-base text-justify md:text-lg text-custom-secondary" />
                 <p className="">
-                  Attended does no end it his mother since real had half every
+                  Provides a platform for aspiring entrepreneurs
+
                 </p>
               </div>
-              <div className="flex p-4">
-                <BsFillCheckCircleFill className="text-[42px] md:text-xl text-[#CAD2C5] mr-4 text-justify" />
+              <div className="flex p-4 text-base lg:text-lg">
+                <BsFillCheckCircleFill className="mr-4 text-base text-justify md:text-lg text-custom-secondary" />
                 <p className="">
-                  Since real had half every him case in packages enquire we up
+                  Harbor entrepreneurial skills and stimulate discussion
                 </p>
               </div>
             </div>
 
-            <div className="w-full bg-gray-200 h-80 mt-5 mb-5">
+            <div className="w-full mt-5 mb-5 bg-gray-200 h-80">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/jNF_Vs7Zw-Y"
@@ -51,41 +52,50 @@ const Footer = () => {
         </div>
 
         <div className="footer bg-custom-accent ">
-          <div className="flex justify-center items-center">
-            <div className="logo w-1/4"></div>
+          <div className="flex items-center justify-center">
+            <div className="w-1/5 logo"></div>
 
-            <div className="Event w-3/4  ">
-              <div className="bg-gradient-to-r from-white to-gray-900 mt-20 mb-8 p-0.5 shadow-2xl">
-                <div className="bg-custom-primary h-full flex flex-col lg:flex-row pt-10 pb-10 pr-4 pl-4">
+            <div className="w-4/5 Event ">
+              <div className="bg-gradient-to-r from-white to-gray-900 my-4 md:my-4 p-0.5 shadow-2xl">
+                <div className="flex flex-col h-full bg-custom-primary lg:flex-row">
                   <div className="flex w-full">
-                    <div className="h-80 flex flex-col justify-center text-left pl-10 lg:ml-40">
-                      <p className="text-white text-base mt-4 mb-4">
-                        EVENT <br></br>DETAILS
+                    <div className="flex flex-col justify-start pl-4 ml-4 text-base text-left lg:ml-10 lg:pl-0">
+                      <p className="mt-4 mb-4 font-bold text-white lg:mt-6 lg:text-lg">
+                        EVENT DETAILS
                       </p>
-                      <p className="text-custom-secondary mt-4 mb-4">
-                        Febraury 10-11,2021
+                      <p className="mt-4 mb-4 text-custom-warm">
+                        February 10 to 11, 2024
                       </p>
-                      <p className="text-white mt-4 mb-4">
-                        PRAYAGRAJ, UTTAR PRADESH, INDIA – 211004
+                      <p className="mt-4 mb-4 text-white">
+                        E-Cell, MNNIT Allahabad, <br />
+                        Prayagraj, Uttar Pradesh, <br />
+                        India - 211004
                       </p>
-                      <Link href="/#location">
-                        <p className="text-white mt-4 mb-4">
-                          View Map Locations
-                        </p>
-                      </Link>
+                      <a
+                        target="_blank"
+                        href="https://goo.gl/maps/oMivUDXkAypzfawm8"
+                        className="mt-4 mb-4 underline cursor-pointer text-custom-warm"
+                      >
+                        VIEW MAP LOCATION
+                      </a>
                     </div>
                   </div>
 
-                  <div className="flex  justify-center  w-full lg:mr-80 lg:mt-10 pl-10 ">
-                    <div className="h-80 text-white flex flex-col justify-center text-left lg:ml-40">
-                      <p>SOCIAL UPDATES</p>
-
-                      <div className="icons justify-around flex h-40 items-center text-3xl  w-full">
+                  <div className="flex justify-start w-full">
+                    <div className="flex flex-col justify-start pl-4 mb-4 ml-4 text-left text-white md:mb-0 lg:pl-0 lg:ml-0">
+                      <p className="mt-4 text-base font-bold lg:mt-6 lg:text-lg">SOCIAL UPDATES</p>
+                      <h1 className="mt-3 text-base text-custom-light md:mt-8">
+                        You may wonder: why this event so popular?{" "}
+                      </h1>
+                      <h1 className="text-base text-custom-light">
+                        If you do, find more info about it here.
+                      </h1>
+                      <div className="flex items-center justify-start w-full gap-5 py-4 text-xl md:text-2xl lg:py-6 icons">
                         <a
                           href="https://www.facebook.com/mnnitecell"
                           target="_blank"
                         >
-                          <div className="bg-custom-secondary  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
+                          <div className="flex items-center justify-center w-12 h-12 mr-2 rounded-full shadow-2xl bg-custom-secondary">
                             <BsFacebook className=" text-custom-primary rounded-full shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-600" />
                           </div>
                         </a>
@@ -93,7 +103,7 @@ const Footer = () => {
                           href="https://twitter.com/ECellMNNIT"
                           target="_blank"
                         >
-                          <div className="bg-custom-secondary  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
+                          <div className="flex items-center justify-center w-12 h-12 mr-2 rounded-full shadow-2xl bg-custom-secondary">
                             <BsTwitter className=" text-custom-primary shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-400" />
                           </div>
                         </a>
@@ -101,7 +111,7 @@ const Footer = () => {
                           href="https://www.linkedin.com/company/13249340"
                           target="_blank"
                         >
-                          <div className="bg-custom-secondary  w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
+                          <div className="flex items-center justify-center w-12 h-12 mr-2 rounded-full shadow-2xl bg-custom-secondary">
                             <BsLinkedin className=" text-custom-primary shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-800" />
                           </div>
                         </a>
@@ -109,7 +119,7 @@ const Footer = () => {
                           href="https://www.instagram.com/ecellmnnit/"
                           target="_blank"
                         >
-                          <div className="bg-custom-secondary w-12 h-12 rounded-full flex items-center justify-center  shadow-2xl mr-2">
+                          <div className="flex items-center justify-center w-12 h-12 mr-2 rounded-full shadow-2xl bg-custom-secondary">
                             <BsYoutube className=" text-custom-primary hover:p-[2px] hover:text-red-700 cursor-pointer" />
                           </div>
                         </a>
@@ -117,12 +127,18 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
+                <div className="pb-6 text-xs text-center bg-custom-primary md:text-base ">
+                  <h1 className="text-custom-light ">
+                    Copyright © Renaissance 2024. All rights reserved
+                  </h1>
+                </div>
               </div>
+
             </div>
           </div>
 
-          {/* <div className=" flex w-full  lg:items-end justify-end pr-8 pb-5 ">
-            <button className="bg-[#CAD2C5] h-[47px] w-[47px] flex items-center justify-center shadow-2xl">
+          {/* <div className="flex justify-end w-full pb-5 pr-8 lg:items-end">
+            <button className="bg-custom-secondary h-[47px] w-[47px] flex items-center justify-center shadow-2xl">
               <RiArrowDropUpLine className="text-[30px]" />
             </button>
           </div> */}

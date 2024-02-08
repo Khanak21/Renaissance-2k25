@@ -1,7 +1,7 @@
 "use client";
 import Counter from "./Counter";
-// import gsap from "gsap";
 import React, { useEffect } from "react";
+import Link from "next/link";
 import { useRef } from "react";
 import { useState } from "react";
 import "./About.css";
@@ -69,18 +69,20 @@ function About() {
     <div>
       {/* div for the main section */}
       <div className="relative h-screen ">
-        <div className="floating-div  absolute top-1/3 left-[25%] md:left-[35%] lg:left-[10%]  text-4xl sm:text-[4rem] font-extrabold text-left text-[white]">
-          <p>RENAISSANCE</p>
-          <p className="mt-8">8.0</p>
+        <div className="floating-div absolute top-1/3 left-[25%] md:left-[35%] lg:left-[10%] text-4xl font-extrabold text-left text-custom-secondary lg:text-5xl">
+          <p className="tracking-wide text-custom-warm">RENAISSANCE</p>
+          <p className="mt-4">8.0</p>
         </div>
-        <div className="absolute bottom-[5rem] right-[2rem] md:right-[5rem] text-white text-right text-xs">
-          <span className="text-xl sm:text-2xl md:text-4xl">10 FEB 2024</span>
+        <div className="absolute bottom-[5rem] right-[2rem] md:right-[5rem] text-custom-secondary text-right">
+          <span className="text-xl font-bold sm:text-2xl md:text-4xl">10 FEB 2024</span>
           <br />
-          <span className="">MNNIT Allahabad,Prayagraj</span>
+          <span className="text-base md:text-lg">MNNIT Allahabad, Prayagraj</span>
           <br />
-          <button className="p-3 border-2 border-white mt-6 shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:border-custom-accent hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300">
-            BUY TICKET
-          </button>
+          <Link href="/#events">
+            <button className="p-3 text-base border-2 border-white mt-6 shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:border-custom-accent hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300">
+              BUY TICKET
+            </button>
+          </Link>
         </div>
       </div>
       {/* div for the about section */}
@@ -90,16 +92,18 @@ function About() {
           ref={myRef}
           className="left-right relative h-[18rem] md:w-1/3 md:h-[30rem]"
         >
-          <div className="font-bold text-custom-warm flex flex-col items-center text-lg lg:text-2xl absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2">
-            <div className="text-[1.5rem] pb-0 mb-0 pl-4">ABOUT</div>
+          <div className="font-bold text-custom-warm flex flex-col items-end text-lg lg:text-2xl absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2">
+            <div className="pb-0 mb-0 text-lg md:text-xl lg:text-2xl">ABOUT</div>
 
-            <div className="text-[1.5rem] pl-3"> DESIGN</div>
+            <div className="text-lg md:text-xl lg:text-2xl"> RENAISSANCE</div>
 
-            <div className="text-[1.5rem] pl-5">WEEK</div>
-
-            <button className="mt-[20px] text-left text-[12px] w-[10.3rem] bg-custom-secondary text-custom-dark p-2 hover:bg-[#e3f1bd] md:w-[10.3rem] transition-all duration-100">
-              CONFIRM YOUR SEAT &rarr;
-            </button>
+            <div className="text-lg md:text-xl lg:text-2xl">8.0</div>
+            <p className="mt-2 text-base italic font-normal floating-div md:text-xl text-custom-light">“Octave of pursuit”</p>
+            {/* <Link href="/#events">
+              <button className="mt-[20px] text-left text-[12px] w-[10.3rem] bg-custom-secondary text-custom-dark p-2 hover:bg-[#e3f1bd] md:w-[10.3rem] transition-all duration-100">
+                CONFIRM YOUR SEAT &rarr;
+              </button>
+            </Link> */}
           </div>
         </div>
         {/* description  */}
@@ -108,7 +112,7 @@ function About() {
           className="about-section md:w-2/3 md:h-[30rem] md:py-20 md:px-12"
         >
           <div className="w-full lg:w-3/4">
-            <div className="text-[white] text-[1rem] text-left p-12">
+            <div className="p-12 text-base text-justify text-custom-light md:text-lg">
               Renaissance is the annual entrepreneurial summit of MNNIT
               Allahabad that provides a platform for aspiring entrepreneurs to
               encourage the entrepreneurial journey of translating thoughts into
