@@ -1,5 +1,4 @@
 import "./TeamPageStyles.css";
-import img from "../../../assets/EventComponent/Five.jpg";
 import { useEffect, useState } from "react";
 import getEventApi from "../../../../api/getEvent.api";
 import { useRouter } from "next/navigation";

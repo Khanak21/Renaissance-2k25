@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import getAllUserDetailsEventLinkApi from "../../../api/getAllUserDetailsEventLink.api";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -41,16 +42,20 @@ const Dashboard = () => {
                 <tbody>
                   {userData?.eventsParticipated.map((item, index) => {
                     return (
-                      <tr>
+                      <tr key={index}>
                         <td class="border border-slate-300 pl-2">
                           {index + 1}
                         </td>
                         {/* <!-- Add the eventPage link as well (so, on clicking on the `Event Name`, the user is redirected to the EventPage) --> */}
-                        <td class="border border-slate-300 pl-2">
-                          {item.eventName}
+                        <td class="border border-slate-300 pl-2 hover:text-custom-accent cursor-pointer">
+                          <Link href={`/events/${item?.route}`} target="_blank">
+                            {item.eventName}
+                          </Link>
                         </td>
                         <td class="border border-slate-300 pl-2 hover:text-custom-accent cursor-pointer">
-                          <a href={item?.link} target="_blank">Link</a>
+                          <a href={item?.link} target="_blank">
+                            Link
+                          </a>
                         </td>
                       </tr>
                     );
