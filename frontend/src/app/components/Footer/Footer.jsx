@@ -90,7 +90,7 @@ const Footer = () => {
                       <h1 className="text-base text-custom-light">
                         If you do, find more info about it here.
                       </h1>
-                      <div className="flex items-center justify-start w-full gap-5 py-4 text-xl md:text-2xl lg:py-6 icons">
+                      <div className="flex items-center justify-start w-full py-4 text-xl md:gap-5 md:text-2xl lg:py-6 icons">
                         <a
                           href="https://www.facebook.com/mnnitecell"
                           target="_blank"

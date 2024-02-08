@@ -12,7 +12,7 @@ const speakers = [
     id: 1,
     name: "Neha Agrawal",
     img: "/Speakers/neha-agrawal.jpg",
-    post: "Founder Mathematically Inclined, 1.55M subscribers",
+    post: "Founder Mathematically Inclined, 1.55M YT subscribers",
     facebook: "https://www.facebook.com/neha.mi.agrawal",
     twitter: "https://twitter.com/NehaAgrawalMath",
     linkedIn: "https://www.linkedin.com/in/nehagarawalmath",
