@@ -18,13 +18,12 @@
   padding: 8px;
   margin-right: 8px;
   border-radius: 50%;
-  background-color: #84a98c;
+  background-color: #DB5461;
   transition: all 0.1s;
 }
 
 .space:hover {
-  background-color: #8f938c;
-  padding: 2px;
+  padding: 5px;
 }
 
 .all {
@@ -64,13 +63,14 @@
   width: 100%;
   height: 100%;
   border-radius: 44px;
-  background: #cad2c5;
+  background: #DB5461;
   transition: 0.5s;
   z-index: -1;
 }
 
 .card:hover:before {
   transform: rotate(20deg);
+  background: #EEF5DB;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -129,7 +129,7 @@
 }
 
 .color {
-  background-color: #84a98c;
+  background-color: #DB5461;
   width: 10px;
   border-radius: 3px 0 0 3px;
   height: 45px;
@@ -140,7 +140,7 @@
   width: 240px;
   border-radius: 2px;
   height: 45px;
-  background-color: #cad2c5;
+  background-color: #EEF5DB;
   display: flex;
   align-items: center;
 }

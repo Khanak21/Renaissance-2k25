@@ -1,46 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
-import Card from "./Components/Card";
-import getAllUserDetailsApi from "../../../api/getAllUserDetails.api";
-import getAllEventsApi from "../../../api/getAllEvents.api";
+import getAllUserDetailsEventLinkApi from "../../../api/getAllUserDetailsEventLink.api";
 import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
   const router = useRouter();
   const [userData, setUserData] = useState(null);
-  const [eventsData, setEventsData] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
       router.push("/");
     }
-    getAllUserDetailsApi()
-      .then((userfetchData) => {
-        if (userfetchData.success) {
-          setUserData(userfetchData.data);
-        }
-        return getAllEventsApi();
-      })
-      .then((eventsData) => {
-        if (eventsData.success) {
-          setEventsData(eventsData.data);
-        }
-      });
-  }, []);
-
-  const cardClickHandler = () => {
-    getAllUserDetailsApi().then((userData) => {
-      if (userData.success) {
-        setUserData(userData.data);
+    getAllUserDetailsEventLinkApi().then((data) => {
+      if (data.success) {
+        setUserData(data.data);
       }
     });
-  };
+  }, []);
+
   return (
     <>
       <div className="flex flex-col-reverse px-[40px] md:flex-row-reverse bg-[#27282A] min-h-screen">
         <div className="mt-[40px] md:p-4 flex-1 md:flex-[0.65] xl:flex-[0.75]">
-          <div className="w-full bg-[#EEF5DB] p-2 rounded-md shadow-md">
+          <div className="w-full bg-custom-light p-2 rounded-md shadow-md">
             <div className="text-base w-full px-6 py-2 flex flex-col justify-center items-center">
               <p className="font-bold text-base lg:text-lg">
                 RENESSANCE EVENTS
@@ -56,30 +39,22 @@ const Dashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="border border-slate-300 pl-2">1</td>
-                    {/* <!-- Add the eventPage link as well (so, on clicking on the `Event Name`, the user is redirected to the EventPage) --> */}
-                    <td class="border border-slate-300 pl-2"> B-Plan</td>
-                    <td class="border border-slate-300 pl-2">
-                      <a href="https://www.google.com">Link</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-300 pl-2">2</td>
-                    <td class="border border-slate-300 pl-2">
-                      Mock IPL Auction
-                    </td>
-                    <td class="border border-slate-300 pl-2">
-                      <a href="https://www.google.com">Link</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-300 pl-2">3</td>
-                    <td class="border border-slate-300 pl-2">Blink and Meet</td>
-                    <td class="border border-slate-300 pl-2">
-                      <a href="https://www.google.com">Link</a>
-                    </td>
-                  </tr>
+                  {userData?.eventsParticipated.map((item, index) => {
+                    return (
+                      <tr>
+                        <td class="border border-slate-300 pl-2">
+                          {index + 1}
+                        </td>
+                        {/* <!-- Add the eventPage link as well (so, on clicking on the `Event Name`, the user is redirected to the EventPage) --> */}
+                        <td class="border border-slate-300 pl-2">
+                          {item.eventName}
+                        </td>
+                        <td class="border border-slate-300 pl-2 hover:text-custom-accent cursor-pointer">
+                          <a href={item?.link} target="_blank">Link</a>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
               <div class="font-bold">Note:</div>

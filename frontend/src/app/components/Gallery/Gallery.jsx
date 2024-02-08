@@ -6,7 +6,7 @@ import NextJsImage from "./NextJsImage";
 
 const Gallery = () => {
   return (
-    <div className="px-0 md:px-12 lg:px-20 pt-10 bg-custom-light">
+    <div className="px-2 md:px-12 lg:px-20 pt-10 bg-custom-light">
       <motion.div
         whileInView={{ y: [150, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5, ease: "easeOut" }}
