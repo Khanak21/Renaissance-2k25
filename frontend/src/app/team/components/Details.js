@@ -2,13 +2,14 @@ import React from "react";
 import { AiFillFacebook, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import "./CardTest.css";
+import Image from "next/image";
 const Details = (prop) => {
   return (
     <>
       <div className="z-10 cursor-pointer all">
         <div className="card">
           <div className="overflow-hidden transition duration-500 ease-in-out imgBx">
-            <img src={prop.image} alt="images" className="object-cover transition duration-500 ease-in-out hover:scale-105" />
+            <Image src={prop.image} alt="images" height={500} width={500} className="object-cover transition duration-500 ease-in-out hover:scale-105" />
           </div>
           <div className="flex flex-col justify-between details">
             <h2 className="tracking-wide text-custom-warm">
