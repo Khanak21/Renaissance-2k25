@@ -8,7 +8,7 @@ export const Hero = () => {
     // set the video in background
     <div>
       <video
-        className="absolute h-screen top-0 left-0 min-w-full min-h-full object-cover border border-b-black"
+        className="absolute top-0 left-0 object-cover h-screen min-w-full min-h-full border border-b-black"
         autoPlay
         loop
         muted
@@ -21,7 +21,7 @@ export const Hero = () => {
 
       {/* in case we want a img in background */}
       {/* <img
-        className="absolute h-screen top-0 left-0 min-w-full min-h-full object-cover border border-b-black"
+        className="absolute top-0 left-0 object-cover h-screen min-w-full min-h-full border border-b-black"
         src={BG.src} // Assuming BG is the variable holding the image source
         alt="Background Image"
       /> */}

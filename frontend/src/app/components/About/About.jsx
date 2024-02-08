@@ -68,7 +68,7 @@ function About() {
   return (
     <div>
       {/* div for the main section */}
-      <div className="relative h-screen ">
+      <div className="relative h-screen">
         <div className="floating-div absolute top-1/3 left-[25%] md:left-[35%] lg:left-[10%] text-4xl font-extrabold text-left text-custom-secondary lg:text-5xl">
           <p className="tracking-wide text-custom-warm">RENAISSANCE</p>
           <p className="mt-4">8.0</p>
@@ -92,12 +92,12 @@ function About() {
           ref={myRef}
           className="left-right relative h-[18rem] md:w-1/3 md:h-[30rem]"
         >
-          <div className="font-bold text-custom-warm flex flex-col items-end text-lg lg:text-2xl absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2">
+          <div className="font-bold text-custom-warm flex flex-col items-center md:items-end text-lg lg:text-2xl absolute top-1/2 left-[55%] transform -translate-x-3/4 -translate-y-1/2">
             <div className="pb-0 mb-0 text-lg md:text-xl lg:text-2xl">ABOUT</div>
 
-            <div className="text-lg md:text-xl lg:text-2xl"> RENAISSANCE</div>
+            <div className="text-lg md:text-xl lg:text-2xl"> RENAISSANCE <span className="text-lg md:hidden">8.0</span></div>
 
-            <div className="text-lg md:text-xl lg:text-2xl">8.0</div>
+            <div className="hidden md:flex md:text-xl lg:text-2xl">8.0</div>
             <p className="mt-2 text-base italic font-normal floating-div md:text-xl text-custom-light">“Octave of pursuit”</p>
             {/* <Link href="/#events">
               <button className="mt-[20px] text-left text-[12px] w-[10.3rem] bg-custom-secondary text-custom-dark p-2 hover:bg-[#e3f1bd] md:w-[10.3rem] transition-all duration-100">
@@ -112,7 +112,7 @@ function About() {
           className="about-section md:w-2/3 md:h-[30rem] md:py-20 md:px-12"
         >
           <div className="w-full lg:w-3/4">
-            <div className="p-12 text-base text-justify text-custom-light md:text-lg">
+            <div className="px-10 pb-8 text-base text-justify md:p-12 text-custom-light md:text-lg">
               Renaissance is the annual entrepreneurial summit of MNNIT
               Allahabad that provides a platform for aspiring entrepreneurs to
               encourage the entrepreneurial journey of translating thoughts into

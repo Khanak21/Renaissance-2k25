@@ -159,7 +159,7 @@ const Speakers = () => {
       <div className="flex justify-center mt-5 md:hidden lg:hidden">
         <Link
           href="/allspeakers"
-          className="p-3 border-[1px] bg-custom-primary border-white mt-6 shadow-[inset_0_0_0_0_rgb(132,169,140)] hover:border-[#84A98C] hover:shadow-[inset_15em_0_0_0_rgb(132,169,140)] transition ease-in-out delay-50 duration-300"
+          className="p-3 border-[1px] bg-custom-primary border-custom-light mt-6 shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:border-custom-accent hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300"
         >
           <button className="mr-2 text-base text-white">
             View All Speakers
