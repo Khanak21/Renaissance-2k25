@@ -1,6 +1,42 @@
 const speakers = [
   {
     id: 0,
+    name: "Manish Advani",
+    img: "/Speakers/manish-advani.jpg",
+    post: "CEO MIMO Potentio \n TEDx Speaker",
+    facebook: "https://www.facebook.com/manish.advani.12",
+    twitter: "https://twitter.com/IndianMarketer",
+    linkedIn: "https://www.linkedin.com/in/manish-advani-38168b9/",
+  },
+  {
+    id: 1,
+    name: "Neha Agrawal",
+    img: "/Speakers/neha-agrawal.jpg",
+    post: "Founder Mathematically Inclined, 1.55M subscribers",
+    facebook: "https://www.facebook.com/neha.mi.agrawal",
+    twitter: "https://twitter.com/NehaAgrawalMath",
+    linkedIn: "https://www.linkedin.com/in/nehagarawalmath",
+  },
+  {
+    id: 2,
+    name: "Manan Verma",
+    img: "/Speakers/manan-verma.jpg",
+    post: "Engineering leader at PW \n Angel Investor",
+    facebook: "https://www.facebook.com/MananVermaTech",
+    twitter: "https://twitter.com/MananVermaTech",
+    linkedIn: "https://www.linkedin.com/in/mananverma/",
+  },
+  {
+    id: 3,
+    name: "Saurabh Jain",
+    img: "/Speakers/saurabh-jain.jpg",
+    post: "Founder Fun2Do Labs \n Ex-Vice President at Paytm",
+    facebook: "https://www.facebook.com/skjsaurabh",
+    twitter: "https://twitter.com/skjsaurabh",
+    linkedIn: "https://www.linkedin.com/in/saurabhskj/",
+  },
+  {
+    id: 4,
     name: "Ankush Singla",
     img: "/Speakers/ankur.jpg",
     post: "Co-Founder, Coding Ninjas",
@@ -9,7 +45,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/ankushsingla",
   },
   {
-    id: 1,
+    id: 5,
     name: "Anuj Batra",
     img: "/Speakers/anuj.jpg",
     post: "Co-Founder, Andromedia Maritime Solutions",
@@ -18,7 +54,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/anujbatra1/",
   },
   {
-    id: 2,
+    id: 6,
     name: "Ashish Meena",
     img: "/Speakers/ashishMeena.jpg",
     post: "Vice President of technology, OYO rickshaw",
@@ -27,7 +63,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/ashishmeena8/",
   },
   {
-    id: 3,
+    id: 7,
     name: "Aashish Sharma",
     img: "/Speakers/ashish.png",
     post: "Vice President, Capgemini",
@@ -36,7 +72,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/aashishsharma1/",
   },
   {
-    id: 4,
+    id: 8,
     name: "Amit Yadav",
     img: "/Speakers/amityadav.jpeg",
     post: "D2C Product & Growth @ Mamaearth ",
@@ -45,7 +81,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/amit-at-8287502355/",
   },
   {
-    id: 5,
+    id: 9,
     name: "Ganesh Kumar",
     img: "/Speakers/ganesh.jpg",
     post: "City Head, Shadowfax",
@@ -54,7 +90,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/ganesh-kumar-9317bb7/",
   },
   {
-    id: 6,
+    id: 10,
     name: "Navin Manaswi",
     img: "/Speakers/navin.jpg",
     post: "Founder and CEO, WoWexp Technologies",
@@ -63,7 +99,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/navin-manaswi-1a708b8",
   },
   {
-    id: 7,
+    id: 11,
     name: "R K Guran",
     img: "/Speakers/rk.jpg",
     post: "Founder, StartupCasa",
@@ -72,7 +108,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/rakesh-kumar-guran-rkg",
   },
   {
-    id: 8,
+    id: 12,
     name: "shivesh kumar",
     img: "/Speakers/shivesh.jpg",
     post: "Founder and CEO, StartUp Monk",
@@ -81,7 +117,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/siveshkumar",
   },
   {
-    id: 9,
+    id: 13,
     name: "Snehaal Dhruv",
     img: "/Speakers/snehal.jpg",
     post: "Co-founder & CEO, Superfan Studio",
@@ -90,7 +126,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/snehaaldhruv",
   },
   {
-    id: 10,
+    id: 14,
     name: "Tapan Singhel",
     img: "/Speakers/tapan.jpg",
     post: "Managing Director & CEO, Bajaj Allianz General Insurance",
@@ -99,7 +135,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/tapansinghel/",
   },
   {
-    id: 11,
+    id: 15,
     name: "Utkarsh Shukla",
     img: "/Speakers/utkarsh.jpg",
     post: "Founder, CEO, YUG Metaverse",
@@ -108,7 +144,7 @@ const speakers = [
     linkedIn: "https://www.linkedin.com/in/utkarshx",
   },
   {
-    id: 12,
+    id: 16,
     name: "Vikas Bansal",
     img: "/Speakers/vikas.jpg",
     post: "Co-Founder, Crejo.Fun",

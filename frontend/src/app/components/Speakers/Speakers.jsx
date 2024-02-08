@@ -11,7 +11,7 @@ export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
     <section className="flex flex-col h-full max-w-sm mx-auto overflow-hidden">
       <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
         <Image
-          className="object-cover object-center w-full h-52"
+          className="object-cover object-top w-full h-52"
           src={`${img}`}
           alt="renaissance mnnit speakers"
           width={400}
@@ -24,7 +24,7 @@ export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
           {/* Speaker's name */}
           <h2 className="text-base font-bold lg:text-lg">{name}</h2>
           {/* Speaker's position/title */}
-          <div className="text-base text-gray-600">{post}</div>
+          <div className="text-base text-gray-600 whitespace-pre-line">{post}</div>
         </div>
         {/* Social Handles */}
         <div className="flex justify-center mt-5">

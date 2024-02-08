@@ -70,7 +70,7 @@ const AllSpeakersPage = () => {
       <div className="pt-[4rem] pb-[4rem] px-4 lg:px-20 bg-[#27282A]">
         {/* Title */}
         <h2 className="pb-5 text-2xl font-bold text-center text-white lg:text-2xl">
-          SPEAKERS
+          PAST SPEAKERS
         </h2>
         {/* Speaker cards */}
         <div className="flex flex-row flex-wrap justify-center gap-4">
