@@ -31,7 +31,7 @@ const Details = (prop) => {
               <AiFillLinkedin className="space hover:text-blue-800" />
             </a>
             <a href={prop.youtube} target="__blank">
-              <AiFillYoutube className="space hover:text-red-900" />
+              <AiFillYoutube className="space hover:text-red-600" />
             </a>
           </div>
         </div>
