@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 // Card component for rendering each speaker
 export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
-  <section className="w-full mx-auto duration-500 transform bg-white shadow-lg sm:container rounded-3xl">
+  <section className="lg:w-[22%] w-full mx-auto lg:m-0 duration-500 transform bg-white shadow-lg rounded-3xl">
     <section className="flex flex-col h-full max-w-sm mx-auto overflow-hidden">
       <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
         <Image
@@ -138,9 +138,9 @@ const Speakers = () => {
         viewport={{ once: true }}
       >
         <div className="flex justify-center w-full pt-4">
-          <div className="grid grid-cols-1 gap-10 px-8 sm:grid-cols-2 sm:px-12 lg:flex lg:justify-around lg:gap-5 lg:px-20">
+          <div className="grid grid-cols-1 gap-10 px-12 sm:grid-cols-2 sm:px-12 lg:flex lg:flex-wrap lg:justify-center lg:gap-5 lg:px-20">
             {/* Mapping over the first three elements of the speakersData array */}
-            {speakersData.slice(0, 4).map((speaker) => (
+            {speakersData.slice(0, 7).map((speaker) => (
               <Card
                 key={speaker.id} // Unique key for React list
                 img={speaker.img} // Speaker's image source
