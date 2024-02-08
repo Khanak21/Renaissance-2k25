@@ -22,27 +22,27 @@ const UpdatePassword = ({
   };
   return (
     <>
-      <div className="bg-[#1D174F] w-full h-full">
+      <div className="w-full h-full bg-custom-primary">
         <div className="sticky top-0 z-[100]">
           <StickyNavbar />
         </div>
 
-        <div className="relative h-[70em]  bg-[#1D174F]   w-screen flex justify-center  pt-[5em]   px-[30px]  ">
-          <div className="p-[17px] sm:p-[30px]  bg-[#EEF5DB] opacity-[0.85] w-full h-[40em]  sm:w-[500px] sm:h-[40em]  flex flex-col rounded">
+        <div className="relative bg-custom-secondary w-screen flex justify-center pt-10  px-[30px]">
+          <div className="p-[17px] mb-24 sm:p-[30px] rounded-2xl bg-custom-primary w-full  sm:w-[500px] flex flex-col rounded">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <Image
                 className=""
-                width={700} // Set the width of the image
+                width={500} // Set the width of the image
                 height={250} // Set the height of the image
                 src={img}
               ></Image>{" "}
-              <h1 className="tracking-[1.2px] text-[#1D174F] font-medium mt-[10px] text-sm sm:text-lg">
-                UPDATE-PASSWORD
+              <h1 className="tracking-[1.2px] text-custom-secondary text-lg font-medium md:text-2xl mt-[10px]">
+                UPDATE PASSWORD
               </h1>
             </div>
 
             <div>
-              <div className="mb-4 flex">
+              <div className="flex mb-4">
                 <div className="mr-[8px] flex justify-center items-center">
                   <RiLockPasswordFill size="21px" color="hsl(217,10%,25%)" />
                 </div>
@@ -79,17 +79,18 @@ const UpdatePassword = ({
                   }}
                   type="password"
                   className="rounded-l-md outline-none w-full h-[36px] p-[10px] text-[13px] sm:text-[14px] "
-                  placeholder="ReEnter - Password"
+                  placeholder="Re-enter password"
                   required
                 ></input>
               </div>
-
+               <div className="flex justify-center w-full">
               <button
                 onClick={handleUpdatePasswordClick}
-                className="w-full m-4 p-[5px] bg-[#1D174F] bg-back text-white rounded-full hover:bg-zinc-600"
+                className="w-[50%] text-base px-4 py-2 bg-custom-secondary rounded-full transition duration-500 ease-in-out text-custom-primary hover:bg-custom-primary hover:text-custom-secondary"
               >
                 UPDATE PASSWORD
               </button>
+              </div>
             </div>
           </div>
         </div>

@@ -255,9 +255,9 @@ const Register = ({ data, setData, setPage }) => {
                     className="rounded-r-md p-[2.6px] flex justify-center items-center bg-custom-light cursor-pointer text-[13px]"
                   >
                     {icon === true ? (
-                      <AiFillEye size="20px" color="#EEF5DB" />
+                      <AiFillEye size="20px" color="hsl(217,10%,25%)" />
                     ) : (
-                      <BsEyeSlashFill size="20px" color="#EEF5DB" />
+                      <BsEyeSlashFill size="20px" color="hsl(217,10%,25%)" />
                     )}
                   </div>
                 </div>

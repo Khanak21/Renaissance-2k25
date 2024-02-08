@@ -9,7 +9,7 @@ const team = () => {
       <div className="sticky top-0 z-[100] ">
         <StickyNavbar />
       </div>
-      <div className="py-4 bg-custom-dark">
+      <div className="py-4 bg-custom-primary">
         <CardTest />
       </div>
       <Footer />
