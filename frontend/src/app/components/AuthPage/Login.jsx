@@ -62,13 +62,13 @@ const Login = ({ type }) => {
   };
   return (
     <>
-      <div className="w-full h-full bg-custom-primary">
+      <div className="w-full h-screen bg-custom-secondary">
         <div className="sticky top-0 z-[100]">
           <StickyNavbar />
         </div>
 
         <div className="relative bg-custom-secondary w-screen flex justify-center pt-10  px-[30px]">
-          <div className="p-[17px] mb-24 sm:p-[30px] rounded-2xl bg-custom-primary w-full  sm:w-[500px] flex flex-col rounded">
+          <div className="p-[17px] mb-24 sm:p-[30px] rounded-2xl bg-custom-primary w-full  sm:w-[500px] flex flex-col">
             <div className="mb-[25px] logo flex flex-col justify-center items-center w-full">
               <Image
                 className=""

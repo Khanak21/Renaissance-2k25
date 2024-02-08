@@ -161,7 +161,7 @@ const Register = ({ data, setData, setPage }) => {
                         id="mnnit"
                         value="mnnit"
                         type="radio"
-                        className="before:content[''] peer relative h-5 w-5 cursor-pointer border-custom-secondary appearance-none rounded-full border border-custom-secondary text-custom-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-custom-secondary checked:before:bg-custom-secondary hover:before:opacity-10"
+                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-custom-secondary text-custom-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-custom-secondary checked:before:bg-custom-secondary hover:before:opacity-10"
                       />
                       <span className="absolute transition-opacity opacity-0 pointer-events-none text-custom-secondary top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
                         <svg
@@ -190,7 +190,7 @@ const Register = ({ data, setData, setPage }) => {
                         onChange={handleFormChange}
                         name="student_from"
                         type="radio"
-                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-custom-secondary text-custom-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-800 before:opacity-0 before:transition-opacity border-custom-secondary checked:border-custom-secondary checked:before:bg-custom-secondary hover:before:opacity-10"
+                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border text-custom-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-800 before:opacity-0 before:transition-opacity border-custom-secondary checked:border-custom-secondary checked:before:bg-custom-secondary hover:before:opacity-10"
                         value="other"
                         id="other"
                         defaultChecked=""
