@@ -27,7 +27,7 @@ const Dashboard = () => {
           <div className="w-full bg-custom-light p-2 rounded-md shadow-md">
             <div className="text-base w-full px-6 py-2 flex flex-col justify-center items-center">
               <p className="font-bold text-base lg:text-lg">
-                RENESSANCE EVENTS
+                REGISTERED EVENTS :  {`${userData?.eventsParticipated.length}`}
               </p>
             </div>
             <div>
@@ -43,16 +43,16 @@ const Dashboard = () => {
                   {userData?.eventsParticipated.map((item, index) => {
                     return (
                       <tr key={index}>
-                        <td class="border border-slate-300 pl-2">
+                        <td class="border border-slate-300 pl-2 text-center">
                           {index + 1}
                         </td>
                         {/* <!-- Add the eventPage link as well (so, on clicking on the `Event Name`, the user is redirected to the EventPage) --> */}
-                        <td class="border border-slate-300 pl-2 hover:text-custom-accent cursor-pointer">
+                        <td class="border text-center border-slate-300 pl-2 hover:text-custom-accent cursor-pointer">
                           <Link href={`/events/${item?.route}`} target="_blank">
                             {item.eventName}
                           </Link>
                         </td>
-                        <td class="border border-slate-300 pl-2 hover:text-custom-accent cursor-pointer">
+                        <td class="border text-center underline border-slate-300 pl-2 hover:text-custom-accent cursor-pointer">
                           <a href={item?.link} target="_blank">
                             Link
                           </a>
@@ -62,8 +62,8 @@ const Dashboard = () => {
                   })}
                 </tbody>
               </table>
-              <div class="font-bold">Note:</div>
-              <div class="">
+              <div class="font-bold mt-4 lg:mt-8">Note:</div>
+              <div class="text-base">
                 Please complete your application by applying through the Google
                 Form. Otherwise, you wont be able to participate in the event.
               </div>
