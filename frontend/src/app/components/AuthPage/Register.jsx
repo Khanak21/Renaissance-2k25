@@ -29,24 +29,24 @@ const Register = ({ data, setData, setPage }) => {
     }
     if (formData.student_from == "") {
       errors.student_from = "Select college";
-      toast.error("select college");
+      toast.error("Select college");
     }
 
     if (!formData.password.trim()) {
       errors.password = "Password is required";
-      toast.error("password is required");
+      toast.error("Password is required");
     }
 
     if (!formData.email.trim()) {
       errors.email = "Email is required";
-      toast.error("email is required");
+      toast.error("E-mail is required");
     } else if (!isValidEmail(formData.email)) {
       errors.email = "Invalid email address";
-      toast.error("invalid email address");
+      toast.error("Invalid email address");
     }
     if (!formData.tel.trim()) {
       errors.tel = "Telephone number is required";
-      toast.error("mobile number is required");
+      toast.error("Mobile number is required");
     } else if (!isValidIndianPhoneNumber(formData.tel)) {
       errors.tel = "Invalid Indian telephone number";
       toast.error("Invalid mobile number");

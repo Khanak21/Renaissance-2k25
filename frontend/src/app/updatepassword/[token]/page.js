@@ -13,12 +13,12 @@ const UpdatePasswordPage = ({ params }) => {
   const handleUpdatePasswordClick = async () => {
     if (password.length < 8) {
       toast.error(
-        "password should be atleast 8 characters having atleast a alphabet and numeric character"
+        "Password should be atleast 8 characters having atleast a letter and numeric character"
       );
       return;
     }
     if (rePassword !== password) {
-      toast.error("password field is not matching");
+      toast.error("Password field is not matching");
       return;
     }
     const apiResult = await updatePasswordApi({

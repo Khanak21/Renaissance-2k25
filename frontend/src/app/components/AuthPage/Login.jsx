@@ -25,7 +25,7 @@ const Login = ({ type }) => {
   const handleLoginClick = async () => {
     if (type === "1") {
       if (email === "" || password === "") {
-        toast.error("email or password field cannot be empty");
+        toast.error("E-mail or password field cannot be empty");
         return;
       }
       const apiResult = await loginUserApi({ email, password });
@@ -41,7 +41,7 @@ const Login = ({ type }) => {
       }
     } else {
       if (email === "") {
-        toast.error("email field cannot be empty");
+        toast.error("E-mail field cannot be empty");
         return;
       }
       const apiResult = await forgetPasswordApi({ email });

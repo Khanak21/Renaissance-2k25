@@ -58,7 +58,7 @@ const TeamPage = ({ eventid }) => {
         });
       }
     } else {
-      toast.error("register yourself to continue.");
+      toast.error("Register yourself to continue.");
       router.push("/auth/register");
     }
   };
@@ -121,26 +121,26 @@ const TeamPage = ({ eventid }) => {
         >
           <div
             id="DesHead"
-            className="flex items-center justify-center w-1/2 text-xl lg:text-3xl font-semibold tracking-wide lg:pl-40 xl:pl-80 lg:pr-10 xl:pr-20 lg:py-20 sm:pt-10 sm:pb-5"
+            className="flex items-center justify-center w-1/2 text-xl font-semibold tracking-wide lg:text-3xl lg:pl-40 xl:pl-80 lg:pr-10 xl:pr-20 lg:py-20 sm:pt-10 sm:pb-5"
           >
             DESCRIPTION
           </div>
-          <div className="backdrop-blur-sm bg-white/10 flex items-center justify-center lg:w-1/2 text-base p-8 sm:text-center ">
+          <div className="flex items-center justify-center p-8 text-base backdrop-blur-sm bg-white/10 lg:w-1/2 sm:text-center ">
             {eventDetails?.description}
           </div>
         </div>
         <div className="">
           <div
             id="Format"
-            className="lg:flex lg:flex-row sm:flex sm:flex-col justify-center items-center pt-10 lg:pb-10 xlsm:pb-20 xs:pb-20 sm:pb-0"
+            className="items-center justify-center pt-10 lg:flex lg:flex-row sm:flex sm:flex-col lg:pb-10 xlsm:pb-20 xs:pb-20 sm:pb-0"
           >
             <div
               id="FormatHead"
-              className="lg:hidden w-1/2 lg:pl-40 xl:pl-60 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-8 flex justify-center items-center text-xl lg:text-3xl font-semibold tracking-wide text-black"
+              className="flex items-center justify-center w-1/2 text-xl font-semibold tracking-wide text-black lg:hidden lg:pl-40 xl:pl-60 lg:pr-10 xl:pr-10 lg:py-10 sm:pb-8 lg:text-3xl"
             >
               FORMAT
             </div>
-            <div className="backdrop-blur-sm bg-white/10 lg:w-1/2 p-8 flex flex-col justify-center items-center text-black text-base">
+            <div className="flex flex-col items-center justify-center p-8 text-base text-black backdrop-blur-sm bg-white/10 lg:w-1/2">
               <ul className="text-base">
                 {eventDetails &&
                   eventDetails.format.map((item, index) => {
@@ -154,7 +154,7 @@ const TeamPage = ({ eventid }) => {
             </div>
             <div
               id="FormatHeadDown"
-              className="w-1/2 lg:pr-40 xl:pr-60 lg:pl-10 xl:pl-10 lg:py-10 sm:pb-8 flex justify-center items-center text-4xl font-semibold tracking-wide text-black"
+              className="flex items-center justify-center w-1/2 text-4xl font-semibold tracking-wide text-black lg:pr-40 xl:pr-60 lg:pl-10 xl:pl-10 lg:py-10 sm:pb-8"
             >
               FORMAT
             </div>
