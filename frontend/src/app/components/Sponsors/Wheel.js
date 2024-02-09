@@ -44,6 +44,7 @@ export default class Wheel extends Component {
     }
 
     this.setState({ cards: newCards });
+    console.log(newCards)
   }
   render() {
     return (
