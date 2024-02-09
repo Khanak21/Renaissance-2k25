@@ -78,9 +78,9 @@ function About() {
           <br />
           <span className="text-base md:text-lg">MNNIT Allahabad, Prayagraj</span>
           <br />
-          <Link href="/#events">
+          <Link href="https://forms.gle/yzVk3Lh8mzubKqYFA" target="_blank">
             <button className="p-3 text-base border-2 border-white mt-6 shadow-[inset_0_0_0_0_rgb(219,84,97)] hover:border-custom-accent hover:shadow-[inset_15em_0_0_0_rgb(219,84,97)] transition ease-in-out delay-50 duration-300">
-              BUY TICKET
+              REGISTER
             </button>
           </Link>
         </div>
