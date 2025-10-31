@@ -1,12 +1,12 @@
 import React from "react";
-import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 import speakersData from "./data"; // Importing speaker data from data.js
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 // Card component for rendering each speaker
-export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
+export const Card = ({ img, name, post, linkedIn }) => (
   <section className="lg:w-[22%] w-full mx-auto lg:m-0 duration-500 transform bg-white shadow-lg rounded-3xl">
     <section className="flex flex-col h-full max-w-sm mx-auto overflow-hidden">
       <div className="flex justify-center duration-300 ease-in-out hover:cursor-pointer hover:scale-105">
@@ -35,22 +35,6 @@ export const Card = ({ img, name, post, linkedIn, twitter, facebook }) => (
             className="mx-2 text-gray-600 hover:text-blue-500"
           >
             <BsLinkedin className="text-[#2F3E46] shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-800 text-xl" />
-          </a>
-          {/* Twitter handle */}
-          <a
-            href={twitter} // Twitter profile URL
-            target="_blank" // Opens link in a new tab
-            className="mx-2 text-gray-600 hover:text-pink-500"
-          >
-            <BsTwitter className="text-[#2F3E46] shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-400 text-xl" />
-          </a>
-          {/* Facebook handle */}
-          <a
-            href={facebook} // Facebook profile URL
-            target="_blank" // Opens link in a new tab
-            className="mx-2 text-gray-600 hover:text-blue-500"
-          >
-            <BsFacebook className="text-[#2F3E46] rounded-full shadow-2xl hover:p-[2px] cursor-pointer hover:text-blue-600 text-xl" />
           </a>
         </div>
       </div>
@@ -147,8 +131,6 @@ const Speakers = () => {
                 name={speaker.name} // Speaker's name
                 post={speaker.post} // Speaker's position/title
                 linkedIn={speaker.linkedIn} // Speaker's LinkedIn profile URL
-                twitter={speaker.twitter} // Speaker's Twitter profile URL
-                facebook={speaker.facebook} // Speaker's Facebook profile URL
               />
             ))}
           </div>
